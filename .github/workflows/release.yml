@@ -1,0 +1,78 @@
+# Publishing a GitHub release (tag "1.2.3" or "v1.2.3") builds the module and attaches module.json + module.zip to it.
+#
+# Two channels:
+#  - Stable: a normal release. Its module.json's manifest is releases/latest/download/module.json, which GitHub
+#    serves from the newest non-pre-release - the URL stable users install from.
+#  - Beta: a release marked "pre-release" (tag "1.2.3-beta.1"). Its module.json's manifest is
+#    releases/download/beta/module.json instead, and that file is also copied onto a rolling release tagged "beta" -
+#    so beta testers install once from that URL and Foundry updates them to each new beta. Stable users never see betas.
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # The rolling "beta" release is this workflow's own output, not something to build.
+    if: github.event.release.tag_name != 'beta'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install
+        run: npm install --no-audit --no-fund
+
+      - name: Test
+        run: npm test
+
+      # git keeps the compendiums as JSON; Foundry reads the compiled LevelDB folders.
+      - name: Compile the compendiums
+        run: npm run build
+
+      # The release's version, download link and update channel go into the manifest that ships.
+      - name: Set version, download link and channel
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+          REPO: ${{ github.repository }}
+          PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          node -e '
+            const fs = require("fs");
+            const { TAG: tag, REPO: repo, PRERELEASE: pre } = process.env;
+            const manifest = JSON.parse(fs.readFileSync("module.json", "utf8"));
+            manifest.version = tag.replace(/^v/, "");
+            manifest.download = `https://github.com/${repo}/releases/download/${tag}/module.zip`;
+            manifest.manifest = pre == "true"
+              ? `https://github.com/${repo}/releases/download/beta/module.json`
+              : `https://github.com/${repo}/releases/latest/download/module.json`;
+            fs.writeFileSync("module.json", JSON.stringify(manifest, null, 2) + "\n");
+          '
+
+      # Everything Foundry loads. The JSON sources stay in the repo for people who build from git.
+      - name: Zip
+        run: zip -r module.zip module.json README.md CHANGELOG.md LICENSE packs -x "packs/_source/*"
+
+      - name: Attach to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${{ github.event.release.tag_name }}" module.json module.zip --clobber
+
+      # A pre-release also becomes the beta channel's current version.
+      - name: Update the beta channel
+        if: github.event.release.prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view beta > /dev/null 2>&1; then
+            gh release create beta --prerelease --title "Beta channel" \
+              --notes "Install Essence20 Homebrew Starter betas from https://github.com/${{ github.repository }}/releases/download/beta/module.json - Foundry updates you to each new beta. The individual betas are the pre-releases below."
+          fi
+          gh release upload beta module.json --clobber

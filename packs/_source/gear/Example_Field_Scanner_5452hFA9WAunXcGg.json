@@ -1,0 +1,36 @@
+{
+  "_id": "5452hFA9WAunXcGg",
+  "_key": "!items!5452hFA9WAunXcGg",
+  "name": "Example: Field Scanner",
+  "type": "gear",
+  "img": "systems/essence20/assets/icons/items/gear.svg",
+  "system": {
+    "gearType": "exploration",
+    "description": "<p>An example piece of gear for the starter kit: a hand-held scanner that sweeps the area for movement and heat.</p><p><em>Gear Type is what the Compendium Browser filters gear by.</em></p>",
+    "source": {
+      "book": "My Homebrew",
+      "page": 3
+    },
+    "automation": {
+      "status": "manual",
+      "notes": "<p>Manual: no rule - the GM decides what it reveals.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.5",
+    "createdTime": 1791849600000,
+    "modifiedTime": 1791849600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

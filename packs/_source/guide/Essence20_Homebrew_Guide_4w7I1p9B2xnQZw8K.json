@@ -1,0 +1,283 @@
+{
+  "_id": "4w7I1p9B2xnQZw8K",
+  "_key": "!journal!4w7I1p9B2xnQZw8K",
+  "name": "Essence20 Homebrew Guide",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.5",
+    "createdTime": 1791849600000,
+    "modifiedTime": 1791849600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "_id": "JIvvPHaOq9WA6a51",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.JIvvPHaOq9WA6a51",
+      "name": "Start here",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Make it yours</h2>\n<p>This module is a template. Before you put anything in it, give it its own identity, or it will clash with anyone else using the starter kit:</p>\n<ol>\n<li>Close Foundry (or return to Setup).</li>\n<li>Copy the folder <code>Data/modules/essence20-homebrew-starter</code> and rename the copy - for example <code>my-ranger-homebrew</code>. Lower case, numbers and hyphens only.</li>\n<li>Open the copy's <code>module.json</code> and change <code>id</code> to exactly the new folder name. Change <code>title</code>, <code>description</code> and <code>authors</code>.</li>\n<li>Optionally rename the compendium labels (<code>label</code> in <code>packs</code>) and the folder name in <code>packFolders</code>.</li>\n<li>Start Foundry, turn your module on in the world, and open its compendiums.</li>\n</ol>\n<p>A compendium from a module is locked. Right-click it in the Compendium tab and choose <strong>Toggle Edit Lock</strong> to add and change items. Your changes are saved into your module's folder, ready to share.</p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "f3bdfxpGy9sDwSQ1",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.f3bdfxpGy9sDwSQ1",
+      "name": "What goes where",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>One compendium per kind of thing</h2>\n<table>\n<thead><tr><th>Compendium</th><th>Item types</th></tr></thead>\n<tbody>\n<tr><td>Perks</td><td>Perk</td></tr>\n<tr><td>Powers and Spells</td><td>Power, Spell, Magic Bauble</td></tr>\n<tr><td>Roles and Origins</td><td>Role, Role Points, Focus, Origin, Influence, Hang-Up, Bond, Faction</td></tr>\n<tr><td>Gear and Weapons</td><td>Weapon, Weapon Effect, Armor, Shield, Gear, Upgrade, Equipment Package, Alteration</td></tr>\n<tr><td>Zord and Transformer Features</td><td>Feature, Megaform Trait, Alt Mode, Trait</td></tr>\n<tr><td>Threats and NPCs</td><td>Actors: NPCs, Zords, Vehicles, Companions</td></tr>\n</tbody>\n</table>\n<p>Nothing forces this split - any item can go in any Item compendium - but it keeps the Compendium Browser and your players' searches tidy. Delete the compendiums you don't need from <code>module.json</code>.</p>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "97Dfv7hMIIVKN9K4",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.97Dfv7hMIIVKN9K4",
+      "name": "Showing up in the Compendium Browser",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>The Compendium Browser finds your items by itself</h2>\n<p>Every Item compendium Foundry has loaded is in the browser - nothing to register. How each part of it is filled:</p>\n<table>\n<thead><tr><th>In the browser</th><th>Comes from</th></tr></thead>\n<tbody>\n<tr><td>The book groups</td><td>The compendium's <strong>folder</strong> (<code>packFolders</code> in <code>module.json</code>). This kit uses \"Homebrew\". To list your books with a game line instead, name the folder exactly like that line's: <em>GI Joe</em>, <em>My Little Pony</em>, <em>Power Rangers</em>, <em>Transformers</em> or <em>Welcome to Night Vale</em>.</td></tr>\n<tr><td>The book name on each row</td><td>The compendium's <strong>label</strong></td></tr>\n<tr><td>The page</td><td>The item's <strong>Source page</strong> (its Details)</td></tr>\n<tr><td>The tabs</td><td>The <strong>item type</strong></td></tr>\n<tr><td>The sub-filter on a tab</td><td>A Perk's or Power's <strong>type</strong>, a Focus's items</td></tr>\n<tr><td>Traits, Gear Type, Availability</td><td>A weapon's, armor's or shield's <strong>traits</strong>; gear's <strong>Gear Type</strong>; a Power's <strong>Availability</strong></td></tr>\n<tr><td>\"Qualifies for\"</td><td>The item's <strong>prerequisites</strong></td></tr>\n<tr><td>Search</td><td>The item's <strong>name</strong></td></tr>\n</tbody>\n</table>\n<p>A GM can switch any compendium off under <strong>Configure Sourcebooks</strong>; the world's Game Line setting never switches off a module's compendiums.</p>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "fRq7G9VMb6qQYbgx",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.fRq7G9VMb6qQYbgx",
+      "name": "Making it work: the Rules tab",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Automate with rules, not descriptions</h2>\n<p>An item does things through the rules on its <strong>Rules</strong> tab - a Perk that gives Edge, a Power that raises a Defense, an item that reacts when its owner is hit. The description is only for people to read; the system never reads it.</p>\n<ul>\n<li>Open the item, go to <strong>Rules</strong>, and add a rule. Each rule type explains its fields, and the editor tells you when a rule would change nothing.</li>\n<li>The example Perk, <em>Example: Steady Under Fire</em>, has one rule: a Roll Modifier that gives Edge on Targeting Tests.</li>\n<li>Copying a working item from the system's own compendiums is the fastest way to learn a rule type: drag it into your compendium, then change it.</li>\n<li>Fill in <strong>Automation</strong> on the item - full, partial or manual, with a note - so players know what happens by itself and what the GM handles.</li>\n</ul>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "OFQe9Rqo2b4yOJ7b",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.OFQe9Rqo2b4yOJ7b",
+      "name": "Prerequisites",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Who can take it</h2>\n<p>An item's <strong>Prerequisites</strong> say who qualifies: a Skill at a die size, an Essence score, a Role or Perk already taken, and so on. They drive the green tick or red cross on the sheet and the browser's \"Qualifies for\" filter, and - depending on the world's setting - a warning or a block when someone takes it.</p>\n<p>The example Perk needs Targeting at d4 or better. Anything the system can't check (a GM's say-so) can go in the prerequisite notes instead.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "YktefCoTNnAgI4ee",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.YktefCoTNnAgI4ee",
+      "name": "What not to include",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Your words, not the book's</h2>\n<ul>\n<li><strong>Don't paste rulebook text</strong> into descriptions. Describe what your item does in your own words, and put the book and page in its Source if it's based on one.</li>\n<li><strong>Don't include official art, logos or stat blocks</strong> from the Hasbro lines. They belong to Hasbro and are licensed to Renegade, not to us - fine for a private game, not for something you share.</li>\n<li>Your own creations, your own descriptions and your own art (or art you have the rights to) are yours to share.</li>\n</ul>"
+      },
+      "sort": 600000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "m01AC7vx0pzYweUb",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.m01AC7vx0pzYweUb",
+      "name": "Sharing it",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Giving it to other tables</h2>\n<ul>\n<li><strong>Simplest:</strong> zip your module's folder and send it. They unzip it into <code>Data/modules</code>.</li>\n<li><strong>With updates:</strong> put it on GitHub, attach <code>module.json</code> and a zip of the folder to a release, and set <code>manifest</code> and <code>download</code> in <code>module.json</code> to those files' URLs. Others install it from the manifest URL in Foundry and get your updates.</li>\n<li>Bump <code>version</code> in <code>module.json</code> every time you share a change.</li>\n</ul>"
+      },
+      "sort": 700000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    }
+  ]
+}

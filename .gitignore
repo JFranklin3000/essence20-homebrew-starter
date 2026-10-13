@@ -1,0 +1,5 @@
+node_modules/
+*.zip
+# Foundry reads the compiled packs; git keeps their JSON in packs/_source. `npm run build` compiles them.
+packs/*
+!packs/_source/

@@ -1,0 +1,51 @@
+{
+  "_id": "vUTQM2jWLruJEhXx",
+  "_key": "!items!vUTQM2jWLruJEhXx",
+  "name": "Example: Steady Under Fire",
+  "type": "perk",
+  "img": "systems/essence20/assets/icons/items/perk.svg",
+  "system": {
+    "type": "general",
+    "description": "<p>An example Perk for the starter kit. You keep your aim when things get loud: Targeting Tests have Edge.</p><p><em>Replace this with your own Perk - and describe it in your own words.</em></p>",
+    "source": {
+      "book": "My Homebrew",
+      "page": 1
+    },
+    "prerequisites": {
+      "when": [
+        "self:skill:targeting>=d4"
+      ]
+    },
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Steady Under Fire",
+        "when": [
+          "skill:targeting"
+        ],
+        "edge": true
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: Targeting Tests open the Roll Options Dialog with Edge already chosen.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.5",
+    "createdTime": 1791849600000,
+    "modifiedTime": 1791849600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

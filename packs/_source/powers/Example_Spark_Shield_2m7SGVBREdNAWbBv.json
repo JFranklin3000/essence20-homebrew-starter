@@ -1,0 +1,39 @@
+{
+  "_id": "2m7SGVBREdNAWbBv",
+  "_key": "!items!2m7SGVBREdNAWbBv",
+  "name": "Example: Spark Shield",
+  "type": "power",
+  "img": "systems/essence20/assets/icons/items/power.svg",
+  "system": {
+    "type": "grid",
+    "powerCost": 1,
+    "usesInterval": "perScene",
+    "availability": "standard",
+    "description": "<p>An example Power for the starter kit: a crackle of energy that turns a blow aside. Spend 1 Personal Power to raise your Toughness until your next turn.</p><p><em>The numbers are the GM's to set - this one has no rule yet, so it's marked manual.</em></p>",
+    "source": {
+      "book": "My Homebrew",
+      "page": 2
+    },
+    "automation": {
+      "status": "manual",
+      "notes": "<p>Manual: apply the Toughness bonus yourself, or add a rule on the Rules tab.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.5",
+    "createdTime": 1791849600000,
+    "modifiedTime": 1791849600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}
