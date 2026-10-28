@@ -10,7 +10,7 @@ const workflow = fs.readFileSync(path.join(root, '.github', 'workflows', 'releas
 const zipped = /zip -r module\.zip ([^-\n]+)/.exec(workflow)[1].trim().split(/\s+/);
 
 /** The collection each pack type's documents are keyed under in LevelDB. */
-const COLLECTION = { Item: 'items', Actor: 'actors', JournalEntry: 'journal' };
+const COLLECTION = { Item: 'items', Actor: 'actors', JournalEntry: 'journal', RollTable: 'tables', Macro: 'macros' };
 
 test('the manifest is ready to publish', () => {
   assert.equal(manifest.id, 'essence20-homebrew-starter');
@@ -22,7 +22,7 @@ test('the manifest is ready to publish', () => {
 });
 
 test('everything Foundry loads is in the release zip', () => {
-  for (const file of ['module.json', 'README.md', 'LICENSE', 'CHANGELOG.md', 'packs']) {
+  for (const file of ['module.json', 'README.md', 'LICENSE', 'CHANGELOG.md', 'scripts', 'packs']) {
     assert.ok(zipped.includes(file), `${file} is not in the release zip (${zipped.join(' ')})`);
     assert.ok(fs.existsSync(path.join(root, file)), `${file} is missing`);
   }

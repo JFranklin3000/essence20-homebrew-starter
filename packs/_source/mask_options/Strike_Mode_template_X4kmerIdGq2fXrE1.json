@@ -1,0 +1,93 @@
+{
+  "name": "Strike Mode (template)",
+  "type": "upgrade",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "type": "vehicle",
+    "description": "<p>Drop on any vehicle to give it a Civilian and a Strike Mode. Strike Mode! marks the vehicle strikeMode; Civilian Mode clears it. Add the converted form's rules here with the condition self:marked:strikeMode (Movement, Defense, Firepoints...).</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Strike Mode!",
+        "when": [
+          "not:self:marked:strikeMode"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "strikeMode"
+          },
+          {
+            "do": "chat",
+            "text": "{name} converts to Strike Mode!"
+          }
+        ]
+      },
+      {
+        "type": "Use",
+        "label": "Civilian Mode",
+        "when": [
+          "self:marked:strikeMode"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "unmark",
+            "key": "strikeMode"
+          },
+          {
+            "do": "chat",
+            "text": "{name} converts back to Civilian Mode."
+          }
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Strike Mode armor",
+        "defense": "toughness",
+        "amount": 1,
+        "when": [
+          "self:marked:strikeMode"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. As shipped: +1 Toughness - change it to fit the vehicle.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "strikeMode": true,
+      "template": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "X4kmerIdGq2fXrE1",
+  "_key": "!items!X4kmerIdGq2fXrE1"
+}

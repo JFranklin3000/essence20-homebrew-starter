@@ -1,0 +1,53 @@
+{
+  "name": "Quick Change",
+  "type": "perk",
+  "img": "icons/skills/movement/feet-winged-boots-brown.webp",
+  "system": {
+    "type": "general",
+    "description": "<p>You can swap masks - or draw a weapon - in the blink of an eye. Once per turn, the Draw Weapon action is a free action for you. (At the table, putting on or swapping a mask is a Draw Weapon action.)</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "ActionCost",
+        "label": "Quick Change",
+        "action": "drawWeapon",
+        "to": "free",
+        "limit": {
+          "per": "turn",
+          "max": 1
+        }
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: once per turn, Draw Weapon costs a free action instead of a Move action.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "agentPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "4ctzeHcyYOCrXnmh",
+  "_key": "!items!4ctzeHcyYOCrXnmh"
+}

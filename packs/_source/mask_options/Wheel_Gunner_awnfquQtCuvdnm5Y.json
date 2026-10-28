@@ -1,0 +1,57 @@
+{
+  "name": "Wheel Gunner",
+  "type": "perk",
+  "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
+  "system": {
+    "type": "general",
+    "description": "<p>You drive with one hand and aim with the other. A vehicle you are driving has Edge on its Targeting Tests.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "prerequisites": {
+      "when": [
+        "self:skill:targeting>=d2"
+      ]
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Wheel Gunner",
+        "scope": "driven",
+        "edge": true,
+        "when": [
+          "skill:targeting"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: the vehicle you drive has Edge on its Targeting Tests (its weapons).</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "agentPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "awnfquQtCuvdnm5Y",
+  "_key": "!items!awnfquQtCuvdnm5Y"
+}

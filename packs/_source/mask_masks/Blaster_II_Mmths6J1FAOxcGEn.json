@@ -1,0 +1,92 @@
+{
+  "_id": "Mmths6J1FAOxcGEn",
+  "_key": "!items!Mmths6J1FAOxcGEn",
+  "name": "Blaster II",
+  "type": "gear",
+  "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>A wider-angle Blaster that sprays heat across everything in front of the wearer.</p><p><em>Hondo MacLean's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Heat Wave",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "targeting",
+            "defense": "evasion",
+            "to": "nearbyEnemies:15",
+            "dataset": {
+              "maskPower": true
+            },
+            "damage": {
+              "value": 1,
+              "type": "fire"
+            }
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-blaster-ii"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Hondo MacLean"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "_id": "cugIRu7grYigPPi8",
+  "_key": "!items!cugIRu7grYigPPi8",
+  "name": "Streamer",
+  "type": "gear",
+  "img": "icons/magic/water/orb-water-bubbles-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Sprays sticky glue, fire-smothering foam or a slick of oil.</p><p><em>Julio Lopez's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Streamer",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "choose",
+            "prompt": "What does Streamer spray?",
+            "options": [
+              {
+                "label": "Glue: one target Restrained",
+                "steps": [
+                  {
+                    "do": "rollVsEach",
+                    "skill": "targeting",
+                    "defense": "evasion",
+                    "to": "target",
+                    "dataset": {
+                      "maskPower": true
+                    },
+                    "onHit": [
+                      {
+                        "do": "applyCondition",
+                        "condition": "restrained",
+                        "to": "target",
+                        "until": "endOfNextTurn"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Oil slick: enemies within 15 ft knocked Prone",
+                "steps": [
+                  {
+                    "do": "rollVsEach",
+                    "skill": "targeting",
+                    "defense": "evasion",
+                    "to": "nearbyEnemies:15",
+                    "dataset": {
+                      "maskPower": true
+                    },
+                    "onHit": [
+                      {
+                        "do": "applyCondition",
+                        "condition": "prone",
+                        "to": "target"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "label": "Foam: smother a fire",
+                "steps": [
+                  {
+                    "do": "chat",
+                    "text": "{name} smothers the fire in foam."
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-streamer"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Glue (Restrained until the end of the target's next turn) and Oil (Prone) roll against Evasion. Foam just posts to chat - which fire goes out is up to the GM. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Julio Lopez"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

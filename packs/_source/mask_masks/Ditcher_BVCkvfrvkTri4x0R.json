@@ -1,0 +1,95 @@
+{
+  "_id": "BVCkvfrvkTri4x0R",
+  "_key": "!items!BVCkvfrvkTri4x0R",
+  "name": "Ditcher",
+  "type": "gear",
+  "img": "icons/magic/earth/projectile-stone-boulder-brown.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Gouges deep trenches in earth and rock - the ground just drops away under the enemy.</p><p><em>Buddie Hawks's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Trench",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "targeting",
+            "defense": "evasion",
+            "to": "nearbyEnemies:15",
+            "dataset": {
+              "maskPower": true
+            },
+            "onHit": [
+              {
+                "do": "applyCondition",
+                "condition": "prone",
+                "to": "target"
+              }
+            ]
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-ditcher"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Rolls Targeting against the Evasion of each enemy within 15 ft; a hit knocks it Prone. The trench itself (difficult terrain) is up to the GM. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Buddie Hawks"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

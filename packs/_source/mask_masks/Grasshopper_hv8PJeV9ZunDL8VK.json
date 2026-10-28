@@ -1,0 +1,110 @@
+{
+  "_id": "hv8PJeV9ZunDL8VK",
+  "_key": "!items!hv8PJeV9ZunDL8VK",
+  "name": "Grasshopper",
+  "type": "gear",
+  "img": "icons/magic/movement/trail-streak-impact-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Boosts the wearer's legs for enormous leaps.</p><p><em>Bruce Sato's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Leap",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "grasshopper",
+            "until": "endOfTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name} springs into an enormous leap."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-grasshopper"
+        }
+      },
+      {
+        "type": "Movement",
+        "label": "Grasshopper",
+        "movement": "ground",
+        "op": "add",
+        "value": 30,
+        "stage": "bonus",
+        "when": [
+          "self:maskBonded",
+          "self:marked:grasshopper"
+        ]
+      },
+      {
+        "type": "RollModifier",
+        "label": "Grasshopper",
+        "edge": true,
+        "when": [
+          "self:maskBonded",
+          "self:marked:grasshopper",
+          "skill:athletics"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Leap: +30 ft Ground and an Edge on Athletics until the end of the turn. Clearing obstacles on the map is up to the GM. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Bruce Sato"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

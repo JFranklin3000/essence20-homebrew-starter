@@ -1,0 +1,393 @@
+{
+  "name": "Piranha",
+  "type": "vehicle",
+  "img": "icons/svg/wingfoot.svg",
+  "system": {
+    "health": {
+      "origin": 8,
+      "value": 8
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 2,
+        "value": 2
+      },
+      "speed": {
+        "base": 6,
+        "value": 6
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 100
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "convertible": true,
+      "deployable": true
+    },
+    "size": "common",
+    "notes": "<p>A touring motorcycle with a sidecar that converts into a assault.</p><p><em>Sly Rax's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Assault",
+      "type": "upgrade",
+      "img": "icons/svg/wingfoot.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A touring motorcycle with a sidecar converts into its Strike Mode: assault.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - assault mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "toughness",
+            "amount": 1,
+            "label": "Assault",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Assault: +1 Toughness - its weapons come out.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RpEntLWoUk94ek3W",
+      "_key": "!actors.items!E4wNrTycQcmyTsdV.RpEntLWoUk94ek3W"
+    },
+    {
+      "name": "Bike Guns",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Bike Guns that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Bike Guns",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "damage": {
+                  "value": 2,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against the target's evasion, 2 blunt damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "kcHWF3droofDnNL5",
+      "_key": "!actors.items!E4wNrTycQcmyTsdV.kcHWF3droofDnNL5"
+    },
+    {
+      "name": "Stiletto Link",
+      "type": "upgrade",
+      "img": "icons/weapons/thrown/dart-feathered.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Stiletto, the Piranha amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Harpoons",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:Stiletto"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "toughness",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 2,
+                  "type": "sharp"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working Stiletto mask: once per scene, the mask's Harpoons rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "2rjkHZ4Kf3z1d1Op",
+      "_key": "!actors.items!E4wNrTycQcmyTsdV.2rjkHZ4Kf3z1d1Op"
+    },
+    {
+      "name": "Piranha Sidecar Sub Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the Piranha carries its Piranha Sidecar Sub.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy Piranha Sidecar Sub",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the Piranha Sidecar Sub!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock Piranha Sidecar Sub",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The Piranha Sidecar Sub docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the Piranha Sidecar Sub's token hidden on the scene. Target it, then Deploy: it appears beside the Piranha. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "LGAOeuKpCyFWFLr0",
+      "_key": "!actors.items!E4wNrTycQcmyTsdV.LGAOeuKpCyFWFLr0"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Piranha",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/wingfoot.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Sly Rax"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "E4wNrTycQcmyTsdV",
+  "_key": "!actors!E4wNrTycQcmyTsdV"
+}

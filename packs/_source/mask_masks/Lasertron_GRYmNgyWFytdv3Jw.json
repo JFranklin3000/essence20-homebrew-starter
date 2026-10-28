@@ -1,0 +1,100 @@
+{
+  "_id": "GRYmNgyWFytdv3Jw",
+  "_key": "!items!GRYmNgyWFytdv3Jw",
+  "name": "Lasertron",
+  "type": "gear",
+  "img": "icons/magic/light/beam-rays-yellow.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>A Laser Command mask that focuses its flash into a cutting beam - and dazzles anyone hit hard.</p><p><em>Matt Trakker's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Lasertron Beam",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "targeting",
+            "defense": "evasion",
+            "to": "target",
+            "dataset": {
+              "maskPower": true
+            },
+            "damage": {
+              "value": 2,
+              "type": "laser"
+            },
+            "onDouble": [
+              {
+                "do": "applyCondition",
+                "condition": "blinded",
+                "to": "target",
+                "until": "endOfNextTurn"
+              }
+            ]
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-lasertron"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. A hit of two degrees or more also Blinds. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Matt Trakker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

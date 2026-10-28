@@ -1,0 +1,393 @@
+{
+  "name": "Skybolt",
+  "type": "vehicle",
+  "img": "icons/svg/wing.svg",
+  "system": {
+    "health": {
+      "origin": 18,
+      "value": 18
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 1,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 4,
+        "value": 4
+      },
+      "speed": {
+        "base": 7,
+        "value": 7
+      }
+    },
+    "movement": {
+      "aerial": {
+        "base": 200
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "air": true,
+      "convertible": true,
+      "deployable": true
+    },
+    "size": "long",
+    "notes": "<p>A fighter jet that converts into an attack craft that drops a turbo car.</p><p><em>Matt Trakker's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Attack Craft",
+      "type": "upgrade",
+      "img": "icons/svg/wing.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A fighter jet converts into its Strike Mode: attack craft.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - attack craft mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "toughness",
+            "amount": 1,
+            "label": "Attack Craft",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Attack Craft: +1 Toughness - its weapons come out.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Mvngwhm000gE6LVF",
+      "_key": "!actors.items!BdXhXgxDSdQmNXhd.Mvngwhm000gE6LVF"
+    },
+    {
+      "name": "Wing Lasers",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Wing Lasers that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Wing Lasers",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "damage": {
+                  "value": 3,
+                  "type": "laser"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against the target's evasion, 3 laser damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3GzffgFokmFo6Duf",
+      "_key": "!actors.items!BdXhXgxDSdQmNXhd.3GzffgFokmFo6Duf"
+    },
+    {
+      "name": "New Spectrum Link",
+      "type": "upgrade",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing New Spectrum, the Skybolt amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Laser Beam",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:New Spectrum"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 2,
+                  "type": "laser"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working New Spectrum mask: once per scene, the mask's Laser Beam rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "rHoUMFtPVMCk3qWt",
+      "_key": "!actors.items!BdXhXgxDSdQmNXhd.rHoUMFtPVMCk3qWt"
+    },
+    {
+      "name": "Skybolt Turbo Car Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the Skybolt carries its Skybolt Turbo Car.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy Skybolt Turbo Car",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the Skybolt Turbo Car!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock Skybolt Turbo Car",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The Skybolt Turbo Car docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the Skybolt Turbo Car's token hidden on the scene. Target it, then Deploy: it appears beside the Skybolt. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dTzvYmaLxohJ2IrI",
+      "_key": "!actors.items!BdXhXgxDSdQmNXhd.dTzvYmaLxohJ2IrI"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Skybolt",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/wing.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Matt Trakker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "BdXhXgxDSdQmNXhd",
+  "_key": "!actors!BdXhXgxDSdQmNXhd"
+}

@@ -1,0 +1,96 @@
+{
+  "_id": "YFbn16Nxd20vDl0P",
+  "_key": "!items!YFbn16Nxd20vDl0P",
+  "name": "Disruptor",
+  "type": "gear",
+  "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Floods the airwaves with noise, cutting radios and remote controls.</p><p><em>Alex Sector's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Jam Signals",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "technology",
+            "defense": "cleverness",
+            "to": "targets",
+            "dataset": {
+              "maskPower": true
+            },
+            "onHit": [
+              {
+                "do": "applyCondition",
+                "condition": "jammed",
+                "to": "target",
+                "until": "endOfNextTurn"
+              }
+            ]
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-disruptor"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Rolls Technology against each target's Cleverness; a hit leaves it Jammed until the end of its next turn. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Alex Sector"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

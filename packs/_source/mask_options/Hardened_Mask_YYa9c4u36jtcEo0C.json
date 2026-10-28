@@ -1,0 +1,52 @@
+{
+  "name": "Hardened Mask",
+  "type": "perk",
+  "img": "icons/equipment/head/helm-barbute-engraved-steel.webp",
+  "system": {
+    "type": "general",
+    "description": "<p>You have reinforced your helmet. While you wear a mask, you have +1 Toughness on top of the helmet's own.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Defense",
+        "label": "Hardened Mask",
+        "defense": "toughness",
+        "amount": 1,
+        "when": [
+          "self:wearingItem:item:mask"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: +1 Toughness while you wear a mask.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "agentPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "YYa9c4u36jtcEo0C",
+  "_key": "!items!YYa9c4u36jtcEo0C"
+}

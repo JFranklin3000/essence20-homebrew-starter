@@ -1,0 +1,73 @@
+{
+  "name": "Mask Tech",
+  "type": "perk",
+  "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>You build and maintain the team's gear. Technology Tests have Edge, and once per scene you can patch up a damaged vehicle or piece of kit in the field. You can also do the lab work that rebonds a mask.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Mask Tech",
+        "edge": true,
+        "when": [
+          "skill:technology"
+        ]
+      },
+      {
+        "type": "Use",
+        "label": "Field Repair (2 Health to the target)",
+        "cost": {
+          "action": "standard"
+        },
+        "limit": {
+          "per": "scene",
+          "max": 1
+        },
+        "steps": [
+          {
+            "do": "heal",
+            "amount": 2,
+            "to": "target"
+          },
+          {
+            "do": "chat",
+            "text": "{name} patches up {target} in the field."
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Automatic: Technology Tests have Edge. Use button: once per scene, the target regains 2 Health.</p><p>Left to the table: the mask lab work (the GM runs the Rebond Mask macro afterwards).</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "qW6Dt1lofXWzKiVM",
+  "_key": "!items!qW6Dt1lofXWzKiVM"
+}

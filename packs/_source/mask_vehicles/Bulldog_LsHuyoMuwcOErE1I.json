@@ -1,0 +1,319 @@
+{
+  "name": "Bulldog",
+  "type": "vehicle",
+  "img": "icons/svg/castle.svg",
+  "system": {
+    "health": {
+      "origin": 28,
+      "value": 28
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 2,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 7,
+        "value": 7
+      },
+      "speed": {
+        "base": 3,
+        "value": 3
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "treads": true,
+      "convertible": true
+    },
+    "size": "extended",
+    "notes": "<p>A cab-over semi truck that converts into a half-track tank.</p><p><em>Boris Bushkin's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Tank",
+      "type": "upgrade",
+      "img": "icons/svg/castle.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A cab-over semi truck converts into its Strike Mode: tank.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - tank mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "toughness",
+            "amount": 3,
+            "label": "Tank",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Tank: +3 Toughness.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "eRHAkjLcYdLJ5GU6",
+      "_key": "!actors.items!LsHuyoMuwcOErE1I.eRHAkjLcYdLJ5GU6"
+    },
+    {
+      "name": "Turret Cannon",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Turret Cannon that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Turret Cannon",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "toughness",
+                "to": "target",
+                "damage": {
+                  "value": 3,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against the target's toughness, 3 blunt damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "M8ElqK1jtUj8o7dO",
+      "_key": "!actors.items!LsHuyoMuwcOErE1I.M8ElqK1jtUj8o7dO"
+    },
+    {
+      "name": "Comrade Link",
+      "type": "upgrade",
+      "img": "icons/magic/light/beam-explosion-orange.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Comrade, the Bulldog amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Energy Stars",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:Comrade"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 1,
+                  "type": "element"
+                },
+                "onHit": [
+                  {
+                    "do": "applyCondition",
+                    "condition": "impaired",
+                    "to": "target",
+                    "until": "endOfNextTurn"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working Comrade mask: once per scene, the mask's Energy Stars rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "hyblje06tESMoGHQ",
+      "_key": "!actors.items!LsHuyoMuwcOErE1I.hyblje06tESMoGHQ"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Bulldog",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 4,
+    "height": 2,
+    "texture": {
+      "src": "icons/svg/castle.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Boris Bushkin"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "LsHuyoMuwcOErE1I",
+  "_key": "!actors!LsHuyoMuwcOErE1I"
+}

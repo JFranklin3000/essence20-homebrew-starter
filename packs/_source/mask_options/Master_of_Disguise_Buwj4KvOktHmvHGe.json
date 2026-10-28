@@ -1,0 +1,60 @@
+{
+  "name": "Master of Disguise",
+  "type": "origin",
+  "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+  "system": {
+    "description": "<p>An actor, a con artist or a spy - you can be anyone, and you have been.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "lcmq": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.lCMqFohnZVFR1ON4",
+        "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+        "name": "Quick Disguise",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 30,
+    "essences": [
+      "social"
+    ],
+    "languages": "",
+    "skills": [
+      "deception",
+      "infiltration",
+      "performance"
+    ],
+    "startingHealth": 1,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick the social increase and a Skill from its list. It sets your starting Health (1) and 30 ft Ground Movement and gives you the Quick Disguise Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "Buwj4KvOktHmvHGe",
+  "_key": "!items!Buwj4KvOktHmvHGe"
+}

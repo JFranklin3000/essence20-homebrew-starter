@@ -1,0 +1,60 @@
+{
+  "name": "Inventor",
+  "type": "origin",
+  "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+  "system": {
+    "description": "<p>Designer, engineer or garage genius: you build the gadgets, keep the vehicles running and understand the masks better than anyone.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "qw6d": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.qW6Dt1lofXWzKiVM",
+        "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+        "name": "Mask Tech",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 30,
+    "essences": [
+      "smarts"
+    ],
+    "languages": "",
+    "skills": [
+      "technology",
+      "science",
+      "alertness"
+    ],
+    "startingHealth": 1,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick the smarts increase and a Skill from its list. It sets your starting Health (1) and 30 ft Ground Movement and gives you the Mask Tech Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "aTOyasnlsi8dlafs",
+  "_key": "!items!aTOyasnlsi8dlafs"
+}

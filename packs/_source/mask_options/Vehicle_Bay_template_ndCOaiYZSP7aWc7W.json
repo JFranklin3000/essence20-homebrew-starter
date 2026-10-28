@@ -1,0 +1,83 @@
+{
+  "name": "Vehicle Bay (template)",
+  "type": "upgrade",
+  "img": "icons/svg/door-exit.svg",
+  "system": {
+    "type": "vehicle",
+    "description": "<p>For a vehicle that carries another. Keep the carried vehicle's token hidden on the scene; target it, then Deploy or Dock.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Deploy carried vehicle",
+        "cost": {
+          "action": "move"
+        },
+        "steps": [
+          {
+            "do": "hideTokens",
+            "to": "target",
+            "hidden": false
+          },
+          {
+            "do": "placeBeside",
+            "to": "target"
+          },
+          {
+            "do": "chat",
+            "text": "{name} deploys the carried vehicle!"
+          }
+        ]
+      },
+      {
+        "type": "Use",
+        "label": "Dock carried vehicle",
+        "cost": {
+          "action": "move"
+        },
+        "steps": [
+          {
+            "do": "hideTokens",
+            "to": "target",
+            "hidden": true
+          },
+          {
+            "do": "chat",
+            "text": "The carried vehicle docks with {name}."
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Deploy reveals the targeted token beside the carrier; Dock hides it. The crew move across by dragging.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "template": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "ndCOaiYZSP7aWc7W",
+  "_key": "!items!ndCOaiYZSP7aWc7W"
+}

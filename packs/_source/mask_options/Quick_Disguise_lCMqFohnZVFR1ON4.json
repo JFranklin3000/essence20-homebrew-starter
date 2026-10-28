@@ -1,0 +1,57 @@
+{
+  "name": "Quick Disguise",
+  "type": "perk",
+  "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>A wig, a uniform and a new walk, and nobody looks twice. Without a mask on, your Deception and Infiltration Tests have Edge - a M.A.S.K. helmet is not much of a disguise.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Quick Disguise",
+        "edge": true,
+        "when": [
+          {
+            "any": [
+              "skill:deception",
+              "skill:infiltration"
+            ]
+          },
+          "not:self:wearingItem:item:mask"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: while you wear no mask, Deception and Infiltration Tests have Edge.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "lCMqFohnZVFR1ON4",
+  "_key": "!items!lCMqFohnZVFR1ON4"
+}

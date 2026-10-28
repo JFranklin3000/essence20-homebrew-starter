@@ -1,0 +1,337 @@
+{
+  "name": "Detonator",
+  "type": "vehicle",
+  "img": "icons/svg/direction.svg",
+  "system": {
+    "health": {
+      "origin": 14,
+      "value": 14
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 1,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 3,
+        "value": 3
+      },
+      "speed": {
+        "base": 6,
+        "value": 6
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 100
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "air": true,
+      "convertible": true,
+      "deployable": true
+    },
+    "size": "long",
+    "notes": "<p>A little round family car that converts into an aerial craft and a quad bike.</p><p><em>Jacques LaFleur's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Jet",
+      "type": "upgrade",
+      "img": "icons/svg/direction.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A little round family car converts into its Strike Mode: jet.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - jet mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Movement",
+            "movement": "aerial",
+            "op": "max",
+            "value": 200,
+            "stage": "total",
+            "label": "Jet",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "evasion",
+            "amount": 2,
+            "label": "Jet",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Jet: Aerial at least 200 ft, +2 Evasion.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "rvlTlRl61iiSHXM0",
+      "_key": "!actors.items!fglboCC8yXALMDjq.rvlTlRl61iiSHXM0"
+    },
+    {
+      "name": "Bombs",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Bombs that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Bombs",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 2,
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against up to 2 targets's evasion, 2 fire damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "92fHircZdJGdBodL",
+      "_key": "!actors.items!fglboCC8yXALMDjq.92fHircZdJGdBodL"
+    },
+    {
+      "name": "Detonator Quad Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the Detonator carries its Detonator Quad.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy Detonator Quad",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the Detonator Quad!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock Detonator Quad",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The Detonator Quad docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the Detonator Quad's token hidden on the scene. Target it, then Deploy: it appears beside the Detonator. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "r5nZmRAlpG8aKpic",
+      "_key": "!actors.items!fglboCC8yXALMDjq.r5nZmRAlpG8aKpic"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Detonator",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/direction.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Jacques LaFleur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "fglboCC8yXALMDjq",
+  "_key": "!actors!fglboCC8yXALMDjq"
+}

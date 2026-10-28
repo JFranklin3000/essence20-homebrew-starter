@@ -1,0 +1,84 @@
+{
+  "name": "Detonator Quad",
+  "type": "vehicle",
+  "img": "icons/svg/direction.svg",
+  "system": {
+    "health": {
+      "origin": 10,
+      "value": 10
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 3,
+        "value": 3
+      },
+      "speed": {
+        "base": 5,
+        "value": 5
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 70
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "allTerrain": true
+    },
+    "size": "common",
+    "notes": "<p>The Detonator's detachable quad. It rides in or on the Detonator.</p><p><em>Jacques LaFleur's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Detonator Quad",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/direction.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Jacques LaFleur"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "ott2kIBLcOEYuwDm",
+  "_key": "!actors!ott2kIBLcOEYuwDm"
+}

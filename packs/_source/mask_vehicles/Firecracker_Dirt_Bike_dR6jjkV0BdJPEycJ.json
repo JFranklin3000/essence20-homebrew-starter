@@ -1,0 +1,83 @@
+{
+  "name": "Firecracker Dirt Bike",
+  "type": "vehicle",
+  "img": "icons/svg/wingfoot.svg",
+  "system": {
+    "health": {
+      "origin": 8,
+      "value": 8
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 2,
+        "value": 2
+      },
+      "speed": {
+        "base": 6,
+        "value": 6
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 100
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true
+    },
+    "size": "common",
+    "notes": "<p>The Firecracker's detachable dirt bike. It rides in or on the Firecracker.</p><p><em>Buddie Hawks's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Firecracker Dirt Bike",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/wingfoot.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Buddie Hawks"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "dR6jjkV0BdJPEycJ",
+  "_key": "!actors!dR6jjkV0BdJPEycJ"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Hired Gun",
+  "type": "origin",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": "<p>Muscle for hire: a mercenary, a bodyguard or a crook with a record. V.E.N.O.M. recruits plenty of you.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "tgwa": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.tgwaLHS4X2RsJDBp",
+        "img": "icons/skills/melee/unarmed-punch-fist.webp",
+        "name": "Cheap Shot",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 30,
+    "essences": [
+      "strength",
+      "speed"
+    ],
+    "languages": "",
+    "skills": [
+      "brawn",
+      "intimidation",
+      "might",
+      "targeting"
+    ],
+    "startingHealth": 2,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick which Essence to raise and a Skill from its list. It sets your starting Health (2) and 30 ft Ground Movement and gives you the Cheap Shot Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "sGo6BAoSq9sLjaNm",
+  "_key": "!items!sGo6BAoSq9sLjaNm"
+}

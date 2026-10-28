@@ -1,0 +1,394 @@
+{
+  "name": "Goliath II",
+  "type": "vehicle",
+  "img": "icons/svg/castle.svg",
+  "system": {
+    "health": {
+      "origin": 28,
+      "value": 28
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 2,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 7,
+        "value": 7
+      },
+      "speed": {
+        "base": 3,
+        "value": 3
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "convertible": true,
+      "deployable": true
+    },
+    "size": "extended",
+    "notes": "<p>A flatbed truck carrying a race car that converts into a missile launcher.</p><p><em>Nevada Rushmore's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Missile Launcher",
+      "type": "upgrade",
+      "img": "icons/svg/castle.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A flatbed truck carrying a race car converts into its Strike Mode: missile launcher.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - missile launcher mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "toughness",
+            "amount": 2,
+            "label": "Missile Launcher",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Missile Launcher: +2 Toughness.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "e26DpXoySKBUwTkQ",
+      "_key": "!actors.items!yXvFAessSAM98418.e26DpXoySKBUwTkQ"
+    },
+    {
+      "name": "Missile Battery",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Missile Battery that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Missile Battery",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 3,
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against up to 3 targets's evasion, 2 fire damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "nfHGXhRijsbsqa1b",
+      "_key": "!actors.items!yXvFAessSAM98418.nfHGXhRijsbsqa1b"
+    },
+    {
+      "name": "Totem Link",
+      "type": "upgrade",
+      "img": "icons/magic/earth/projectile-stone-ball-brown.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Totem, the Goliath II amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Totem Shot",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:Totem"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 2,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working Totem mask: once per scene, the mask's Totem Shot rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "7hiA3Tg8frHsr7Bp",
+      "_key": "!actors.items!yXvFAessSAM98418.7hiA3Tg8frHsr7Bp"
+    },
+    {
+      "name": "Goliath I Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the Goliath II carries its Goliath I.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy Goliath I",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the Goliath I!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock Goliath I",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The Goliath I docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the Goliath I's token hidden on the scene. Target it, then Deploy: it appears beside the Goliath II. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "BXCBeYekUz6VeMOc",
+      "_key": "!actors.items!yXvFAessSAM98418.BXCBeYekUz6VeMOc"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Goliath II",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 4,
+    "height": 2,
+    "texture": {
+      "src": "icons/svg/castle.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Nevada Rushmore"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "yXvFAessSAM98418",
+  "_key": "!actors!yXvFAessSAM98418"
+}

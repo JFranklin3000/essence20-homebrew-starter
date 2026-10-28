@@ -1,0 +1,60 @@
+{
+  "name": "Stunt Driver",
+  "type": "origin",
+  "img": "icons/environment/settlement/wagon.webp",
+  "system": {
+    "description": "<p>You earned a living on film sets and stunt shows, jumping cars over buses and walking away from the wreck.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "sdre": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.SdrEwyodPeFmU1OA",
+        "img": "icons/environment/settlement/wagon.webp",
+        "name": "Daredevil",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 35,
+    "essences": [
+      "speed"
+    ],
+    "languages": "",
+    "skills": [
+      "driving",
+      "acrobatics",
+      "athletics"
+    ],
+    "startingHealth": 2,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick the speed increase and a Skill from its list. It sets your starting Health (2) and 35 ft Ground Movement and gives you the Daredevil Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "Ib88dhRNIozfUOfb",
+  "_key": "!items!Ib88dhRNIozfUOfb"
+}

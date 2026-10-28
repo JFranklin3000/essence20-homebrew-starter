@@ -1,0 +1,394 @@
+{
+  "name": "Firecracker",
+  "type": "vehicle",
+  "img": "icons/svg/direction.svg",
+  "system": {
+    "health": {
+      "origin": 20,
+      "value": 20
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 1,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 5,
+        "value": 5
+      },
+      "speed": {
+        "base": 4,
+        "value": 4
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 70
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "convertible": true,
+      "deployable": true
+    },
+    "size": "large",
+    "notes": "<p>A pickup truck that converts into a weapon platform with a dirt bike.</p><p><em>Hondo MacLean & Buddie Hawks's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Weapon Platform",
+      "type": "upgrade",
+      "img": "icons/svg/direction.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A pickup truck converts into its Strike Mode: weapon platform.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts - weapon platform mode!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "defense": "toughness",
+            "amount": 2,
+            "label": "Weapon Platform",
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Weapon Platform: +2 Toughness.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3nPbPR9SEsW7U9VE",
+      "_key": "!actors.items!i7jFeb5bzN0U3VKv.3nPbPR9SEsW7U9VE"
+    },
+    {
+      "name": "Laser Turret",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Laser Turret that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Laser Turret",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 2,
+                "damage": {
+                  "value": 2,
+                  "type": "laser"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against up to 2 targets's evasion, 2 laser damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Q4WDB7UkYXRn839p",
+      "_key": "!actors.items!i7jFeb5bzN0U3VKv.Q4WDB7UkYXRn839p"
+    },
+    {
+      "name": "Blaster Link",
+      "type": "upgrade",
+      "img": "icons/magic/fire/beam-jet-stream-embers.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Blaster, the Firecracker amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Heat Beam",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:Blaster"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working Blaster mask: once per scene, the mask's Heat Beam rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RqdFxBdxJJayonhB",
+      "_key": "!actors.items!i7jFeb5bzN0U3VKv.RqdFxBdxJJayonhB"
+    },
+    {
+      "name": "Firecracker Dirt Bike Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the Firecracker carries its Firecracker Dirt Bike.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy Firecracker Dirt Bike",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the Firecracker Dirt Bike!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock Firecracker Dirt Bike",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The Firecracker Dirt Bike docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the Firecracker Dirt Bike's token hidden on the scene. Target it, then Deploy: it appears beside the Firecracker. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3eDHlwRXpT7VNsQq",
+      "_key": "!actors.items!i7jFeb5bzN0U3VKv.3eDHlwRXpT7VNsQq"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Firecracker",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "icons/svg/direction.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Hondo MacLean & Buddie Hawks"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "i7jFeb5bzN0U3VKv",
+  "_key": "!actors!i7jFeb5bzN0U3VKv"
+}

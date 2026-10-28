@@ -1,0 +1,60 @@
+{
+  "name": "Race Driver",
+  "type": "origin",
+  "img": "icons/sundries/flags/banner-flag-red-white.webp",
+  "system": {
+    "description": "<p>You drove on the professional circuit before the team found you. Reflexes, nerve and an ear for an engine.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "7une": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.7UnEszYaBW0dXSQs",
+        "img": "icons/sundries/flags/banner-flag-red-white.webp",
+        "name": "Pole Position",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 35,
+    "essences": [
+      "speed"
+    ],
+    "languages": "",
+    "skills": [
+      "driving",
+      "initiative",
+      "finesse"
+    ],
+    "startingHealth": 1,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick the speed increase and a Skill from its list. It sets your starting Health (1) and 35 ft Ground Movement and gives you the Pole Position Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "zb1liwy9j7ob7nUD",
+  "_key": "!items!zb1liwy9j7ob7nUD"
+}

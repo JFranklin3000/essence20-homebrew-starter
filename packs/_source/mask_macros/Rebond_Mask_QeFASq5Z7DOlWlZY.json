@@ -1,0 +1,25 @@
+{
+  "_id": "QeFASq5Z7DOlWlZY",
+  "_key": "!macros!QeFASq5Z7DOlWlZY",
+  "name": "Rebond Mask",
+  "type": "script",
+  "img": "icons/svg/mystery-man.svg",
+  "scope": "global",
+  "command": "// M.A.S.K.: bond the masks on the selected tokens' actors to those actors (GM only) - after the lab work and downtime.\nconst api = game.modules.get('essence20-homebrew-starter')?.api?.mask;\nif (!api) return ui.notifications.warn('Turn on the Essence20 Homebrew Starter module first.');\nif (!game.user.isGM) return ui.notifications.warn('Only the GM rebonds masks.');\nconst actors = canvas.tokens.controlled.map(token => token.actor).filter(Boolean);\nif (!actors.length) return ui.notifications.warn('Select the tokens of the agents whose masks to rebond.');\nfor (const actor of actors) {\n  for (const mask of actor.items.filter(item => api.isMask(item) && !api.bondHolds(item, actor))) {\n    await api.rebondMask(mask);\n    ChatMessage.create({ content: `${mask.name} is now bonded to ${actor.name}.` });\n  }\n}",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

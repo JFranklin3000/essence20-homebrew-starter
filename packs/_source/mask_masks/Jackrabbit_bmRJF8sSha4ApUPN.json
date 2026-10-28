@@ -1,0 +1,100 @@
+{
+  "_id": "bmRJF8sSha4ApUPN",
+  "_key": "!items!bmRJF8sSha4ApUPN",
+  "name": "Jackrabbit",
+  "type": "gear",
+  "img": "icons/magic/air/wind-tornado-wall-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Lets the wearer fly under their own power.</p><p><em>Alex Sector's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Take Flight",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "jackrabbit",
+            "until": "scene"
+          },
+          {
+            "do": "chat",
+            "text": "{name} takes to the air."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-jackrabbit"
+        }
+      },
+      {
+        "type": "Movement",
+        "label": "Jackrabbit",
+        "movement": "aerial",
+        "op": "max",
+        "value": 40,
+        "stage": "total",
+        "when": [
+          "self:maskBonded",
+          "self:marked:jackrabbit"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Take Flight: an Aerial speed of at least 40 ft for the scene. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Alex Sector"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

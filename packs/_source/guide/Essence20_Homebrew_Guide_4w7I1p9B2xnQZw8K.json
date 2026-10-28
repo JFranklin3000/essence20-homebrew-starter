@@ -206,6 +206,43 @@
       "src": null
     },
     {
+      "_id": "Hr7uLeP4gE2sQ9xA",
+      "_key": "!journal.pages!4w7I1p9B2xnQZw8K.Hr7uLeP4gE2sQ9xA",
+      "name": "House rules",
+      "type": "text",
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Rules for the whole table</h2>\n<p>A house rule changes the game for everyone at once - every character and Threat in the world - without an item on anyone's sheet. The GM turns each one on or off under <strong>Configure Settings → House Rules</strong> (Essence20 6.0.7 or later). Rolls list a house rule as the source of whatever it changes, so players can see where a ↑ or an Edge came from, and switch a shift off for one roll like any other.</p>\n<p>This kit comes with four examples, all off until you turn them on: <strong>Heroic Initiative</strong> (Edge on Initiative), <strong>Everyone Knows Initiative</strong> (no untrained Snag on Initiative), <strong>Extra General Perk</strong> (one more General Perk at level 1 - characters already playing get it as a pick to make from their sheet) and <strong>Extra Edges and Snags Count</strong>.</p>\n<h2>Making your own in Foundry</h2>\n<p>No code needed: on the House Rules page, click <strong>New House Rule</strong>. Give it a name and a sentence saying what it changes, then <strong>Add a rule</strong> - the same guided editor an item's Rules tab opens, in game words. Or drop an item onto the window to copy its rules: build the rule on a test item, try it on a character, then drop the item. Save, and every character and Threat in the world uses it. The pencil and the bin beside it edit or delete it later. These house rules are kept in the world, not in this module.</p>\n<h2>Shipping your own in your module</h2>\n<p>To share house rules with other tables, put them in <code>scripts/house-rules.mjs</code>. Copy one of the entries in <code>RULE_HOUSE_RULES</code> and change:</p>\n<ul>\n<li><code>id</code> - unique, with your module's id in front (<code>my-ranger-homebrew-...</code>).</li>\n<li><code>label</code> and <code>hint</code> - what the GM sees in House Rules. Use your own words.</li>\n<li><code>rules</code> - the same rules an item's Rules tab writes. The easy way to get the JSON: make the house rule in Foundry first, then copy its rules from the world setting, or from a test item's Rules tab (its JSON view).</li>\n</ul>\n<p>Rules that change rolls, damage and Defenses work best (RollModifier, DamageModifier, DefenseModifier, DialogSwitch). A Use rule doesn't: a house rule has no sheet to put its button on.</p>\n<h2>When rules aren't enough</h2>\n<p>A house rule can also be a plain switch your own code reads: register it with no <code>rules</code>, then check <code>game.essence20.rules.houseRuleEnabled(id)</code>. The third example does this - it listens to the <code>essence20.preRollOptions</code> hook, which runs just before the Roll Options Dialog opens, and adds a ↑1 with <code>addSource</code> when a roll has two or more Edges.</p>"
+      },
+      "sort": 550000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.5",
+        "createdTime": 1791849600000,
+        "modifiedTime": 1791849600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
       "_id": "YktefCoTNnAgI4ee",
       "_key": "!journal.pages!4w7I1p9B2xnQZw8K.YktefCoTNnAgI4ee",
       "name": "What not to include",

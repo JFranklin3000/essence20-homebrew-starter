@@ -1,0 +1,52 @@
+{
+  "name": "Pole Position",
+  "type": "perk",
+  "img": "icons/sundries/flags/banner-flag-red-white.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>You are first off the line. While you are aboard a vehicle, your Initiative Tests are upshifted once.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Pole Position",
+        "upshift": 1,
+        "when": [
+          "skill:initiative",
+          "vehicle:crew"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: while you crew a vehicle, Initiative Tests are upshifted once.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "7UnEszYaBW0dXSQs",
+  "_key": "!items!7UnEszYaBW0dXSQs"
+}

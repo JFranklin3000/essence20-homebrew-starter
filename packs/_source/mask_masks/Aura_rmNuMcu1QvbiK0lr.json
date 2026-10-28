@@ -1,0 +1,108 @@
+{
+  "_id": "rmNuMcu1QvbiK0lr",
+  "_key": "!items!rmNuMcu1QvbiK0lr",
+  "name": "Aura",
+  "type": "gear",
+  "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Wraps the wearer in a force shield that drinks in the energy of incoming attacks.</p><p><em>Gloria Baker's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Force Shield",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "move"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "aura",
+            "until": "endOfNextTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name} raises an energy-absorbing force shield."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-aura"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Aura",
+        "defense": "toughness",
+        "amount": 3,
+        "when": [
+          "self:maskBonded",
+          "self:marked:aura"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Aura",
+        "defense": "evasion",
+        "amount": 1,
+        "when": [
+          "self:maskBonded",
+          "self:marked:aura"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Force Shield (a Move action): +3 Toughness and +1 Evasion until the end of the wearer's next turn. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Gloria Baker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

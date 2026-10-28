@@ -1,0 +1,466 @@
+{
+  "name": "Rhino",
+  "type": "vehicle",
+  "img": "icons/svg/castle.svg",
+  "system": {
+    "health": {
+      "origin": 30,
+      "value": 30
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 3,
+      "description": "1 driver, 3 passengers"
+    },
+    "firepoints": {
+      "value": 2,
+      "description": "Missile pods"
+    },
+    "essences": {
+      "strength": {
+        "base": 8,
+        "value": 8
+      },
+      "speed": {
+        "base": 3,
+        "value": 3
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      },
+      "technology": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "convertible": true,
+      "deployable": true,
+      "armoredCabin": true
+    },
+    "size": "extended",
+    "notes": "<p>A long-haul semi truck. Its armor plates slide up into a rolling fortress and mobile command center, with an ATV tucked in the back.</p><p><em>Matt Trakker's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Fortress",
+      "type": "upgrade",
+      "img": "icons/svg/castle.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Armor plates slam into place over the cab and trailer.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Strike Mode!",
+            "when": [
+              "not:self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} locks down into an armored fortress!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Civilian Mode",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "unmark",
+                "key": "strikeMode"
+              },
+              {
+                "do": "chat",
+                "text": "{name} converts back to Civilian Mode."
+              }
+            ]
+          },
+          {
+            "type": "Defense",
+            "label": "Fortress armor",
+            "defense": "toughness",
+            "amount": 3,
+            "when": [
+              "self:marked:strikeMode"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Fortress: +3 Toughness.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "yS2sKrgrXc4gZ9hM",
+      "_key": "!actors.items!RuplqQVUeVIW6Mst.yS2sKrgrXc4gZ9hM"
+    },
+    {
+      "name": "Twin Missile Launchers",
+      "type": "upgrade",
+      "img": "icons/magic/fire/projectile-meteor-salvo-strong-red.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Launchers that pop out of the trailer roof.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Missile Salvo",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 2,
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against the Evasion of up to two targets, 2 Fire damage each.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "xVDCpbSyOc4KvUB1",
+      "_key": "!actors.items!RuplqQVUeVIW6Mst.xVDCpbSyOc4KvUB1"
+    },
+    {
+      "name": "Smoke Dischargers",
+      "type": "upgrade",
+      "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Puts up a wall of smoke around the truck.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Smoke Screen",
+            "when": [
+              "self:marked:strikeMode"
+            ],
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "applyCondition",
+                "condition": "cover",
+                "to": "self",
+                "until": "endOfNextTurn"
+              },
+              {
+                "do": "chat",
+                "text": "{name} disappears behind a wall of smoke."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: the Rhino has Cover until the end of its next turn.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "DqdKPUI9S3ucQS90",
+      "_key": "!actors.items!RuplqQVUeVIW6Mst.DqdKPUI9S3ucQS90"
+    },
+    {
+      "name": "Ultra-Flash Floodlights",
+      "type": "upgrade",
+      "img": "icons/magic/light/explosion-star-glow-yellow.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Ultra-Flash, the Rhino's floodlights carry its blinding burst.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Flash Floodlights",
+            "when": [
+              "self:marked:strikeMode",
+              "self:crewWearing:Ultra-Flash"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "onHit": [
+                  {
+                    "do": "applyCondition",
+                    "condition": "blinded",
+                    "to": "target",
+                    "until": "endOfNextTurn"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode, with someone aboard wearing a working Ultra-Flash mask: once per scene, Targeting against each target's Evasion; a hit Blinds until the end of its next turn.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "YhSXv3BS2Tufaz8I",
+      "_key": "!actors.items!RuplqQVUeVIW6Mst.YhSXv3BS2Tufaz8I"
+    },
+    {
+      "name": "ATV Bay",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A ramp at the back of the trailer for the Rhino's ATV.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy ATV",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the ATV!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock ATV",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The ATV docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep the ATV's token hidden on the scene. Target it, then Deploy: it appears beside the Rhino. Dock hides it again. The crew move across by dragging.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "8H1dc79MXeD5Joy8",
+      "_key": "!actors.items!RuplqQVUeVIW6Mst.8H1dc79MXeD5Joy8"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Rhino",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 4,
+    "height": 2,
+    "texture": {
+      "src": "icons/svg/castle.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Matt Trakker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "RuplqQVUeVIW6Mst",
+  "_key": "!actors!RuplqQVUeVIW6Mst"
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Tycoon",
+  "type": "origin",
+  "img": "icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp",
+  "system": {
+    "description": "<p>A self-made millionaire - or one who made it crookedly. Your fortune pays for the vehicles, the bases and the masks.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "items": {
+      "tiqp": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.tIQpavZs9ZkrSJIG",
+        "img": "icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp",
+        "name": "Deep Pockets",
+        "type": "perk"
+      }
+    },
+    "baseAerialMovement": 0,
+    "baseAquaticMovement": 0,
+    "baseGroundMovement": 30,
+    "essences": [
+      "smarts",
+      "social"
+    ],
+    "languages": "",
+    "skills": [
+      "persuasion",
+      "culture",
+      "streetwise"
+    ],
+    "startingHealth": 1,
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: when added, you pick which Essence to raise and a Skill from its list. It sets your starting Health (1) and 30 ft Ground Movement and gives you the Deep Pockets Perk.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "origin": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "AtKS6i3MCys0Do0E",
+  "_key": "!items!AtKS6i3MCys0Do0E"
+}

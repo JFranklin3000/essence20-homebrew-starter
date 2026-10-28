@@ -1,0 +1,60 @@
+{
+  "name": "Daredevil",
+  "type": "perk",
+  "img": "icons/environment/settlement/wagon.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>Jumps, skids and two-wheel turns are just another day at work. Driving Tests have Edge - yours, and those of any vehicle you are driving.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Daredevil",
+        "edge": true,
+        "when": [
+          "skill:driving"
+        ]
+      },
+      {
+        "type": "RollModifier",
+        "label": "Daredevil",
+        "scope": "driven",
+        "edge": true,
+        "when": [
+          "skill:driving"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: your Driving Tests, and the Driving Tests of the vehicle you drive, open the Roll Options Dialog with Edge chosen.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "SdrEwyodPeFmU1OA",
+  "_key": "!items!SdrEwyodPeFmU1OA"
+}

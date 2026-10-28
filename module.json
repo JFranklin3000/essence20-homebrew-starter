@@ -1,8 +1,8 @@
 {
   "id": "essence20-homebrew-starter",
   "title": "Essence20 Homebrew Starter",
-  "description": "<p>A starting point for your own Essence20 content: compendiums already set up for Perks, Powers, Roles, Origins, gear, Zord and Transformer features and Threats, a worked example of each kind of field, and a guide - in Foundry - to making items that show up properly in the Compendium Browser and work through the Rules tab. Copy it, rename it, and make it yours.</p>",
-  "version": "1.0.0",
+  "description": "<p>A starting point for your own Essence20 content: compendiums already set up for Perks, Powers, Roles, Origins, gear, Zord and Transformer features and Threats, a worked example of each kind of field, and a guide - in Foundry - to making items that show up properly in the Compendium Browser and work through the Rules tab. House rules too: example rules a GM can switch on for every character, under Configure Settings. Copy it, rename it, and make it yours.</p>",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "talinthalas"
@@ -23,6 +23,11 @@
       }
     ]
   },
+  "esmodules": [
+    "scripts/house-rules.mjs",
+    "scripts/mask/house-rules.mjs",
+    "scripts/mask/mask-tags.mjs"
+  ],
   "packs": [
     {
       "name": "perks",
@@ -100,6 +105,94 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "mask_masks",
+      "label": "M.A.S.K. Masks",
+      "path": "packs/mask_masks",
+      "type": "Item",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_vehicles",
+      "label": "M.A.S.K. Vehicles",
+      "path": "packs/mask_vehicles",
+      "type": "Actor",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_agents",
+      "label": "M.A.S.K. Agents",
+      "path": "packs/mask_agents",
+      "type": "Actor",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_venom",
+      "label": "V.E.N.O.M. Agents",
+      "path": "packs/mask_venom",
+      "type": "Actor",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_options",
+      "label": "M.A.S.K. Origins, Perks and Features",
+      "path": "packs/mask_options",
+      "type": "Item",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_tables",
+      "label": "M.A.S.K. Mission Tables",
+      "path": "packs/mask_tables",
+      "type": "RollTable",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_macros",
+      "label": "M.A.S.K. Macros",
+      "path": "packs/mask_macros",
+      "type": "Macro",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "mask_guide",
+      "label": "M.A.S.K. Guide",
+      "path": "packs/mask_guide",
+      "type": "JournalEntry",
+      "system": "essence20",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "packFolders": [
@@ -116,6 +209,21 @@
         "threats",
         "guide"
       ]
+    },
+    {
+      "name": "M.A.S.K.",
+      "sorting": "m",
+      "color": "#a3141c",
+      "packs": [
+        "mask_masks",
+        "mask_vehicles",
+        "mask_agents",
+        "mask_venom",
+        "mask_options",
+        "mask_tables",
+        "mask_macros",
+        "mask_guide"
+      ]
     }
   ],
   "flags": {
@@ -123,7 +231,7 @@
   },
   "url": "https://github.com/JFranklin3000/essence20-homebrew-starter",
   "manifest": "https://github.com/JFranklin3000/essence20-homebrew-starter/releases/latest/download/module.json",
-  "download": "https://github.com/JFranklin3000/essence20-homebrew-starter/releases/download/1.0.0/module.zip",
+  "download": "https://github.com/JFranklin3000/essence20-homebrew-starter/releases/download/1.1.0/module.zip",
   "bugs": "https://github.com/JFranklin3000/essence20-homebrew-starter/issues",
   "readme": "README.md",
   "changelog": "CHANGELOG.md",

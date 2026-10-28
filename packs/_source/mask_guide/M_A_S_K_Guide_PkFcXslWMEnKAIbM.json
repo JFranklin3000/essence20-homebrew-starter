@@ -1,0 +1,246 @@
+{
+  "_id": "PkFcXslWMEnKAIbM",
+  "_key": "!journal!PkFcXslWMEnKAIbM",
+  "name": "M.A.S.K. Guide",
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "categories": [],
+  "pages": [
+    {
+      "_id": "Gn69Dl8DzqYk6d25",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.Gn69Dl8DzqYk6d25",
+      "name": "Start here",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>M.A.S.K. for Essence20</h2>\n<p>Homebrew support for playing M.A.S.K. - the Mobile Armored Strike Kommand against V.E.N.O.M. - with the Essence20 system. Nothing here changes the system: it is compendium content, house rules and two small rule tags, all in this module.</p>\n<h3>Setting up a world</h3>\n<ul>\n<li>Set the <strong>Game Line</strong> (Configure Settings) to <strong>GI Joe</strong>, or leave it on all lines. M.A.S.K. plays on the G.I. Joe rules: agents take G.I. Joe Roles and Origins, and the Party is a Strike Team.</li>\n<li>Turn on the <strong>M.A.S.K.</strong> house rules you want under Configure Settings &rarr; House Rules (see the next page).</li>\n<li>The M.A.S.K. compendiums sit in their own <strong>M.A.S.K.</strong> folder; picking a game line never switches a module's books off.</li>\n</ul>\n<p><em>Status: the compendiums are being filled in. This guide grows with them.</em></p>"
+      },
+      "sort": 100000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "JIdwNPCizgR5D1uC",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.JIdwNPCizgR5D1uC",
+      "name": "House rules",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>House rules</h2>\n<ul>\n<li><strong>Bonded Masks</strong> (on by default): a mask's power works only for the agent it is bonded to; anyone else wearing it has only the helmet. Off: anyone can use any mask.</li>\n<li><strong>Concealed Weapons</strong> (on by default): a vehicle's Strike-only weapons cannot fire while it is in Civilian Mode - the attack is refused before its action is spent. Mark an attack Strike-only with the flag <code>flags.essence20-homebrew-starter.strikeOnly: true</code>.</li>\n<li><strong>Disguised Vehicles</strong>: a vehicle in Civilian Mode gets an Edge on Deception and Infiltration - it passes for ordinary traffic.</li>\n</ul>\n<p>Both rules ones can be rebuilt by hand with <strong>New House Rule</strong>:</p>\n<ul>\n<li>Disguised Vehicles: a RollModifier with an Edge, when <code>self:type:vehicle</code>, <code>not:self:marked:strikeMode</code> and either <code>skill:deception</code> or <code>skill:infiltration</code>.</li>\n<li>Concealed Weapons: a BeforeRoll with Cancel and Early, when <code>self:type:vehicle</code>, <code>not:self:marked:strikeMode</code> and <code>item:data:flags.essence20-homebrew-starter.strikeOnly=true</code>.</li>\n</ul>"
+      },
+      "sort": 200000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "KrV0G66nxNCV17V8",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.KrV0G66nxNCV17V8",
+      "name": "Masks",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Masks</h2>\n<p>A mask is a piece of gear carrying the flag <code>flags.essence20-homebrew-starter.mask: true</code>. Wearing it is having it equipped.</p>\n<ul>\n<li><strong>Its power</strong> is a <strong>Use</strong> rule, usable a number of times per scene equal to the wearer's Speed: limit <code>{per: scene, max: @essence.speed}</code>. Give the power's rules the condition <code>self:maskBonded</code>.</li>\n<li><strong>The helmet</strong> - its protection - is an ordinary Defense rule with no condition, so it works for any wearer.</li>\n<li><strong>One at a time</strong>: a Veto rule on every mask, <code>{on: equip, items: [item:mask]}</code> when <code>self:wearingItem:item:mask</code>.</li>\n<li><strong>Bonds</strong>: a mask nobody has worn bonds to the first agent who puts it on. A mask taken from someone stays theirs until the GM runs the <strong>Rebond Mask</strong> macro (after the lab work and downtime the story calls for - a Smarts (Technology) test is a good fit).</li>\n</ul>"
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "7ameEEu6JbAfI1TD",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.7ameEEu6JbAfI1TD",
+      "name": "Vehicles",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Vehicles: Civilian and Strike Mode</h2>\n<p>Each M.A.S.K. vehicle is built as it looks on the road - its Civilian Mode. Its <strong>Strike Mode</strong> feature (a vehicle upgrade) carries two Use buttons: <em>Strike Mode!</em> (a <code>mark</code> step, key <code>strikeMode</code>, no duration - it stays until cleared) and <em>Civilian Mode</em> (an <code>unmark</code> step). Everything that changes when it converts is a rule with the condition <code>self:marked:strikeMode</code>: movement, Defenses, and the weapons - each weapon system is its own upgrade with a Use button that only appears in Strike Mode. Vehicles roll their weapons with their own Skill dice.</p>\n<p>A vehicle's <strong>linked mask</strong> power - a crew member's mask firing through it - is a Use with the condition <code>self:crewWearing:&lt;mask name&gt;</code>, once per scene. It appears only while someone aboard wears that mask (and it works for them).</p>\n<p>Vehicles that carry another (the Rhino's ATV) keep its token <strong>hidden</strong> on the scene. Target it and press the carrier's <em>Deploy</em>: it appears just beside the carrier. <em>Dock</em> hides it again. The crew move across by dragging.</p>\n<p>Defenses are the system's own: base 10 plus Strength (Toughness) or Speed (Evasion). A vehicle with no qualified driver moves at half speed - that is the system's rule too.</p>\n<h3>Vehicles</h3>\n<table><thead><tr><th>Vehicle</th><th>Agent</th><th>Health</th><th>Movement (civilian)</th><th>Features</th></tr></thead><tbody><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.n3IIcpSPppFNaqEg]{Afterburner}</td><td>Dusty Hayes</td><td>12</td><td>ground 140</td><td>Strike Mode: Jet, Turret Cannon, New Backlash Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.OHdJYAvaG1bEvSUk]{Barracuda}</td><td>Bruno Sheppard</td><td>8</td><td>ground 100</td><td>Strike Mode: Glider, Glider Rockets, New Magna-Beam Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.U1h705LshbizePpj]{Billboard Blast}</td><td>Dusty Hayes</td><td>24</td><td></td><td>Strike Mode: Gun Emplacement, Hidden Cannon, Vacuum Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.LsHuyoMuwcOErE1I]{Bulldog}</td><td>Boris Bushkin</td><td>28</td><td>ground 60</td><td>Strike Mode: Tank, Turret Cannon, Comrade Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.LCbRB6V9aCIEfIm2]{Bullet}</td><td>Ali Bombay</td><td>8</td><td>ground 100</td><td>Strike Mode: Drone, Drone Guns, Vortex Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.ffhYSqwK5K6EeqFd]{Buzzard}</td><td>Miles Mayhem &amp; Maximus Mayhem</td><td>12</td><td>ground 140</td><td>Strike Mode: Drone Jet, Jet Lasers, Deep Freeze Link, Buzzard Dragster Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.zHrPhMTAwmrjHrsp]{Buzzard Dragster}</td><td>Maximus Mayhem</td><td>12</td><td>ground 140</td><td>Dragster Guns</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.NSe8OtBT0HgjTIHs]{Coast Patrol}</td><td>Matt Trakker</td><td>12</td><td>swim 60</td><td>Deck Gun</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.5yqktCiUniou3Qu2]{Condor}</td><td>Brad Turner</td><td>8</td><td>ground 100</td><td>Strike Mode: Helicopter, Mini-Missiles, Hocus Pocus Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.fglboCC8yXALMDjq]{Detonator}</td><td>Jacques LaFleur</td><td>14</td><td>ground 100</td><td>Strike Mode: Jet, Bombs, Detonator Quad Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.ott2kIBLcOEYuwDm]{Detonator Quad}</td><td>Jacques LaFleur</td><td>10</td><td>ground 70</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.Kzh2xqUSH5coi1JY]{Dynamo}</td><td>Bruce Sato</td><td>16</td><td>ground 80</td><td>Strike Mode: Helicopter, Rotor Guns, New Lifter Link, Dynamo Assault Cart Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.mfzWIMFQ9uPRIjwQ]{Dynamo Assault Cart}</td><td>Bruce Sato</td><td>10</td><td>ground 70</td><td>Cart Cannon</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.i7jFeb5bzN0U3VKv]{Firecracker}</td><td>Hondo MacLean &amp; Buddie Hawks</td><td>20</td><td>ground 70</td><td>Strike Mode: Weapon Platform, Laser Turret, Blaster Link, Firecracker Dirt Bike Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.dR6jjkV0BdJPEycJ]{Firecracker Dirt Bike}</td><td>Buddie Hawks</td><td>8</td><td>ground 100</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.TPhhcijEpnUp7w1r]{Firefly}</td><td>Julio Lopez</td><td>16</td><td>ground 80</td><td>Strike Mode: Jet, Wing Rockets</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.5yxFgp6HoXsvOnYa]{Fireforce}</td><td>Julio Lopez</td><td>14</td><td>ground 100</td><td>Strike Mode: Glider, Flame Jets, New Streamer Link, Fireforce Trike Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.K7dyyoAw5Olr6CUj]{Fireforce Trike}</td><td>Julio Lopez</td><td>8</td><td>ground 100</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.CAmRm6XEBvCDfrIh]{Gator}</td><td>Dusty Hayes</td><td>16</td><td>ground 80</td><td>Strike Mode: Assault, Twin Cannons, Backlash Link, Gator Hydroplane Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.Mp1hXxVjlHJn3nMF]{Gator Hydroplane}</td><td>Dusty Hayes</td><td>12</td><td>swim 60</td><td>Hydroplane Missiles</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.PI1qllApw1fwmxpi]{Glider Strike}</td><td>Jacques LaFleur</td><td>6</td><td>aerial 50</td><td>Glider Bombs</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.IaXyNYHkBdjkUj0E]{Goliath I}</td><td>Matt Trakker</td><td>12</td><td>ground 140</td><td>Nose Cannon</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.yXvFAessSAM98418]{Goliath II}</td><td>Nevada Rushmore</td><td>28</td><td>ground 60</td><td>Strike Mode: Missile Launcher, Missile Battery, Totem Link, Goliath I Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.xEq6AhMte9FBtfq8]{Hornet}</td><td>Matt Trakker</td><td>18</td><td>aerial 200</td><td>Laser Battery, Lasertron Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.bQJHSrREvvCnE05C]{Hurricane}</td><td>Hondo MacLean &amp; Buddie Hawks</td><td>14</td><td>ground 100</td><td>Strike Mode: Command Post, Twin Missiles, Blaster II Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.6g7qIRYxmZoGV9l4]{Iguana}</td><td>Lester Sludge</td><td>10</td><td>ground 70</td><td>Strike Mode: Buzz-Saw Platform, Buzz Saws, Mudslinger Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.vLKr8XiUjT0gv3Ij]{Jackhammer}</td><td>Cliff Dagger</td><td>16</td><td>ground 80</td><td>Strike Mode: Assault, Roof Cannon, Torch Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.JZZUwsWQRvHYqj74]{Jungle Challenge}</td><td>Matt Trakker</td><td>6</td><td>aerial 60</td><td>Pack Lasers, Arrow Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.pZmsAyjPK6bvJRp5]{Manta}</td><td>Vanessa Warfield</td><td>14</td><td>ground 100</td><td>Strike Mode: Assault Jet, Wing Lasers, Whip Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.KbP818DGUACZkyJC]{Meteor}</td><td>Ace Riker</td><td>18</td><td>aerial 200</td><td>Strike Mode: Attack Fighter, Air-to-Air Missiles, Cruise Control Link, Meteor Missile Tank Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.6gmCiNZTvAG65YlL]{Meteor Missile Tank}</td><td>Ace Riker</td><td>10</td><td>ground 70</td><td>Tank Missiles</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.xDe6xYaRrP3byWgu]{Outlaw}</td><td>Miles Mayhem &amp; Nash Gorey</td><td>28</td><td>ground 60</td><td>Strike Mode: Assault Base, Tank Cannons, Roof Missiles, Python Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.E4wNrTycQcmyTsdV]{Piranha}</td><td>Sly Rax</td><td>8</td><td>ground 100</td><td>Strike Mode: Assault, Bike Guns, Stiletto Link, Piranha Sidecar Sub Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.VRY1hD0KU2Bad2YX]{Piranha Sidecar Sub}</td><td>Sly Rax</td><td>12</td><td>swim 60</td><td>Torpedo</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.tU1LF3mK9IFMXaR1]{Pitstop Catapult}</td><td>Sly Rax</td><td>24</td><td></td><td>Strike Mode: Catapult, Catapult, Sawblade Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.UWbvG6EcV55EZUFD]{Racing Arena}</td><td>Bruno Sheppard</td><td>24</td><td></td><td>Strike Mode: Trap, Trackside Launchers, Magna-Beam Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.IRy5zORmOvhXPexy]{Ratfang}</td><td>Miles Mayhem</td><td>18</td><td>aerial 200</td><td>Laser Battery, Raynet Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.RfrD13Wqwt5jh9V2]{Raven}</td><td>Calhoun Burns</td><td>14</td><td>ground 100</td><td>Strike Mode: Airboat, Deck Guns, Gulliver Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.lrXo3YFRyYbS9cEp]{Razorback}</td><td>Brad Turner</td><td>14</td><td>ground 100</td><td>Strike Mode: Tank, Tank Cannon, Eclipse Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.8FDLRn28bXtxfpx5]{Rescue Mission}</td><td>Bruce Sato</td><td>6</td><td>aerial 60</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.RuplqQVUeVIW6Mst]{Rhino}</td><td>Matt Trakker</td><td>30</td><td>ground 60</td><td>Strike Mode: Fortress, Twin Missile Launchers, Smoke Dischargers, Ultra-Flash Floodlights, ATV Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.LXBXFCtqz2ijcQVm]{Rhino ATV}</td><td>Bruce Sato</td><td>8</td><td>ground 70</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.v16r33PnAhRjnK3S]{Shark}</td><td>Gloria Baker</td><td>14</td><td>ground 100</td><td>Strike Mode: Submarine, Torpedoes</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.BdXhXgxDSdQmNXhd]{Skybolt}</td><td>Matt Trakker</td><td>18</td><td>aerial 200</td><td>Strike Mode: Attack Craft, Wing Lasers, New Spectrum Link, Skybolt Turbo Car Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.0HnrSo2XV3c7VFpy]{Skybolt Turbo Car}</td><td>Matt Trakker</td><td>12</td><td>ground 140</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.0lBAsd4rru784plX]{Slingshot}</td><td>Ace Riker</td><td>20</td><td>ground 70</td><td>Strike Mode: Launcher, Sonic Cannon, Ricochet Link, Slingshot Sonic Jet Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.F9eMDEIqjZrQ7SYJ]{Slingshot Sonic Jet}</td><td>Ace Riker</td><td>18</td><td>aerial 200</td><td>Sonic Guns</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.mRF2h6C2aEVaLlVL]{Stiletto}</td><td>Gloria Baker</td><td>14</td><td>ground 100</td><td>Strike Mode: Helicopter, Rotor Cannons, New Collider Link, Stiletto Plane Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.QGUAroPuJx1Ugrre]{Stiletto Plane}</td><td>Gloria Baker</td><td>18</td><td>aerial 200</td><td>Plane Guns</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.d65IpV2y8rVeEQai]{Stinger}</td><td>Bruno Sheppard</td><td>14</td><td>ground 100</td><td>Strike Mode: Tank, Tank Cannon, Magna-Beam Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.L13xwGuKcY0z6Dog]{Switchblade}</td><td>Miles Mayhem</td><td>20</td><td>aerial 100</td><td>Strike Mode: Jet, Nose Guns, Jet Torpedo, Viper Dispersal</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.oqwqtTX8GU71777q]{The Collector}</td><td>Alex Sector</td><td>24</td><td></td><td>Strike Mode: Attack Installation, Turret Lasers, Disruptor Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.VAFsNOAKyg90Se1z]{Thunderhawk}</td><td>Matt Trakker</td><td>18</td><td>ground 90</td><td>Strike Mode: Jet, Laser Cannons, Wing Missiles, Spectrum Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.dUNZAvdWnRGgxhNn]{Vampire}</td><td>Floyd Malloy</td><td>8</td><td>ground 100</td><td>Strike Mode: Turbo Jet, Wing Guns, Buckshot Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.9elarb46rSMnkGIk]{Vandal}</td><td>Floyd Malloy</td><td>20</td><td>ground 70</td><td>Strike Mode: Tank, Tank Gun, New Buckshot Link, Vandal Recon Plane Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.6VCDAgl1sHilwgqF]{Vandal Recon Plane}</td><td>Floyd Malloy</td><td>18</td><td>aerial 200</td><td>-</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.9jNwsSQL7vMErRzA]{Venom's Revenge}</td><td>Miles Mayhem</td><td>6</td><td>aerial 60</td><td>Pack Missiles, Ripper Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.DCgFWtq2Nz9EEHUU]{Volcano}</td><td>Matt Trakker &amp; Jacques LaFleur</td><td>20</td><td>ground 70</td><td>Strike Mode: Attack Station, Lava Cannon, Roof Missiles, Lava Shot Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.4ba8qbQd3kCK4Lkc]{Wildcat}</td><td>Buddie Hawks</td><td>20</td><td>ground 70</td><td>Strike Mode: Vertical Fighter, Wing Cannons, Ditcher Link</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.bcAxe5y5rLTyZ4NB]{Wolfbeast}</td><td>Miles Mayhem</td><td>14</td><td>ground 100</td><td>Strike Mode: Tank, Tank Gun, New Viper Link, Wolfbeast Shuttle Bay</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.m7pgQ05qrxnyauJB]{Wolfbeast Shuttle}</td><td>Miles Mayhem</td><td>18</td><td>aerial 200</td><td>Shuttle Missiles</td></tr></tbody></table>\n<h3>Build your own</h3>\n<p>The M.A.S.K. Origins, Perks and Features compendium has templates to drop on any vehicle and adjust: @UUID[Compendium.essence20-homebrew-starter.mask_options.Item.3PPNE2gDJoJ9Fvfa]{Concealed Weapon (template)}, @UUID[Compendium.essence20-homebrew-starter.mask_options.Item.9L1AyAIRru563SiE]{Linked Mask Power (template)}, @UUID[Compendium.essence20-homebrew-starter.mask_options.Item.X4kmerIdGq2fXrE1]{Strike Mode (template)}, @UUID[Compendium.essence20-homebrew-starter.mask_options.Item.ndCOaiYZSP7aWc7W]{Vehicle Bay (template)}.</p>"
+      },
+      "sort": 400000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "tVnB61B4u4doyzC3",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.tVnB61B4u4doyzC3",
+      "name": "Mask roster",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Mask roster</h2>\n<p>Every mask in the M.A.S.K. Masks compendium. Powers are this module's own design - the toys only name each mask and what it does. Each works for its bonded agent a number of times per scene equal to their Speed, and every mask gives +1 Toughness to whoever wears it. New Blaster and New Torch were planned for the toy line but never sold.</p>\n<h3>M.A.S.K.</h3><table><thead><tr><th>Mask</th><th>Agent</th><th>Power (action)</th></tr></thead><tbody><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.ashqDiQdMUZmn5WH]{Cruise Control}</td><td>Ace Riker</td><td>Take the Wheel (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Wvivq59J8ere4KtO]{Ricochet}</td><td>Ace Riker</td><td>Energy Boomerang (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.YFbn16Nxd20vDl0P]{Disruptor}</td><td>Alex Sector</td><td>Jam Signals (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.bmRJF8sSha4ApUPN]{Jackrabbit}</td><td>Alex Sector</td><td>Take Flight (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.N66PW38jFEDKe43p]{Vortex}</td><td>Ali Bombay</td><td>Whirlwind (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.pXyuKlqMZMzNpFw7]{Comrade}</td><td>Boris Bushkin</td><td>Energy Stars (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.syptEtsDSdzL2BKl]{Eclipse}</td><td>Brad Turner</td><td>Eclipse Field (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.h0fc97SJqmiiyZSf]{Hocus Pocus}</td><td>Brad Turner</td><td>Hologram (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.hv8PJeV9ZunDL8VK]{Grasshopper}</td><td>Bruce Sato</td><td>Leap (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.A4qwOD6O8Qv5U1Lb]{Lifter}</td><td>Bruce Sato</td><td>Anti-Gravity Field (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.ySPtZ4gEgvxN0YQc]{New Lifter}</td><td>Bruce Sato</td><td>Anti-Gravity Field (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.BVCkvfrvkTri4x0R]{Ditcher}</td><td>Buddie Hawks</td><td>Trench (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.8GySM45AbIhdYEkw]{Penetrator}</td><td>Buddie Hawks</td><td>Phase (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.mfB37BTOeZX2XJYM]{Gulliver}</td><td>Calhoun Burns</td><td>Shrink Ray (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.t1JelQh0dbdFbMP8]{Backlash}</td><td>Dusty Hayes</td><td>Kinetic Blast (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.IvcT8N81mZ0onGtP]{New Backlash}</td><td>Dusty Hayes</td><td>Kinetic Blast (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.ameuY3bDBZrylT67]{Vacuum}</td><td>Dusty Hayes</td><td>Vacuum Pocket (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.rmNuMcu1QvbiK0lr]{Aura}</td><td>Gloria Baker</td><td>Force Shield (move)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.pElwEt0ZsLBw0ZjM]{New Collider}</td><td>Gloria Baker</td><td>Collider Impact (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.xyuU4Mp7xtDRg5gA]{Blaster}</td><td>Hondo MacLean</td><td>Heat Beam (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Mmths6J1FAOxcGEn]{Blaster II}</td><td>Hondo MacLean</td><td>Heat Wave (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Nq0zR2ljTo6z1mid]{New Blaster}</td><td>Hondo MacLean</td><td>Heat Beam (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.OKfUQGz77NyJHXHc]{Maraj}</td><td>Jacques LaFleur</td><td>Invisibility Screen (move)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.5uIbsKB1Zc15o1OU]{New Maraj}</td><td>Jacques LaFleur</td><td>Invisibility Screen (move), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.WyQfVQ4IPfSOX5lc]{New Streamer}</td><td>Julio Lopez</td><td>Glue (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.cugIRu7grYigPPi8]{Streamer}</td><td>Julio Lopez</td><td>Streamer (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.nOAaESVOME4Gwbva]{Arrow}</td><td>Matt Trakker</td><td>Thunderbolt (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.SsT8Iq2l476wtT9B]{Dolphin}</td><td>Matt Trakker</td><td>Sonar (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.GRYmNgyWFytdv3Jw]{Lasertron}</td><td>Matt Trakker</td><td>Lasertron Beam (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.lqnmSyPfrXZcdMyN]{Lava Shot}</td><td>Matt Trakker</td><td>Lava Shot (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.tYwlKVYGyFXxcZI6]{New Spectrum}</td><td>Matt Trakker</td><td>Laser Beam (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.taItCNJAeVZHgSbB]{Shroud}</td><td>Matt Trakker</td><td>Shroud (move)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Vmnz3qn4d4gWo3Ll]{Spectrum}</td><td>Matt Trakker</td><td>Spectrum: Laser or Sonic Waves (standard), Spectrum Vision (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.cTy1u3Da6pbcBted]{Ultra-Flash}</td><td>Matt Trakker</td><td>Ultra-Flash (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.8oGHo7ZAhfmOLCao]{Totem}</td><td>Nevada Rushmore</td><td>Totem Shot (standard)</td></tr></tbody></table>\n<h3>V.E.N.O.M.</h3><table><thead><tr><th>Mask</th><th>Agent</th><th>Power (action)</th></tr></thead><tbody><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.rhSvXOI07oaEfzhM]{Magna-Beam}</td><td>Bruno Sheppard</td><td>Magnetic Pull (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Zk3k2vBajDvg5qir]{New Magna-Beam}</td><td>Bruno Sheppard</td><td>Magnetic Pull (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.bXAadcNLq25yFE6I]{New Torch}</td><td>Cliff Dagger</td><td>Flamethrower (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.gfgFI6SxXWtEgok4]{Torch}</td><td>Cliff Dagger</td><td>Flamethrower (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.vtio1Me4MQXvvdB3]{Buckshot}</td><td>Floyd Malloy</td><td>Bearing Balls (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.zC3wzwvakBagw415]{New Buckshot}</td><td>Floyd Malloy</td><td>Bearing Balls (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.0a1dwwbYUsrDoPpB]{Mudslinger}</td><td>Lester Sludge</td><td>Mud Shot (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.GL0B3OduG0TygzYj]{Deep Freeze}</td><td>Maximus Mayhem</td><td>Cold Ray (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.UNcnh48LzGAK04WX]{Flexor}</td><td>Miles Mayhem</td><td>Flex Shield (move)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.HUoDnRBLw5FDaZOA]{New Viper}</td><td>Miles Mayhem</td><td>Viper Venom (standard), Holo-Double (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.VWjxR92khqQpSNyB]{Python}</td><td>Miles Mayhem</td><td>Gripping Wire (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.kPit4WjzdBGYEjOK]{Raynet}</td><td>Miles Mayhem</td><td>Ray Net (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.XF3uWEzR0k2TFya7]{Ripper}</td><td>Miles Mayhem</td><td>Shredding Beam (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.iGVzJItcRXMWZbUt]{Viper}</td><td>Miles Mayhem</td><td>Viper Venom (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.ksvj9gvBMFk9IMtD]{Powerhouse}</td><td>Nash Gorey</td><td>Power Up (free)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.Z1CmiRJuDSe9QKfP]{Sawblade}</td><td>Sly Rax</td><td>Blade Spray (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.NtumhJsrpCdxpgbd]{Stiletto}</td><td>Sly Rax</td><td>Harpoons (standard)</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_masks.Item.PcxEwd0OS3uaniyq]{Whip}</td><td>Vanessa Warfield</td><td>Energy Whip (standard)</td></tr></tbody></table>"
+      },
+      "sort": 350000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    },
+    {
+      "_id": "RIrzp6G9JrWslxtG",
+      "_key": "!journal.pages!PkFcXslWMEnKAIbM.RIrzp6G9JrWslxtG",
+      "name": "Agents",
+      "type": "text",
+      "title": {
+        "show": false,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<h2>Agents: Origins and Perks</h2>\n<p>M.A.S.K. agents are built as G.I. Joe characters: a G.I. Joe Role, then an Origin - a G.I. Joe one or one of the six below - and Perks. The M.A.S.K. Origins work like the book's: drop one on a character, pick the Essence to raise and a Skill from its list, and it sets starting Health and Ground Movement and grants its Origin Perk. V.E.N.O.M. agents use the same Origins.</p>\n<h3>Origins</h3>\n<table><thead><tr><th>Origin</th><th>Essence</th><th>Skills</th><th>Health</th><th>Ground</th><th>Origin Perk</th></tr></thead><tbody><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.sGo6BAoSq9sLjaNm]{Hired Gun}</td><td>Strength or Speed</td><td>Brawn, Intimidation, Might, Targeting</td><td>2</td><td>30 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.tgwaLHS4X2RsJDBp]{Cheap Shot}: You never fight fair. Once per scene, as a free action, line up a cheap shot: your next attack this turn is upshifted once.</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.aTOyasnlsi8dlafs]{Inventor}</td><td>Smarts</td><td>Technology, Science, Alertness</td><td>1</td><td>30 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.qW6Dt1lofXWzKiVM]{Mask Tech}: You build and maintain the team's gear. Technology Tests have Edge, and once per scene you can patch up a damaged vehicle or piece of kit in the field. You can also do the lab work that rebonds a mask.</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.Buwj4KvOktHmvHGe]{Master of Disguise}</td><td>Social</td><td>Deception, Infiltration, Performance</td><td>1</td><td>30 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.lCMqFohnZVFR1ON4]{Quick Disguise}: A wig, a uniform and a new walk, and nobody looks twice. Without a mask on, your Deception and Infiltration Tests have Edge - a M.A.S.K. helmet is not much of a disguise.</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.zb1liwy9j7ob7nUD]{Race Driver}</td><td>Speed</td><td>Driving, Initiative, Finesse</td><td>1</td><td>35 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.7UnEszYaBW0dXSQs]{Pole Position}: You are first off the line. While you are aboard a vehicle, your Initiative Tests are upshifted once.</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.Ib88dhRNIozfUOfb]{Stunt Driver}</td><td>Speed</td><td>Driving, Acrobatics, Athletics</td><td>2</td><td>35 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.SdrEwyodPeFmU1OA]{Daredevil}: Jumps, skids and two-wheel turns are just another day at work. Driving Tests have Edge - yours, and those of any vehicle you are driving.</td></tr><tr><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.AtKS6i3MCys0Do0E]{Tycoon}</td><td>Smarts or Social</td><td>Persuasion, Culture, Streetwise</td><td>1</td><td>30 ft</td><td>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.tIQpavZs9ZkrSJIG]{Deep Pockets}: Money opens doors. Once per mission, your fortune or your contacts produce something the team needs: a ride, a plane ticket, a building pass, a piece of gear.</td></tr></tbody></table>\n<h3>Mask Agent Perks</h3>\n<p>General Perks, taken like any other.</p>\n<ul><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.YYa9c4u36jtcEo0C]{Hardened Mask}: You have reinforced your helmet. While you wear a mask, you have +1 Toughness on top of the helmet's own.</li><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.4ctzeHcyYOCrXnmh]{Quick Change}: You can swap masks - or draw a weapon - in the blink of an eye. Once per turn, the Draw Weapon action is a free action for you. (At the table, putting on or swapping a mask is a Draw Weapon action.)</li><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.KsjAKJeQC1KCYIjW]{Secret Identity}: By day you have an ordinary life, and you work hard to keep it. Your Cover starts at 5. While it holds and you wear no mask, your Deception Tests have Edge. When the GM decides you slipped - seen unmasking, a vehicle followed home - you lose 1 Cover; at 0 your identity is blown. Once per mission, lying low restores 1.</li><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.kz9WteU24VypCcZT]{Signature Mask}: You and your mask are one. Rolls made with your mask's power are upshifted once.</li><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.pXYCHGF7u34E4SOE]{Vehicle Bond}: You know your ride like your own hands. A vehicle you are driving has +1 Evasion and Edge on its Driving Tests.</li><li>@UUID[Compendium.essence20-homebrew-starter.mask_options.Item.awnfquQtCuvdnm5Y]{Wheel Gunner}: You drive with one hand and aim with the other. A vehicle you are driving has Edge on its Targeting Tests.</li></ul>\n<h3>Putting on a mask</h3>\n<p>The system doesn't charge an action for equipping gear, so this is a table rule: putting on or swapping a mask is the <strong>Draw Weapon</strong> action (a Move action). The Quick Change Perk makes it Free once per turn.</p>"
+      },
+      "sort": 500000,
+      "ownership": {
+        "default": -1
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "category": null,
+      "system": {},
+      "image": {},
+      "video": {
+        "controls": true,
+        "volume": 0.5
+      },
+      "src": null
+    }
+  ]
+}

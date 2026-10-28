@@ -30,6 +30,34 @@ folder, the book name from its label, the page from the item's Source page, the 
 a Perk's or Power's type, traits, Gear Type and a Power's Availability, and "Qualifies for" from its prerequisites. Search is by
 name. The guide in Foundry has the full table.
 
+## House rules
+
+`scripts/house-rules.mjs` registers four example house rules (Essence20 6.0.7 or later). The GM turns them on under
+**Configure Settings → House Rules**, and while one is on every character and Threat in the world uses it:
+
+- **Heroic Initiative** - everyone rolls Initiative with an Edge (a rules example).
+- **Everyone Knows Initiative** - no untrained Snag on Initiative (a rules example).
+- **Extra General Perk** - every character chooses one more General Perk at level 1, on top of their Role's (a rules
+  example, a `LevelPick` rule). Switched on mid-campaign, existing characters get it as a pick to make; add a
+  `when` such as `["self:line:pr"]` to give it to only some characters.
+- **Extra Edges and Snags Count** - two or more Edges also give ↑1, two or more Snags ↓1 (a code example, through the
+  `essence20.preRollOptions` hook).
+
+The quickest way to make your own needs no code: on the House Rules page, **New House Rule** - name it, then add its
+rules with the same guided editor an item's Rules tab uses (or drop an item on it to copy its rules). Those are kept
+in the world. To ship one in your module instead, copy an entry in `RULE_HOUSE_RULES`, give it a new `id` (keep your module's id in front), a label,
+a hint and its `rules` - the same JSON an item's Rules tab writes. Rolls list the house rule as the source of what it
+changes. The guide in Foundry has a page on it.
+
+## M.A.S.K. (in progress)
+
+A homebrew M.A.S.K. setting rides along in its own **M.A.S.K.** compendium folder: masks, vehicles with a Civilian and a
+Strike Mode, agents and V.E.N.O.M., mission tables, macros and a guide. It plays on the G.I. Joe line (set the Game Line
+to GI Joe, or leave it on all lines) and changes nothing in the system: its house rules are in `scripts/mask/house-rules.mjs`
+and its three rule tags (`item:mask`, `self:maskBonded`, `self:crewWearing`) in `scripts/mask/mask-tags.mjs`, through
+`game.essence20.rules`. The *M.A.S.K. Guide* compendium explains how masks and vehicles are built, and lists the
+M.A.S.K. Origins and Mask Agent Perks.
+
 ## Your words, not the book's
 
 Describe your items in your own words; put the book and page in the item's Source if it's based on one. Don't include

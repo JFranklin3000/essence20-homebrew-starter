@@ -1,0 +1,223 @@
+{
+  "name": "Venom's Revenge",
+  "type": "vehicle",
+  "img": "icons/svg/jump.svg",
+  "system": {
+    "health": {
+      "origin": 6,
+      "value": 6
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 1,
+        "value": 1
+      },
+      "speed": {
+        "base": 5,
+        "value": 5
+      }
+    },
+    "movement": {
+      "aerial": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "air": true,
+      "wearable": true
+    },
+    "size": "common",
+    "notes": "<p>An assault jet pack.</p><p><em>Miles Mayhem's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Pack Missiles",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Pack Missiles.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Pack Missiles",
+            "when": [],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 2,
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Targeting against up to 2 targets's evasion, 2 fire damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "k8uogjiioPZSI4Vf",
+      "_key": "!actors.items!9jNwsSQL7vMErRzA.k8uogjiioPZSI4Vf"
+    },
+    {
+      "name": "Ripper Link",
+      "type": "upgrade",
+      "img": "icons/magic/lightning/bolt-strike-beam-yellow.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>With someone aboard wearing Ripper, the Venom's Revenge amplifies the mask's power through its own systems.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Amplified Shredding Beam",
+            "when": [
+              "self:crewWearing:Ripper"
+            ],
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "nearbyEnemies:20",
+                "damage": {
+                  "value": 2,
+                  "type": "sharp"
+                },
+                "onHit": [
+                  {
+                    "do": "applyCondition",
+                    "condition": "armorStripped",
+                    "to": "target"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>With someone aboard wearing a working Ripper mask: once per scene, the mask's Shredding Beam rolled by the vehicle against every enemy within 20 ft.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "0cY2DZSA7y79qOzM",
+      "_key": "!actors.items!9jNwsSQL7vMErRzA.0cY2DZSA7y79qOzM"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Venom's Revenge",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/jump.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Miles Mayhem"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "9jNwsSQL7vMErRzA",
+  "_key": "!actors!9jNwsSQL7vMErRzA"
+}

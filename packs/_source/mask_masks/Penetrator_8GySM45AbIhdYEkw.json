@@ -1,0 +1,101 @@
+{
+  "_id": "8GySM45AbIhdYEkw",
+  "_key": "!items!8GySM45AbIhdYEkw",
+  "name": "Penetrator",
+  "type": "gear",
+  "img": "icons/magic/control/silhouette-hold-change-blue.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Lets its wearer turn intangible for a moment - long enough to slip through a wall, a locked door or someone's grip.</p><p><em>Buddie Hawks's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Phase",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "phasing",
+            "until": "endOfTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name} phases out - able to pass through solid objects until the end of the turn."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-penetrator"
+        }
+      },
+      {
+        "type": "ConditionImmunity",
+        "label": "Phasing",
+        "conditions": [
+          "grappled",
+          "restrained",
+          "immobilized"
+        ],
+        "when": [
+          "self:maskBonded",
+          "self:marked:phasing"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Phase marks the wearer until the end of the turn: immune to Grappled, Restrained and Immobilized while it lasts. Moving through walls and objects is up to the GM - walls on the scene still block the token. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Buddie Hawks"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

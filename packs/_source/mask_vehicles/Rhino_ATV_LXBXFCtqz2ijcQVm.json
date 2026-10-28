@@ -1,0 +1,81 @@
+{
+  "name": "Rhino ATV",
+  "type": "vehicle",
+  "img": "icons/svg/direction.svg",
+  "system": {
+    "health": {
+      "origin": 8,
+      "value": 8
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": "1 driver"
+    },
+    "firepoints": {
+      "value": 0,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 2,
+        "value": 2
+      },
+      "speed": {
+        "base": 5,
+        "value": 5
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 70
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true,
+      "allTerrain": true
+    },
+    "size": "common",
+    "notes": "<p>A rugged little all-terrain vehicle that rides in the back of the Rhino.</p><p><em>Bruce Sato's vehicle.</em> It has no weapons and no Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Rhino ATV",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/direction.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Bruce Sato"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "LXBXFCtqz2ijcQVm",
+  "_key": "!actors!LXBXFCtqz2ijcQVm"
+}

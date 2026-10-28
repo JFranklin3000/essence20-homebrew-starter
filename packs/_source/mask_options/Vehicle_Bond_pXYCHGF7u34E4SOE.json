@@ -1,0 +1,64 @@
+{
+  "name": "Vehicle Bond",
+  "type": "perk",
+  "img": "icons/environment/settlement/wagon.webp",
+  "system": {
+    "type": "general",
+    "description": "<p>You know your ride like your own hands. A vehicle you are driving has +1 Evasion and Edge on its Driving Tests.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "prerequisites": {
+      "when": [
+        "self:skill:driving>=d2"
+      ]
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Defense",
+        "label": "Vehicle Bond",
+        "scope": "driven",
+        "defense": "evasion",
+        "amount": 1
+      },
+      {
+        "type": "RollModifier",
+        "label": "Vehicle Bond",
+        "scope": "driven",
+        "edge": true,
+        "when": [
+          "skill:driving"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: the vehicle you drive gets +1 Evasion, and its Driving Tests have Edge.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "agentPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "pXYCHGF7u34E4SOE",
+  "_key": "!items!pXYCHGF7u34E4SOE"
+}

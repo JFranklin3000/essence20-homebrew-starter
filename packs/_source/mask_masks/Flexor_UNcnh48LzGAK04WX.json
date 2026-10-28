@@ -1,0 +1,108 @@
+{
+  "_id": "UNcnh48LzGAK04WX",
+  "_key": "!items!UNcnh48LzGAK04WX",
+  "name": "Flexor",
+  "type": "gear",
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Throws out a flexible energy shield in front of the wearer.</p><p><em>Miles Mayhem's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Flex Shield",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "move"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "flexor",
+            "until": "endOfNextTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name} throws up a flexible energy shield."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-flexor"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Flexor",
+        "defense": "evasion",
+        "amount": 2,
+        "when": [
+          "self:maskBonded",
+          "self:marked:flexor"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Flexor",
+        "defense": "toughness",
+        "amount": 2,
+        "when": [
+          "self:maskBonded",
+          "self:marked:flexor"
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Flex Shield (a Move action): +2 Evasion and +2 Toughness until the end of the wearer's next turn. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Miles Mayhem"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

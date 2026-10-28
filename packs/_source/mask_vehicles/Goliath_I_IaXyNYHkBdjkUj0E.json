@@ -1,0 +1,146 @@
+{
+  "name": "Goliath I",
+  "type": "vehicle",
+  "img": "icons/svg/direction.svg",
+  "system": {
+    "health": {
+      "origin": 12,
+      "value": 12
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 3,
+        "value": 3
+      },
+      "speed": {
+        "base": 7,
+        "value": 7
+      }
+    },
+    "movement": {
+      "ground": {
+        "base": 140
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "land": true
+    },
+    "size": "long",
+    "notes": "<p>A Formula One race car that launches from Goliath II.</p><p><em>Matt Trakker's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Nose Cannon",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Nose Cannon.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Nose Cannon",
+            "when": [],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "damage": {
+                  "value": 2,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Targeting against the target's evasion, 2 blunt damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "MSi1mp1QhIilV9L3",
+      "_key": "!actors.items!IaXyNYHkBdjkUj0E.MSi1mp1QhIilV9L3"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Goliath I",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/direction.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Matt Trakker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "IaXyNYHkBdjkUj0E",
+  "_key": "!actors!IaXyNYHkBdjkUj0E"
+}

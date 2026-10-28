@@ -1,0 +1,104 @@
+{
+  "_id": "ksvj9gvBMFk9IMtD",
+  "_key": "!items!ksvj9gvBMFk9IMtD",
+  "name": "Powerhouse",
+  "type": "gear",
+  "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Multiplies the wearer's strength (called Samson in some reports).</p><p><em>Nash Gorey's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Power Up",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "free"
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "powerhouse",
+            "until": "endOfNextTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name}'s muscles swell with power."
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-powerhouse"
+        }
+      },
+      {
+        "type": "RollModifier",
+        "label": "Powerhouse",
+        "upshift": 2,
+        "when": [
+          "self:maskBonded",
+          "self:marked:powerhouse",
+          {
+            "any": [
+              "skill:might",
+              "skill:brawn",
+              "skill:athletics"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Power Up: ↑2 on Might, Brawn and Athletics until the end of the wearer's next turn. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Nash Gorey"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

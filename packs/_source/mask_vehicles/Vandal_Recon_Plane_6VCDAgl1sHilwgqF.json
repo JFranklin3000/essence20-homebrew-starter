@@ -1,0 +1,83 @@
+{
+  "name": "Vandal Recon Plane",
+  "type": "vehicle",
+  "img": "icons/svg/wing.svg",
+  "system": {
+    "health": {
+      "origin": 18,
+      "value": 18
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 1,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 4,
+        "value": 4
+      },
+      "speed": {
+        "base": 7,
+        "value": 7
+      }
+    },
+    "movement": {
+      "aerial": {
+        "base": 200
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "air": true
+    },
+    "size": "long",
+    "notes": "<p>The Vandal's detachable recon plane. It rides in or on the Vandal.</p><p><em>Floyd Malloy's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Vandal Recon Plane",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/wing.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Floyd Malloy"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "6VCDAgl1sHilwgqF",
+  "_key": "!actors!6VCDAgl1sHilwgqF"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Deep Pockets",
+  "type": "perk",
+  "img": "icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>Money opens doors. Once per mission, your fortune or your contacts produce something the team needs: a ride, a plane ticket, a building pass, a piece of gear.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Call in your fortune",
+        "limit": {
+          "per": "mission",
+          "max": 1
+        },
+        "steps": [
+          {
+            "do": "chat",
+            "text": "{name} pulls some strings - money talks. (GM: a vehicle, travel or a piece of gear of Standard Availability or lower turns up.)"
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Use button: once per mission, posts it to chat.</p><p>Left to the table: what turns up.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "tIQpavZs9ZkrSJIG",
+  "_key": "!items!tIQpavZs9ZkrSJIG"
+}

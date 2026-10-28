@@ -1,0 +1,146 @@
+{
+  "name": "Piranha Sidecar Sub",
+  "type": "vehicle",
+  "img": "icons/svg/anchor.svg",
+  "system": {
+    "health": {
+      "origin": 12,
+      "value": 12
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 1,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 3,
+        "value": 3
+      },
+      "speed": {
+        "base": 4,
+        "value": 4
+      }
+    },
+    "movement": {
+      "swim": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "sea": true
+    },
+    "size": "long",
+    "notes": "<p>The Piranha's sidecar, which detaches as a one-man submarine. It rides in or on the Piranha.</p><p><em>Sly Rax's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Torpedo",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Torpedo.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Torpedo",
+            "when": [],
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "toughness",
+                "to": "target",
+                "damage": {
+                  "value": 3,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Targeting against the target's toughness, 3 blunt damage.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "bqWgzxxFezfvsY3I",
+      "_key": "!actors.items!VRY1hD0KU2Bad2YX.bqWgzxxFezfvsY3I"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Piranha Sidecar Sub",
+    "actorLink": true,
+    "disposition": -1,
+    "width": 2,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/anchor.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Sly Rax"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "VRY1hD0KU2Bad2YX",
+  "_key": "!actors!VRY1hD0KU2Bad2YX"
+}

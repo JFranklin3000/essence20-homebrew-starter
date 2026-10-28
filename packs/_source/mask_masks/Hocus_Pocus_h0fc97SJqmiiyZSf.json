@@ -1,0 +1,96 @@
+{
+  "_id": "h0fc97SJqmiiyZSf",
+  "_key": "!items!h0fc97SJqmiiyZSf",
+  "name": "Hocus Pocus",
+  "type": "gear",
+  "img": "icons/magic/perception/hand-eye-pink.webp",
+  "system": {
+    "gearType": "military",
+    "equipped": false,
+    "quantity": 1,
+    "description": "<p>Projects convincing holograms - anything from a fake roadblock to a charging monster.</p><p><em>Brad Turner's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Hologram",
+        "when": [
+          "self:maskBonded"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "deception",
+            "defense": "cleverness",
+            "to": "targets",
+            "dataset": {
+              "maskPower": true
+            },
+            "onHit": [
+              {
+                "do": "applyCondition",
+                "condition": "mesmerized",
+                "to": "target",
+                "until": "endOfNextTurn"
+              }
+            ]
+          }
+        ],
+        "limit": {
+          "per": "scene",
+          "max": "@essence.speed",
+          "key": "mask-hocus-pocus"
+        }
+      },
+      {
+        "type": "Defense",
+        "label": "Mask helmet",
+        "defense": "toughness",
+        "amount": 1
+      },
+      {
+        "type": "Veto",
+        "on": "equip",
+        "items": [
+          "item:mask"
+        ],
+        "when": [
+          "self:wearingItem:item:mask"
+        ],
+        "message": "Take off the mask you are wearing first - one mask at a time."
+      }
+    ],
+    "automation": {
+      "status": "partial",
+      "notes": "<p>Rolls Deception against each target's Cleverness; a hit leaves it Mesmerized by the illusion until the end of its next turn. What the hologram shows is up to the player. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "mask": true,
+      "agent": "Brad Turner"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

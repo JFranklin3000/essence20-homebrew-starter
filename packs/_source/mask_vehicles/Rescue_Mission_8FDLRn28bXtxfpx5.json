@@ -1,0 +1,84 @@
+{
+  "name": "Rescue Mission",
+  "type": "vehicle",
+  "img": "icons/svg/jump.svg",
+  "system": {
+    "health": {
+      "origin": 6,
+      "value": 6
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 0,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 1,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 1,
+        "value": 1
+      },
+      "speed": {
+        "base": 5,
+        "value": 5
+      }
+    },
+    "movement": {
+      "aerial": {
+        "base": 60
+      }
+    },
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "air": true,
+      "wearable": true
+    },
+    "size": "common",
+    "notes": "<p>A one-man helipack for rescues.</p><p><em>Bruce Sato's vehicle.</em> It has no Civilian Mode - its weapons are always ready. Stats are homebrew.</p>"
+  },
+  "items": [],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Rescue Mission",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "icons/svg/jump.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Bruce Sato"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "8FDLRn28bXtxfpx5",
+  "_key": "!actors!8FDLRn28bXtxfpx5"
+}

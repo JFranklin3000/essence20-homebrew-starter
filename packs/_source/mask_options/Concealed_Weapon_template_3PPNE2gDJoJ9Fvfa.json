@@ -1,0 +1,65 @@
+{
+  "name": "Concealed Weapon (template)",
+  "type": "upgrade",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "type": "vehicle",
+    "description": "<p>A weapon that only comes out in Strike Mode. Change the damage, type, Defense and recipients to fit.</p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Concealed Weapon",
+        "when": [
+          "self:marked:strikeMode"
+        ],
+        "cost": {
+          "action": "standard"
+        },
+        "steps": [
+          {
+            "do": "rollVsEach",
+            "skill": "targeting",
+            "defense": "evasion",
+            "to": "target",
+            "damage": {
+              "value": 2,
+              "type": "blunt"
+            }
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Strike Mode only: Targeting against the target's Evasion, 2 damage (x degrees).</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "template": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "3PPNE2gDJoJ9Fvfa",
+  "_key": "!items!3PPNE2gDJoJ9Fvfa"
+}

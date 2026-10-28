@@ -1,0 +1,51 @@
+{
+  "name": "Signature Mask",
+  "type": "perk",
+  "img": "icons/equipment/head/helm-barbute-horned-gold-red.webp",
+  "system": {
+    "type": "general",
+    "description": "<p>You and your mask are one. Rolls made with your mask's power are upshifted once.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Signature Mask",
+        "upshift": 1,
+        "when": [
+          "roll:dataset:maskPower"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: an attack from one of your mask's Use buttons is upshifted once.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "agentPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "kz9WteU24VypCcZT",
+  "_key": "!items!kz9WteU24VypCcZT"
+}

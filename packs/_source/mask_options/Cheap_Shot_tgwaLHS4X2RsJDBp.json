@@ -1,0 +1,75 @@
+{
+  "name": "Cheap Shot",
+  "type": "perk",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "type": "origin",
+    "description": "<p>You never fight fair. Once per scene, as a free action, line up a cheap shot: your next attack this turn is upshifted once.</p><p><em>M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Line up a Cheap Shot",
+        "cost": {
+          "action": "free"
+        },
+        "limit": {
+          "per": "scene",
+          "max": 1
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "cheapShot",
+            "until": "endOfTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name} lines up a cheap shot."
+          }
+        ]
+      },
+      {
+        "type": "RollModifier",
+        "label": "Cheap Shot",
+        "upshift": 1,
+        "consumeMark": "cheapShot",
+        "when": [
+          "self:marked:cheapShot",
+          "attack"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Use button: once per scene, marks you until the end of your turn. Your next attack is upshifted once and uses the mark up.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "originPerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793059200000,
+    "modifiedTime": 1793059200000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "tgwaLHS4X2RsJDBp",
+  "_key": "!items!tgwaLHS4X2RsJDBp"
+}
