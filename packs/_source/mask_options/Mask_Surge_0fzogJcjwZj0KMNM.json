@@ -1,0 +1,79 @@
+{
+  "name": "Mask Surge",
+  "type": "perk",
+  "img": "icons/magic/lightning/bolt-strike-blue.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>Push your mask past its limits. Spend 1 Mask Charge as a free action: your next mask power roll this turn is upshifted once.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Mask Surge (1 Mask Charge)",
+        "when": [
+          "self:slotEquipped:mask"
+        ],
+        "cost": {
+          "action": "free",
+          "resource": {
+            "rolePoints": true
+          },
+          "amount": 1
+        },
+        "steps": [
+          {
+            "do": "mark",
+            "key": "maskSurge",
+            "until": "endOfTurn"
+          },
+          {
+            "do": "chat",
+            "text": "{name}'s mask surges with power."
+          }
+        ]
+      },
+      {
+        "type": "RollModifier",
+        "label": "Mask Surge",
+        "upshift": 1,
+        "stack": "maskSurge",
+        "consumeMark": "maskSurge",
+        "when": [
+          "roll:dataset:maskPower",
+          "self:marked:maskSurge"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Use button (while wearing a mask): spend 1 Mask Charge, marking you until the end of the turn. Your next mask power roll is upshifted once and uses the mark up.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "0fzogJcjwZj0KMNM",
+  "_key": "!items!0fzogJcjwZj0KMNM"
+}

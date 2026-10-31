@@ -51,80 +51,48 @@
   "items": [
     {
       "name": "Strike Mode: Jet",
-      "type": "upgrade",
+      "type": "altMode",
       "img": "icons/svg/thrust.svg",
       "system": {
-        "type": "vehicle",
         "description": "<p>The rotor folds back and the helicopter becomes a jet: much faster, harder to hit, no more hovering.</p>",
         "source": {
           "book": "M.A.S.K. (homebrew)",
           "page": 0
         },
+        "altModeMovement": {
+          "ground": 0,
+          "aerial": 200,
+          "aquatic": 0,
+          "climb": 0,
+          "burrow": 0
+        },
+        "altModesize": "long",
+        "altModeSizeOptions": [
+          "long"
+        ],
+        "modeDefenses": {
+          "toughness": 0,
+          "evasion": 2
+        },
         "rules": [
           {
-            "type": "Use",
-            "label": "Jet Mode!",
+            "type": "RollModifier",
+            "label": "Disguised Vehicle",
+            "edge": true,
             "when": [
-              "not:self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
+              "not:self:transformed",
               {
-                "do": "mark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} folds its rotor and goes jet!"
+                "any": [
+                  "skill:deception",
+                  "skill:infiltration"
+                ]
               }
-            ]
-          },
-          {
-            "type": "Use",
-            "label": "Helicopter Mode",
-            "when": [
-              "self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
-              {
-                "do": "unmark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} drops back into helicopter mode."
-              }
-            ]
-          },
-          {
-            "type": "Movement",
-            "label": "Jet",
-            "movement": "aerial",
-            "op": "max",
-            "value": 200,
-            "stage": "total",
-            "when": [
-              "self:marked:strikeMode"
-            ]
-          },
-          {
-            "type": "Defense",
-            "label": "Jet",
-            "defense": "evasion",
-            "amount": 2,
-            "when": [
-              "self:marked:strikeMode"
             ]
           }
         ],
         "automation": {
           "status": "full",
-          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Jet: Aerial at least 200 ft, +2 Evasion. Helicopter mode is the vehicle as built (it can hover).</p>"
+          "notes": "<p>Strike Mode is an Alt Mode: the vehicle's Transform button converts it, and back. Jet: Aerial 200 ft, +2 Evasion (helicopter mode is the vehicle as built, and can hover). In Civilian Mode it has Edge on Deception and Infiltration Tests.</p>"
         }
       },
       "effects": [],
@@ -167,7 +135,6 @@
           {
             "type": "Use",
             "label": "Nose Guns",
-            "when": [],
             "cost": {
               "action": "standard"
             },
@@ -229,9 +196,6 @@
           {
             "type": "Use",
             "label": "Jet Torpedo",
-            "when": [
-              "self:marked:strikeMode"
-            ],
             "cost": {
               "action": "standard"
             },
@@ -256,6 +220,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Jet mode only, once per scene: Targeting against the target's Toughness, 4 Fire damage.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],
@@ -298,7 +268,7 @@
             "type": "Use",
             "label": "Venom Cloud",
             "when": [
-              "self:crewWearing:Viper"
+              "self:crewSlotEquipped:mask:Viper"
             ],
             "cost": {
               "action": "standard"

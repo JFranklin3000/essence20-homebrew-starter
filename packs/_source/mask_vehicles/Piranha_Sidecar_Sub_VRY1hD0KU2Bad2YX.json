@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Torpedo",
-            "when": [],
             "cost": {
               "action": "standard"
             },

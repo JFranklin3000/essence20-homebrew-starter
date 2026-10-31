@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Dragster Guns",
-            "when": [],
             "cost": {
               "action": "standard"
             },

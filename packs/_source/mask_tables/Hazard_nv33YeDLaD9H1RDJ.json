@@ -1,0 +1,232 @@
+{
+  "name": "Hazard",
+  "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+  "description": "<p>One each lap.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "An oil slick: Driving test against the course DIF, or lose a lap's progress",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "GbKZ1xCDqtMTsi4G",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.GbKZ1xCDqtMTsi4G"
+    },
+    {
+      "type": "text",
+      "name": "A rockslide blocks half the road: the leader must test first",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "e1sTiTSSXTLMGZ8s",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.e1sTiTSSXTLMGZ8s"
+    },
+    {
+      "type": "text",
+      "name": "A hairpin bend: Driving test with a Snag, or spin out (Prone vehicle, lose a lap's progress)",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Djiyj1aWmTmySo9j",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.Djiyj1aWmTmySo9j"
+    },
+    {
+      "type": "text",
+      "name": "A V.E.N.O.M. dirty trick: a mask power or a vehicle weapon aimed at the leader",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "6EKYRjriAJlOVmhA",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.6EKYRjriAJlOVmhA"
+    },
+    {
+      "type": "text",
+      "name": "Spectators spill onto the track: a Driving test to get through without harm",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "CRehxwrdHU8F3ueo",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.CRehxwrdHU8F3ueo"
+    },
+    {
+      "type": "text",
+      "name": "A jump: on a success with two Degrees, gain a place",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "81I9aWPz2lfCVtID",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.81I9aWPz2lfCVtID"
+    },
+    {
+      "type": "text",
+      "name": "A mud bog: everyone without all-terrain moves at half speed this lap",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "4ofwEpXxeb6nbwel",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.4ofwEpXxeb6nbwel"
+    },
+    {
+      "type": "text",
+      "name": "Engine trouble: one random racer must test Technology or drop to last",
+      "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dVqwwSEjNF5nbv4t",
+      "_key": "!tables.results!nv33YeDLaD9H1RDJ.dVqwwSEjNF5nbv4t"
+    }
+  ],
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "xRbR22elbpNTWIAk",
+  "sort": 200,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "race": "hazard"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "nv33YeDLaD9H1RDJ",
+  "_key": "!tables!nv33YeDLaD9H1RDJ"
+}

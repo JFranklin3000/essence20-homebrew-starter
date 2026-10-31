@@ -62,7 +62,6 @@
           {
             "type": "Use",
             "label": "Pack Lasers",
-            "when": [],
             "cost": {
               "action": "standard"
             },
@@ -125,7 +124,7 @@
             "type": "Use",
             "label": "Amplified Thunderbolt",
             "when": [
-              "self:crewWearing:Arrow"
+              "self:crewSlotEquipped:mask:Arrow"
             ],
             "cost": {
               "action": "standard"

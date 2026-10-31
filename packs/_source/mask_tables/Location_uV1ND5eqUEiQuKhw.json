@@ -1,0 +1,332 @@
+{
+  "name": "Location",
+  "img": "icons/environment/settlement/watchtower-cliff.webp",
+  "description": "<p>Where it happens.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "A gold mine high in the mountains",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "KMRWqxzVriDzs97y",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.KMRWqxzVriDzs97y"
+    },
+    {
+      "type": "text",
+      "name": "An archaeological dig in the desert",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Zc9a05JA6PK6IFF2",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.Zc9a05JA6PK6IFF2"
+    },
+    {
+      "type": "text",
+      "name": "An old bank vault under a European city",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "zAtdI2kRTeKvgHBE",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.zAtdI2kRTeKvgHBE"
+    },
+    {
+      "type": "text",
+      "name": "A rocket launch center on the coast",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "XrKht5UA8RRjo8lg",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.XrKht5UA8RRjo8lg"
+    },
+    {
+      "type": "text",
+      "name": "A research station deep in the rainforest",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "41FHTZ8Mw5HfRknk",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.41FHTZ8Mw5HfRknk"
+    },
+    {
+      "type": "text",
+      "name": "A grand museum during a gala night",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "wtNEXomPZ98NQwC4",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.wtNEXomPZ98NQwC4"
+    },
+    {
+      "type": "text",
+      "name": "A castle on a lake, now a hotel",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "yAjpEm8vNgtTs4bb",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.yAjpEm8vNgtTs4bb"
+    },
+    {
+      "type": "text",
+      "name": "A film studio back lot",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3BcwTVrGswM7hKND",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.3BcwTVrGswM7hKND"
+    },
+    {
+      "type": "text",
+      "name": "An offshore oil platform in a storm",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "XBl4qTcqbRlozuy0",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.XBl4qTcqbRlozuy0"
+    },
+    {
+      "type": "text",
+      "name": "A monastery on a snowbound mountain",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Yzki0RNETRk1sDJx",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.Yzki0RNETRk1sDJx"
+    },
+    {
+      "type": "text",
+      "name": "A resort island in the Caribbean",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "FxOV8DSFZy2aLnX1",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.FxOV8DSFZy2aLnX1"
+    },
+    {
+      "type": "text",
+      "name": "A desert racing circuit on race day",
+      "img": "icons/environment/settlement/watchtower-cliff.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RFWnvW89GKhEoJay",
+      "_key": "!tables.results!uV1ND5eqUEiQuKhw.RFWnvW89GKhEoJay"
+    }
+  ],
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 200,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "location"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "uV1ND5eqUEiQuKhw",
+  "_key": "!tables!uV1ND5eqUEiQuKhw"
+}

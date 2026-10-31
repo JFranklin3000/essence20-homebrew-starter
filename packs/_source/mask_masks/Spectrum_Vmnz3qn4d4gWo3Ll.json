@@ -8,18 +8,21 @@
     "gearType": "military",
     "equipped": false,
     "quantity": 1,
-    "description": "<p>The M.A.S.K. leader's signature mask: a sensor-packed helmet whose visor fires a focused laser, throws out a pulse of sound, or sweeps the area across the whole spectrum of light.</p><p><em>Matt Trakker's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "description": "<p>The M.A.S.K. leader's signature mask: a sensor-packed helmet whose visor fires a focused laser, throws out a pulse of sound, or sweeps the area across the whole spectrum of light.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
     "source": {
       "book": "M.A.S.K. (homebrew)",
       "page": 0
+    },
+    "powerGear": {
+      "bonded": true,
+      "bondedTo": "",
+      "slot": "mask",
+      "altModeOnly": false
     },
     "rules": [
       {
         "type": "Use",
         "label": "Spectrum: Laser or Sonic Waves",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "standard"
         },
@@ -84,9 +87,6 @@
       {
         "type": "Use",
         "label": "Spectrum Vision",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "free"
         },
@@ -112,7 +112,6 @@
         "label": "Spectrum Vision",
         "edge": true,
         "when": [
-          "self:maskBonded",
           "self:marked:spectrumVision",
           "skill:alertness"
         ]
@@ -122,22 +121,11 @@
         "label": "Mask helmet",
         "defense": "toughness",
         "amount": 1
-      },
-      {
-        "type": "Veto",
-        "on": "equip",
-        "items": [
-          "item:mask"
-        ],
-        "when": [
-          "self:wearingItem:item:mask"
-        ],
-        "message": "Take off the mask you are wearing first - one mask at a time."
       }
     ],
     "automation": {
       "status": "full",
-      "notes": "<p>Laser and Sonic Waves roll against the targets and post Apply Damage buttons; Sonic Waves deafens on a hit. Spectrum Vision gives an Edge on Alertness for the rest of the scene. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+      "notes": "<p>Laser and Sonic Waves roll against the targets and post Apply Damage buttons; Sonic Waves deafens on a hit. Spectrum Vision gives an Edge on Alertness for the rest of the scene. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
     }
   },
   "effects": [],

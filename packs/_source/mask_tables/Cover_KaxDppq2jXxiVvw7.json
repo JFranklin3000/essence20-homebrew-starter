@@ -1,0 +1,232 @@
+{
+  "name": "Cover",
+  "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+  "description": "<p>V.E.N.O.M.'s cover while they work.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "A road-repair crew with cones and a steamroller",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "qJRRnx5kOrbpMLZY",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.qJRRnx5kOrbpMLZY"
+    },
+    {
+      "type": "text",
+      "name": "A tour bus full of very quiet tourists",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "TfMm6yDByMfotH0l",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.TfMm6yDByMfotH0l"
+    },
+    {
+      "type": "text",
+      "name": "A television news team",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "shsYvY7AlOQC5juf",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.shsYvY7AlOQC5juf"
+    },
+    {
+      "type": "text",
+      "name": "A private security firm, hired that very morning",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "GgzpZ0oR7wfqPrcH",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.GgzpZ0oR7wfqPrcH"
+    },
+    {
+      "type": "text",
+      "name": "A charity car rally passing through",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Qpt1PiUvUfzlGfdo",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.Qpt1PiUvUfzlGfdo"
+    },
+    {
+      "type": "text",
+      "name": "A construction company with a crane",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "M3Xb4q818X8hhIKl",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.M3Xb4q818X8hhIKl"
+    },
+    {
+      "type": "text",
+      "name": "A fleet of ice-cream vans",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Yp2lXVbGaynszWnm",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.Yp2lXVbGaynszWnm"
+    },
+    {
+      "type": "text",
+      "name": "A circus setting up on the edge of town",
+      "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RNKnKS6rs8oLPSts",
+      "_key": "!tables.results!KaxDppq2jXxiVvw7.RNKnKS6rs8oLPSts"
+    }
+  ],
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 400,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "disguise"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "KaxDppq2jXxiVvw7",
+  "_key": "!tables!KaxDppq2jXxiVvw7"
+}

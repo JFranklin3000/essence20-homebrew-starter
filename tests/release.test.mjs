@@ -44,7 +44,12 @@ test('every source document can be compiled', () => {
     for (const file of fs.readdirSync(folder).filter(name => name.endsWith('.json'))) {
       const doc = JSON.parse(fs.readFileSync(path.join(folder, file), 'utf8'));
       assert.match(doc._id, /^[A-Za-z0-9]{16}$/, file);
-      assert.equal(doc._key, `!${COLLECTION[pack.type]}!${doc._id}`, file);
+      // A compendium's own documents, or a folder inside it.
+      assert.ok([`!${COLLECTION[pack.type]}!${doc._id}`, `!folders!${doc._id}`].includes(doc._key), file);
+      if (doc._key.startsWith('!folders!')) {
+        assert.equal(doc.type, pack.type, file);
+      }
+
       assert.ok(!ids.has(doc._id), `${file} reuses the id ${doc._id}`);
       ids.add(doc._id);
       assert.ok(doc.name, `${file} has no name`);

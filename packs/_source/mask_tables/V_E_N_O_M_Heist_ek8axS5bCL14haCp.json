@@ -1,0 +1,32 @@
+{
+  "name": "V.E.N.O.M. Heist",
+  "type": "RollTable",
+  "folder": null,
+  "sorting": "m",
+  "sort": 100,
+  "color": null,
+  "description": "",
+  "flags": {
+    "essence20-homebrew-starter": {
+      "episode": "heist"
+    },
+    "essence20": {
+      "mission": {
+        "title": "V.E.N.O.M. strikes: {Location}",
+        "outline": "1. A hook: news, a tip-off, or a V.E.N.O.M. vehicle seen somewhere it shouldn't be.\n2. Investigation: work out what V.E.N.O.M. wants and how before {Crew} strikes. The M.A.S.K. Guide's Agent roster page lists their vehicles.\n3. The chase: vehicles in Civilian Mode, then Strike Mode when the masks come out.\n4. The showdown, and the complication at the worst moment."
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "ek8axS5bCL14haCp",
+  "_key": "!folders!ek8axS5bCL14haCp"
+}

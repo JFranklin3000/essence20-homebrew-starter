@@ -1,0 +1,52 @@
+{
+  "name": "Mask Mastery",
+  "type": "perk",
+  "img": "icons/equipment/head/helm-barbute-horned-gold-red.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>Years behind the mask have made its power second nature. Your mask power rolls are upshifted once more.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Mask Mastery",
+        "upshift": 1,
+        "stack": "maskMastery",
+        "when": [
+          "roll:dataset:maskPower"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: rolls made with your mask's power are upshifted once (on top of Signature Mask).</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "P39SMvR5ynYD21Ni",
+  "_key": "!items!P39SMvR5ynYD21Ni"
+}

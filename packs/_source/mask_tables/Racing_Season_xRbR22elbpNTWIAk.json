@@ -1,0 +1,32 @@
+{
+  "name": "Racing Season",
+  "type": "RollTable",
+  "folder": null,
+  "sorting": "m",
+  "sort": 200,
+  "color": null,
+  "description": "",
+  "flags": {
+    "essence20-homebrew-starter": {
+      "episode": "race"
+    },
+    "essence20": {
+      "mission": {
+        "title": "Race: {Course}",
+        "outline": "1. Set up: the course's line gives the Driving DIF. A race is usually three laps.\n2. Each lap: every driver makes a Driving test against the DIF; those who succeed complete the lap. Count them in the Race and Chase Tracker, with Hazard as its hazard table.\n3. Dirty tricks: a racer can attack instead (a vehicle weapon in Strike Mode, or a mask power) and drives with a Snag that lap.\n4. The finish: the first to the last lap wins; ties go to the higher Driving total."
+      }
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "xRbR22elbpNTWIAk",
+  "_key": "!folders!xRbR22elbpNTWIAk"
+}

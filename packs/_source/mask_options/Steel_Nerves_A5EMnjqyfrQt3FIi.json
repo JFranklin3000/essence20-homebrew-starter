@@ -1,0 +1,54 @@
+{
+  "name": "Steel Nerves",
+  "type": "perk",
+  "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>Behind the mask, fear doesn't reach you. While you wear a mask, you can't be Frightened or Surprised.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "ConditionImmunity",
+        "label": "Steel Nerves",
+        "conditions": [
+          "frightened",
+          "surprised"
+        ],
+        "when": [
+          "self:slotEquipped:mask"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: immune to Frightened and Surprised while you wear a mask.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "A5EMnjqyfrQt3FIi",
+  "_key": "!items!A5EMnjqyfrQt3FIi"
+}

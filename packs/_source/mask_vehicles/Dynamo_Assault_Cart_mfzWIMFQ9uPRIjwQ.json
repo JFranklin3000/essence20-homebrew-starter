@@ -62,7 +62,6 @@
           {
             "type": "Use",
             "label": "Cart Cannon",
-            "when": [],
             "cost": {
               "action": "standard"
             },

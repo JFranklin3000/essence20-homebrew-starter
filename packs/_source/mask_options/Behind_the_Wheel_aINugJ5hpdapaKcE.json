@@ -1,0 +1,50 @@
+{
+  "name": "Behind the Wheel",
+  "type": "perk",
+  "img": "icons/environment/settlement/wagon.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>You drive like the vehicle is armour. A vehicle you are driving has +1 Toughness.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Defense",
+        "label": "Behind the Wheel",
+        "scope": "driven",
+        "defense": "toughness",
+        "amount": 1
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: the vehicle you drive has +1 Toughness.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "aINugJ5hpdapaKcE",
+  "_key": "!items!aINugJ5hpdapaKcE"
+}

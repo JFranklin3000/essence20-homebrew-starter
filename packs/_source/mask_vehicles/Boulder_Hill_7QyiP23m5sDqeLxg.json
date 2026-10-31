@@ -1,0 +1,545 @@
+{
+  "name": "Boulder Hill",
+  "type": "vehicle",
+  "img": "icons/svg/castle.svg",
+  "system": {
+    "health": {
+      "origin": 40,
+      "value": 40
+    },
+    "crew": {
+      "numDrivers": 1,
+      "numPassengers": 8,
+      "description": ""
+    },
+    "firepoints": {
+      "value": 2,
+      "description": ""
+    },
+    "essences": {
+      "strength": {
+        "base": 6,
+        "value": 6
+      },
+      "speed": {
+        "base": 1,
+        "value": 1
+      }
+    },
+    "movement": {},
+    "skills": {
+      "driving": {
+        "shift": "d6"
+      },
+      "targeting": {
+        "shift": "d6"
+      }
+    },
+    "traits": {
+      "largeObstacle": true,
+      "convertible": true
+    },
+    "size": "huge",
+    "notes": "<p>A quiet country gas station with a diner and a garage, built into a hill outside town that converts into the fortified M.A.S.K. headquarters. Matt Trakker owns it; the team lives and works there.</p><p><em>Matt Trakker's vehicle.</em> Its weapons come out in Strike Mode. Stats are homebrew.</p>"
+  },
+  "items": [
+    {
+      "name": "Strike Mode: Headquarters",
+      "type": "altMode",
+      "img": "icons/svg/tower.svg",
+      "system": {
+        "description": "<p>A quiet country gas station with a diner and a garage, built into a hill outside town converts into its Strike Mode: headquarters.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "altModeMovement": {
+          "ground": 0,
+          "aerial": 0,
+          "aquatic": 0,
+          "climb": 0,
+          "burrow": 0
+        },
+        "altModesize": "huge",
+        "altModeSizeOptions": [
+          "huge"
+        ],
+        "modeDefenses": {
+          "toughness": 3,
+          "evasion": 0
+        },
+        "rules": [
+          {
+            "type": "RollModifier",
+            "label": "Disguised Vehicle",
+            "edge": true,
+            "when": [
+              "not:self:transformed",
+              {
+                "any": [
+                  "skill:deception",
+                  "skill:infiltration"
+                ]
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode is an Alt Mode: the vehicle's Transform button converts it, and back. Headquarters: +3 Toughness. In Civilian Mode it has Edge on Deception and Infiltration Tests.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "strikeMode": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "XZJ82JvO0OKKl2WT",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.XZJ82JvO0OKKl2WT"
+    },
+    {
+      "name": "Rooftop Lasers",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Rooftop Lasers that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Rooftop Lasers",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "first": 2,
+                "damage": {
+                  "value": 2,
+                  "type": "laser"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against up to 2 targets's evasion, 2 laser damage.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "NqRQcUdADZ4wnVwp",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.NqRQcUdADZ4wnVwp"
+    },
+    {
+      "name": "Hillside Cannon",
+      "type": "upgrade",
+      "img": "icons/svg/target.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Hillside Cannon that only come out in Strike Mode.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Hillside Cannon",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "toughness",
+                "to": "target",
+                "damage": {
+                  "value": 3,
+                  "type": "blunt"
+                }
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Strike Mode only: Targeting against the target's toughness, 3 blunt damage.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "j70i4MAfKZoX0rZO",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.j70i4MAfKZoX0rZO"
+    },
+    {
+      "name": "Command Center",
+      "type": "upgrade",
+      "img": "icons/svg/eye.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Radar, radio and the team's computers, deep under the garage.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "RollModifier",
+            "label": "Command Center",
+            "scope": "crew",
+            "edge": true,
+            "when": [
+              {
+                "any": [
+                  "skill:alertness",
+                  "skill:technology"
+                ]
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Automatic: anyone crewing Boulder Hill (on duty in the base) has Edge on Alertness and Technology Tests.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "hq": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "QuGVL0riEALTJQJj",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.QuGVL0riEALTJQJj"
+    },
+    {
+      "name": "Repair Bay",
+      "type": "upgrade",
+      "img": "icons/tools/smithing/anvil.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>A full garage and machine shop behind the service bays.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Repair a vehicle (10 Health to the target)",
+            "cost": {
+              "action": "standard"
+            },
+            "limit": {
+              "per": "scene",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "heal",
+                "amount": 10,
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "The Boulder Hill repair bay works on {target}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Use button: once per scene, the targeted vehicle regains 10 Health.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "hq": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "93i6bBvclrM4BkdD",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.93i6bBvclrM4BkdD"
+    },
+    {
+      "name": "Hidden Hangar",
+      "type": "upgrade",
+      "img": "icons/svg/door-exit.svg",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Hangar doors in the hillside, for the vehicles the team keeps at the base.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Deploy vehicle",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": false
+              },
+              {
+                "do": "placeBeside",
+                "to": "target"
+              },
+              {
+                "do": "chat",
+                "text": "{name} deploys the vehicle!"
+              }
+            ]
+          },
+          {
+            "type": "Use",
+            "label": "Dock vehicle",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "hideTokens",
+                "to": "target",
+                "hidden": true
+              },
+              {
+                "do": "chat",
+                "text": "The vehicle docks with {name}."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Keep a stored vehicle's token hidden on the scene. Target it, then Deploy: it rolls out beside the base. Dock hides it again.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "hq": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "Uref9zfmfeCHHYxa",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.Uref9zfmfeCHHYxa"
+    },
+    {
+      "name": "Mask Lab",
+      "type": "upgrade",
+      "img": "icons/equipment/head/helm-barbute-engraved-steel.webp",
+      "system": {
+        "type": "vehicle",
+        "description": "<p>Where the masks are built, repaired and rebonded.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Rebond a mask (lab work)",
+            "steps": [
+              {
+                "do": "chat",
+                "text": "Lab work begins at Boulder Hill: after a day's work and a Smarts (Technology) test, the GM presses Rebond on the mask's sheet (its Power Gear section) and the new wearer puts it on."
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Use button: posts the lab work to chat. Left to the table: the test and the downtime; the GM then presses Rebond on the mask's sheet.</p>"
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "maskVehicle": true,
+          "hq": true
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1792972800000,
+        "modifiedTime": 1792972800000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "3aAydVtTtGCpR57T",
+      "_key": "!actors.items!7QyiP23m5sDqeLxg.3aAydVtTtGCpR57T"
+    }
+  ],
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "prototypeToken": {
+    "name": "Boulder Hill",
+    "actorLink": true,
+    "disposition": 1,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "icons/svg/castle.svg"
+    }
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "maskVehicle": true,
+      "agent": "Matt Trakker"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1792972800000,
+    "modifiedTime": 1792972800000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "7QyiP23m5sDqeLxg",
+  "_key": "!actors!7QyiP23m5sDqeLxg"
+}

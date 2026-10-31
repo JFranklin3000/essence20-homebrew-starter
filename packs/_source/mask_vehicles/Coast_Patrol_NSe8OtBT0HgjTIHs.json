@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Deck Gun",
-            "when": [],
             "cost": {
               "action": "standard"
             },

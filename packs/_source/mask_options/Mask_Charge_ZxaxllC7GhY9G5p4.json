@@ -1,0 +1,70 @@
+{
+  "name": "Mask Charge",
+  "type": "rolePoints",
+  "img": "systems/essence20/assets/icons/items/rolePoints.svg",
+  "system": {
+    "description": "<p>The extra power a Mask Agent can push through their mask. Mask Surge spends it; Rapid Recharge and Living Legend restore it.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "automation": {
+      "status": "full",
+      "notes": "<p>On the sheet: your Mask Charge pool, 2 at 1st level and 1 more at 3rd, 6th, 11th and 17th.</p>"
+    },
+    "bonus": {
+      "defenseBonus": {
+        "cleverness": false,
+        "evasion": false,
+        "toughness": false,
+        "willpower": false
+      },
+      "increase": 0,
+      "level20Value": 0,
+      "increaseLevels": [],
+      "startingValue": 0,
+      "type": "none",
+      "value": 0
+    },
+    "isActivatable": false,
+    "isActive": false,
+    "powerCost": null,
+    "resource": {
+      "increase": 1,
+      "level20Value": null,
+      "level20ValueIsUnlimited": false,
+      "increaseLevels": [
+        "level3",
+        "level6",
+        "level11",
+        "level17"
+      ],
+      "max": null,
+      "startingMax": 2,
+      "value": null
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePoints": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "ZxaxllC7GhY9G5p4",
+  "_key": "!items!ZxaxllC7GhY9G5p4"
+}

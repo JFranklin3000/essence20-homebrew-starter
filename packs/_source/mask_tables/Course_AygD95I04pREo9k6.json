@@ -1,0 +1,232 @@
+{
+  "name": "Course",
+  "img": "icons/sundries/flags/banner-flag-red-white.webp",
+  "description": "<p>Where the race is run, and what it rewards.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "A mountain pass: hairpins and sheer drops (Driving DIF 14)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "7lBzdxYNOpMhEEvf",
+      "_key": "!tables.results!AygD95I04pREo9k6.7lBzdxYNOpMhEEvf"
+    },
+    {
+      "type": "text",
+      "name": "A desert rally: long straights, sand and heat (DIF 12; Speed rules)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "gZMOfzsmakYc0jNa",
+      "_key": "!tables.results!AygD95I04pREo9k6.gZMOfzsmakYc0jNa"
+    },
+    {
+      "type": "text",
+      "name": "A city street circuit: tight corners and crowds (DIF 14)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "jsckGbpIwor4ypac",
+      "_key": "!tables.results!AygD95I04pREo9k6.jsckGbpIwor4ypac"
+    },
+    {
+      "type": "text",
+      "name": "A frozen lake track: nothing grips (DIF 16)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dXyZy53XniZi20zT",
+      "_key": "!tables.results!AygD95I04pREo9k6.dXyZy53XniZi20zT"
+    },
+    {
+      "type": "text",
+      "name": "A jungle trail: mud, roots and river crossings (DIF 14; all-terrain vehicles have Edge)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dchnVknbJ9B54rvd",
+      "_key": "!tables.results!AygD95I04pREo9k6.dchnVknbJ9B54rvd"
+    },
+    {
+      "type": "text",
+      "name": "A coastal road: fast, narrow and windy (DIF 12)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "jynBrDpw9PIKTChP",
+      "_key": "!tables.results!AygD95I04pREo9k6.jynBrDpw9PIKTChP"
+    },
+    {
+      "type": "text",
+      "name": "A canyon run: jumps and narrow gaps (DIF 14)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "ma14alOiR84cnf2B",
+      "_key": "!tables.results!AygD95I04pREo9k6.ma14alOiR84cnf2B"
+    },
+    {
+      "type": "text",
+      "name": "An oval speedway: pure speed (DIF 10; the fastest vehicle has Edge)",
+      "img": "icons/sundries/flags/banner-flag-red-white.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "sTAJKQBKfUGvUDbG",
+      "_key": "!tables.results!AygD95I04pREo9k6.sTAJKQBKfUGvUDbG"
+    }
+  ],
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "xRbR22elbpNTWIAk",
+  "sort": 100,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "race": "course"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "AygD95I04pREo9k6",
+  "_key": "!tables!AygD95I04pREo9k6"
+}

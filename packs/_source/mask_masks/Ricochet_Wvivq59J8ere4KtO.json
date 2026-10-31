@@ -8,18 +8,21 @@
     "gearType": "military",
     "equipped": false,
     "quantity": 1,
-    "description": "<p>Throws a boomerang of energy that bounces between targets (also called Boomerang).</p><p><em>Ace Riker's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "description": "<p>Throws a boomerang of energy that bounces between targets (also called Boomerang).</p><p><em>Ace Riker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
     "source": {
       "book": "M.A.S.K. (homebrew)",
       "page": 0
+    },
+    "powerGear": {
+      "bonded": true,
+      "bondedTo": "",
+      "slot": "mask",
+      "altModeOnly": false
     },
     "rules": [
       {
         "type": "Use",
         "label": "Energy Boomerang",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "standard"
         },
@@ -50,22 +53,11 @@
         "label": "Mask helmet",
         "defense": "toughness",
         "amount": 1
-      },
-      {
-        "type": "Veto",
-        "on": "equip",
-        "items": [
-          "item:mask"
-        ],
-        "when": [
-          "self:wearingItem:item:mask"
-        ],
-        "message": "Take off the mask you are wearing first - one mask at a time."
       }
     ],
     "automation": {
       "status": "full",
-      "notes": "<p>Rolls Targeting against the Evasion of up to two targeted creatures: 1 damage each (Apply Damage buttons). Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+      "notes": "<p>Rolls Targeting against the Evasion of up to two targeted creatures: 1 damage each (Apply Damage buttons). Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
     }
   },
   "effects": [],

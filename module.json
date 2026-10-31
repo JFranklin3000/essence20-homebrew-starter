@@ -24,9 +24,7 @@
     ]
   },
   "esmodules": [
-    "scripts/house-rules.mjs",
-    "scripts/mask/house-rules.mjs",
-    "scripts/mask/mask-tags.mjs"
+    "scripts/house-rules.mjs"
   ],
   "packs": [
     {
@@ -173,17 +171,6 @@
       }
     },
     {
-      "name": "mask_macros",
-      "label": "M.A.S.K. Macros",
-      "path": "packs/mask_macros",
-      "type": "Macro",
-      "system": "essence20",
-      "ownership": {
-        "PLAYER": "NONE",
-        "ASSISTANT": "OWNER"
-      }
-    },
-    {
       "name": "mask_guide",
       "label": "M.A.S.K. Guide",
       "path": "packs/mask_guide",
@@ -221,13 +208,22 @@
         "mask_venom",
         "mask_options",
         "mask_tables",
-        "mask_macros",
         "mask_guide"
       ]
     }
   ],
   "flags": {
-    "canUpload": true
+    "canUpload": true,
+    "essence20": {
+      "gameLines": [
+        {
+          "id": "mask",
+          "label": "M.A.S.K.",
+          "family": "giJoe",
+          "packFolder": "M.A.S.K."
+        }
+      ]
+    }
   },
   "url": "https://github.com/JFranklin3000/essence20-homebrew-starter",
   "manifest": "https://github.com/JFranklin3000/essence20-homebrew-starter/releases/latest/download/module.json",

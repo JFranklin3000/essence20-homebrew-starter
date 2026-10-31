@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Laser Battery",
-            "when": [],
             "cost": {
               "action": "standard"
             },
@@ -124,7 +123,7 @@
             "type": "Use",
             "label": "Amplified Ray Net",
             "when": [
-              "self:crewWearing:Raynet"
+              "self:crewSlotEquipped:mask:Raynet"
             ],
             "cost": {
               "action": "standard"

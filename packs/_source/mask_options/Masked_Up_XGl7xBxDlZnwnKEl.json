@@ -1,0 +1,52 @@
+{
+  "name": "Masked Up",
+  "type": "perk",
+  "img": "icons/equipment/head/helm-barbute-engraved-steel.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>With your mask on you move like a different person. While you wear a mask, you have +1 Evasion.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Defense",
+        "label": "Masked Up",
+        "defense": "evasion",
+        "amount": 1,
+        "when": [
+          "self:slotEquipped:mask"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: +1 Evasion while you wear a mask.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "XGl7xBxDlZnwnKEl",
+  "_key": "!items!XGl7xBxDlZnwnKEl"
+}

@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Sonic Guns",
-            "when": [],
             "cost": {
               "action": "standard"
             },

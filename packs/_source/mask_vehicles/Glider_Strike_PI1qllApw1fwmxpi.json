@@ -62,7 +62,6 @@
           {
             "type": "Use",
             "label": "Glider Bombs",
-            "when": [],
             "cost": {
               "action": "standard"
             },

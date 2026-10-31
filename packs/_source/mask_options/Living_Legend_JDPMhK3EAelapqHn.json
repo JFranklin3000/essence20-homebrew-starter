@@ -1,0 +1,67 @@
+{
+  "name": "Living Legend",
+  "type": "perk",
+  "img": "icons/magic/light/explosion-star-glow-yellow.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>When it matters most, you are at your best. Once per mission, as a free action, regain all your Mask Charge.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Living Legend (regain all Mask Charge)",
+        "cost": {
+          "action": "free"
+        },
+        "limit": {
+          "per": "mission",
+          "max": 1
+        },
+        "steps": [
+          {
+            "do": "gainResource",
+            "resource": {
+              "rolePoints": true
+            },
+            "amount": 99
+          },
+          {
+            "do": "chat",
+            "text": "{name} is at their legendary best."
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Use button: once per mission, refill your Mask Charge.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "JDPMhK3EAelapqHn",
+  "_key": "!items!JDPMhK3EAelapqHn"
+}

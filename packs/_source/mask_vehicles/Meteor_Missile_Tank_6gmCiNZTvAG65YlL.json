@@ -62,7 +62,6 @@
           {
             "type": "Use",
             "label": "Tank Missiles",
-            "when": [],
             "cost": {
               "action": "standard"
             },

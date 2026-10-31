@@ -22,7 +22,7 @@
               "skill:infiltration"
             ]
           },
-          "not:self:wearingItem:item:mask"
+          "not:self:slotEquipped:mask"
         ]
       }
     ],

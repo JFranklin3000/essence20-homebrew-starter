@@ -1,0 +1,282 @@
+{
+  "name": "Scheme",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "description": "<p>How Miles Mayhem means to pull it off.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "Swap it for a fake in the middle of a public event",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "oJnnkPKT6mSbg7A1",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.oJnnkPKT6mSbg7A1"
+    },
+    {
+      "type": "text",
+      "name": "Tunnel in from underneath",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "HTt5Bm11xLw1pN3L",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.HTt5Bm11xLw1pN3L"
+    },
+    {
+      "type": "text",
+      "name": "Pose as a film crew and \"shoot a scene\" right through security",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "a6TeHACaIGOOyuq3",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.a6TeHACaIGOOyuq3"
+    },
+    {
+      "type": "text",
+      "name": "Cause a disaster and loot the place during the evacuation",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "fnd20hGJQxLgzHGG",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.fnd20hGJQxLgzHGG"
+    },
+    {
+      "type": "text",
+      "name": "Win it outright in a rigged race",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dPtpZgM1WNa3eSlk",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.dPtpZgM1WNa3eSlk"
+    },
+    {
+      "type": "text",
+      "name": "Hold a landmark hostage until it is handed over",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "2M6vpLURpOZlkb3j",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.2M6vpLURpOZlkb3j"
+    },
+    {
+      "type": "text",
+      "name": "Steal it so that M.A.S.K. takes the blame",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "eq5SLd4K1u9HWrXK",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.eq5SLd4K1u9HWrXK"
+    },
+    {
+      "type": "text",
+      "name": "Hijack the convoy moving it",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "BZcc2Ay12ajnwCpU",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.BZcc2Ay12ajnwCpU"
+    },
+    {
+      "type": "text",
+      "name": "Plant an insider weeks ahead and walk out with it",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "cRrI4bLgD1O3FWSU",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.cRrI4bLgD1O3FWSU"
+    },
+    {
+      "type": "text",
+      "name": "Blackmail the owner into handing it over",
+      "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "SYj81ymvcnvQBFOA",
+      "_key": "!tables.results!0SGFDQqLMTok6cFX.SYj81ymvcnvQBFOA"
+    }
+  ],
+  "formula": "1d10",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 300,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "scheme"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "0SGFDQqLMTok6cFX",
+  "_key": "!tables!0SGFDQqLMTok6cFX"
+}

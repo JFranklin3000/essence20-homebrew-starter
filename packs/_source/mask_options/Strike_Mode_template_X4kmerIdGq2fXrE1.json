@@ -1,68 +1,47 @@
 {
   "name": "Strike Mode (template)",
-  "type": "upgrade",
+  "type": "altMode",
   "img": "icons/svg/upgrade.svg",
   "system": {
-    "type": "vehicle",
-    "description": "<p>Drop on any vehicle to give it a Civilian and a Strike Mode. Strike Mode! marks the vehicle strikeMode; Civilian Mode clears it. Add the converted form's rules here with the condition self:marked:strikeMode (Movement, Defense, Firepoints...).</p>",
+    "description": "<p>Drop on any vehicle to give it a Strike Mode (with \"Alt Modes on Vehicles and Zords\" on in Configure Settings). Set its movement, size and Defenses on the Details tab to fit the vehicle.</p>",
     "source": {
       "book": "M.A.S.K. (homebrew)",
       "page": 0
     },
+    "altModeMovement": {
+      "ground": 60,
+      "aerial": 0,
+      "aquatic": 0,
+      "climb": 0,
+      "burrow": 0
+    },
+    "altModesize": "long",
+    "altModeSizeOptions": [
+      "long"
+    ],
+    "modeDefenses": {
+      "toughness": 1,
+      "evasion": 0
+    },
     "rules": [
       {
-        "type": "Use",
-        "label": "Strike Mode!",
+        "type": "RollModifier",
+        "label": "Disguised Vehicle",
+        "edge": true,
         "when": [
-          "not:self:marked:strikeMode"
-        ],
-        "cost": {
-          "action": "free"
-        },
-        "steps": [
+          "not:self:transformed",
           {
-            "do": "mark",
-            "key": "strikeMode"
-          },
-          {
-            "do": "chat",
-            "text": "{name} converts to Strike Mode!"
+            "any": [
+              "skill:deception",
+              "skill:infiltration"
+            ]
           }
-        ]
-      },
-      {
-        "type": "Use",
-        "label": "Civilian Mode",
-        "when": [
-          "self:marked:strikeMode"
-        ],
-        "cost": {
-          "action": "free"
-        },
-        "steps": [
-          {
-            "do": "unmark",
-            "key": "strikeMode"
-          },
-          {
-            "do": "chat",
-            "text": "{name} converts back to Civilian Mode."
-          }
-        ]
-      },
-      {
-        "type": "Defense",
-        "label": "Strike Mode armor",
-        "defense": "toughness",
-        "amount": 1,
-        "when": [
-          "self:marked:strikeMode"
         ]
       }
     ],
     "automation": {
       "status": "full",
-      "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. As shipped: +1 Toughness - change it to fit the vehicle.</p>"
+      "notes": "<p>Strike Mode is an Alt Mode: the vehicle's Transform button converts it, and back. As shipped: Ground 60 ft, Long, +1 Toughness - change them to fit the vehicle. In Civilian Mode it has Edge on Deception and Infiltration Tests.</p>"
     }
   },
   "effects": [],

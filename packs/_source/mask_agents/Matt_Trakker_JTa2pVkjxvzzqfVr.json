@@ -1,0 +1,3026 @@
+{
+  "name": "Matt Trakker",
+  "type": "npc",
+  "system": {
+    "conditioning": 0,
+    "defenses": {
+      "toughness": {
+        "armor": 0,
+        "bonus": 0,
+        "base": 10,
+        "essence": "strength",
+        "morphed": 0,
+        "name": "toughness",
+        "shield": 0,
+        "string": "",
+        "total": 0
+      },
+      "evasion": {
+        "armor": 0,
+        "bonus": 0,
+        "base": 10,
+        "essence": "speed",
+        "morphed": 0,
+        "name": "evasion",
+        "shield": 0,
+        "string": "",
+        "total": 0
+      },
+      "willpower": {
+        "armor": 0,
+        "bonus": 0,
+        "base": 10,
+        "essence": "smarts",
+        "morphed": 0,
+        "name": "willpower",
+        "shield": 0,
+        "string": "",
+        "total": 0
+      },
+      "cleverness": {
+        "armor": 0,
+        "bonus": 0,
+        "base": 10,
+        "essence": "social",
+        "morphed": 0,
+        "name": "cleverness",
+        "shield": 0,
+        "string": "",
+        "total": 0
+      }
+    },
+    "essences": {
+      "strength": {
+        "base": 4,
+        "max": 4,
+        "value": 4
+      },
+      "speed": {
+        "base": 6,
+        "max": 6,
+        "value": 6
+      },
+      "smarts": {
+        "base": 7,
+        "max": 7,
+        "value": 7
+      },
+      "social": {
+        "base": 7,
+        "max": 7,
+        "value": 7
+      }
+    },
+    "health": {
+      "origin": 8,
+      "value": 8,
+      "bonus": 0,
+      "max": 0,
+      "string": ""
+    },
+    "languages": [],
+    "movement": {
+      "ground": {
+        "base": 40,
+        "altMode": 0,
+        "bonus": 0,
+        "morphed": 0,
+        "total": 0
+      },
+      "aerial": {
+        "altMode": 0,
+        "base": 0,
+        "bonus": 0,
+        "morphed": 0,
+        "total": 0
+      },
+      "burrow": {
+        "altMode": 0,
+        "base": 0,
+        "bonus": 0,
+        "morphed": 0,
+        "total": 0
+      },
+      "climb": {
+        "altMode": 0,
+        "base": 0,
+        "bonus": 0,
+        "morphed": 0,
+        "total": 0
+      },
+      "swim": {
+        "altMode": 0,
+        "base": 0,
+        "bonus": 0,
+        "morphed": 0,
+        "total": 0
+      }
+    },
+    "skills": {
+      "athletics": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d8",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": true
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "driving": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d8",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "targeting": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d2",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "initiative": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d2",
+        "canBeInitiative": true,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "alertness": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d8",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "technology": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d6",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "persuasion": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d8",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": true,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "streetwise": {
+        "isChosen": true,
+        "specializations": {},
+        "shift": "d6",
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": true,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "roleSkillDie": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "acrobatics": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "animalHandling": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": true,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "brawn": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": true
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "culture": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "deception": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": true,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "finesse": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "infiltration": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": true,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "intimidation": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": true
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "might": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": true
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "performance": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": true,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "science": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "spellcasting": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": true,
+          "speed": true,
+          "strength": true
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "survival": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "wealth": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": false,
+          "social": false,
+          "speed": false,
+          "strength": false
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      },
+      "weird": {
+        "canBeInitiative": false,
+        "canCritD2": false,
+        "essences": {
+          "smarts": true,
+          "social": true,
+          "speed": true,
+          "strength": true
+        },
+        "edge": false,
+        "isChosen": false,
+        "isSpecialized": false,
+        "modifier": 0,
+        "shift": "d20",
+        "shiftDown": 0,
+        "shiftUp": 0,
+        "snag": false,
+        "specializations": {},
+        "essenceAttribution": {
+          "smarts": 0,
+          "social": 0,
+          "speed": 0,
+          "strength": 0
+        }
+      }
+    },
+    "size": "common",
+    "threatLevel": 8,
+    "altModeId": "",
+    "altModeName": "",
+    "altModesize": "common",
+    "background": {
+      "pronouns": "",
+      "role": ""
+    },
+    "biography": {
+      "age": 0,
+      "bio": "<p>The millionaire who founded M.A.S.K. and leads it from the driver&#x27;s seat - calm, decisive and always one move ahead of Miles Mayhem. Raising his son Scott between missions.</p><p><strong>Masks:</strong> Spectrum, Ultra-Flash, Lava Shot, Shroud, Dolphin, Arrow, Lasertron, New Spectrum (wearing Spectrum).</p><p><strong>Vehicles:</strong> @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.NSe8OtBT0HgjTIHs]{Coast Patrol}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.IaXyNYHkBdjkUj0E]{Goliath I}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.xEq6AhMte9FBtfq8]{Hornet}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.JZZUwsWQRvHYqj74]{Jungle Challenge}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.RuplqQVUeVIW6Mst]{Rhino}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.BdXhXgxDSdQmNXhd]{Skybolt}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.0HnrSo2XV3c7VFpy]{Skybolt Turbo Car}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.VAFsNOAKyg90Se1z]{Thunderhawk}, @UUID[Compendium.essence20-homebrew-starter.mask_vehicles.Actor.DCgFWtq2Nz9EEHUU]{Volcano}.</p><p><em>M.A.S.K. - M.A.S.K. homebrew; stats built with the Threat Builder (Field Guide rules).</em></p>",
+      "bonds": "",
+      "description": "",
+      "eyeColor": "",
+      "gender": "",
+      "hairColor": "",
+      "height": "",
+      "languages": "",
+      "pronoun": "",
+      "skinColor": "",
+      "weight": ""
+    },
+    "canHaveZord": false,
+    "canMorph": false,
+    "canQualify": false,
+    "canShowWealthDie": false,
+    "canSpellcast": false,
+    "canTransform": false,
+    "canUseWeird": false,
+    "environments": [],
+    "essenceRanks": {
+      "smarts": null,
+      "social": null,
+      "speed": null,
+      "strength": null
+    },
+    "faction": "",
+    "focusEssence": "",
+    "hardpoints": {
+      "external": {
+        "base": 2,
+        "bonus": 0,
+        "max": 0,
+        "used": 0,
+        "over": false
+      },
+      "integrated": {
+        "base": 2,
+        "bonus": 0,
+        "max": 0,
+        "used": 0,
+        "over": false
+      }
+    },
+    "image": {
+      "botmode": null,
+      "morphed": null,
+      "unmorphed": null
+    },
+    "isMorphed": false,
+    "isTransformed": false,
+    "level": 1,
+    "loadout": {
+      "handsMax": 6,
+      "handsUsed": 0,
+      "handsOver": false
+    },
+    "oldHandTransitionLevel": null,
+    "powers": {
+      "personal": {
+        "regeneration": 0,
+        "max": 0,
+        "value": 0
+      },
+      "sorcerous": {
+        "levelTaken": 0,
+        "max": 0,
+        "committed": 0,
+        "value": 0
+      }
+    },
+    "notes": "",
+    "poisonTraining": 0,
+    "qualified": {
+      "armors": {
+        "computerized": false,
+        "heavy": false,
+        "impulse": false,
+        "light": false,
+        "medium": false,
+        "psycho": false,
+        "tactical": false,
+        "ultraHeavy": false
+      },
+      "poisons": {
+        "all": false,
+        "standard": false,
+        "limited": false
+      },
+      "toxins": {
+        "all": false,
+        "standard": false,
+        "limited": false
+      },
+      "weapons": {
+        "assaultRifle": false,
+        "ballistic": false,
+        "blunt": false,
+        "closeCombatHeavyBlade": false,
+        "element": false,
+        "explosives": false,
+        "finesse": false,
+        "grenades": false,
+        "martialArts": false,
+        "mightMelee": false,
+        "oneHanded": false,
+        "shotguns": false,
+        "silent": false,
+        "stun": false,
+        "submachineGun": false,
+        "thrown": false
+      }
+    },
+    "senses": {
+      "hearing": {},
+      "sight": {},
+      "smell": {},
+      "taste": {},
+      "touch": {}
+    },
+    "skillRankAllocation": {
+      "strength": {
+        "value": 0,
+        "string": ""
+      },
+      "speed": {
+        "value": 0,
+        "string": ""
+      },
+      "smarts": {
+        "value": 0,
+        "string": ""
+      },
+      "social": {
+        "value": 0,
+        "string": ""
+      }
+    },
+    "trained": {
+      "armors": {
+        "computerized": false,
+        "heavy": false,
+        "impulse": false,
+        "light": false,
+        "medium": false,
+        "psycho": false,
+        "tactical": false,
+        "ultraHeavy": false
+      },
+      "poisons": {
+        "all": false,
+        "standard": false,
+        "limited": false
+      },
+      "toxins": {
+        "all": false,
+        "standard": false,
+        "limited": false
+      },
+      "upgrades": {
+        "armors": {
+          "automatic": false,
+          "standard": false,
+          "limited": false,
+          "restricted": false,
+          "prototype": false,
+          "unique": false,
+          "theoretical": false,
+          "other": false
+        }
+      },
+      "weapons": {
+        "assaultRifle": false,
+        "ballistic": false,
+        "blunt": false,
+        "closeCombatHeavyBlade": false,
+        "element": false,
+        "explosives": false,
+        "finesse": false,
+        "grenades": false,
+        "martialArts": false,
+        "mightMelee": false,
+        "oneHanded": false,
+        "shotguns": false,
+        "silent": false,
+        "stun": false,
+        "submachineGun": false,
+        "thrown": false
+      }
+    },
+    "actors": {},
+    "actions": {
+      "enabled": true,
+      "shared": false,
+      "free": {
+        "base": 0,
+        "bonus": 0,
+        "max": 0
+      },
+      "move": {
+        "base": 0,
+        "bonus": 0,
+        "max": 0
+      },
+      "standard": {
+        "base": 0,
+        "bonus": 0,
+        "max": 0
+      }
+    },
+    "color": "#b5b1b1",
+    "showConditioning": true,
+    "energon": {
+      "dark": {
+        "value": 0
+      },
+      "normal": {
+        "max": 0,
+        "value": 0
+      },
+      "primal": {
+        "value": 0
+      },
+      "red": {
+        "value": 0
+      },
+      "synthEn": {
+        "value": 0
+      }
+    },
+    "essenceShifts": {
+      "any": {
+        "edge": false,
+        "shiftUp": 0,
+        "shiftDown": 0,
+        "snag": false,
+        "untrainedBonus": false,
+        "morphed": 0
+      },
+      "smarts": {
+        "edge": false,
+        "shiftUp": 0,
+        "shiftDown": 0,
+        "snag": false,
+        "untrainedBonus": false,
+        "morphed": 0
+      },
+      "social": {
+        "edge": false,
+        "shiftUp": 0,
+        "shiftDown": 0,
+        "snag": false,
+        "untrainedBonus": false,
+        "morphed": 0
+      },
+      "speed": {
+        "edge": false,
+        "shiftUp": 0,
+        "shiftDown": 0,
+        "snag": false,
+        "untrainedBonus": false,
+        "morphed": 0
+      },
+      "strength": {
+        "edge": false,
+        "shiftUp": 0,
+        "shiftDown": 0,
+        "snag": false,
+        "untrainedBonus": false,
+        "morphed": 0
+      }
+    },
+    "immunities": {
+      "acid": false,
+      "blindingBlast": false,
+      "blunt": false,
+      "cold": false,
+      "cover": false,
+      "deafened": false,
+      "electric": false,
+      "element": false,
+      "emp": false,
+      "essenceStrength": false,
+      "essenceSpeed": false,
+      "essenceSmarts": false,
+      "essenceSocial": false,
+      "essenceStrengthSpeed": false,
+      "essenceAny": false,
+      "essenceSwap": false,
+      "fire": false,
+      "frightened": false,
+      "grapple": false,
+      "impaired": false,
+      "intimidate": false,
+      "knocProne": false,
+      "laser": false,
+      "maneuver": false,
+      "mesmerized": false,
+      "modelock": false,
+      "poison": false,
+      "psychic": false,
+      "restrained": false,
+      "sharp": false,
+      "sonic": false,
+      "special": false,
+      "spot": false,
+      "stun": false,
+      "unconscious": false,
+      "void": false
+    },
+    "initiative": {
+      "formula": "2d20kl + 0",
+      "modifier": 0,
+      "shift": "d20",
+      "skill": "initiative"
+    },
+    "isLocked": false,
+    "movementIsReadOnly": false,
+    "movementNotSet": false,
+    "resistances": {
+      "acid": false,
+      "blindingBlast": false,
+      "blunt": false,
+      "cold": false,
+      "cover": false,
+      "deafened": false,
+      "electric": false,
+      "element": false,
+      "emp": false,
+      "essenceStrength": false,
+      "essenceSpeed": false,
+      "essenceSmarts": false,
+      "essenceSocial": false,
+      "essenceStrengthSpeed": false,
+      "essenceAny": false,
+      "essenceSwap": false,
+      "fire": false,
+      "frightened": false,
+      "grapple": false,
+      "impaired": false,
+      "intimidate": false,
+      "knocProne": false,
+      "laser": false,
+      "maneuver": false,
+      "mesmerized": false,
+      "modelock": false,
+      "poison": false,
+      "psychic": false,
+      "restrained": false,
+      "sharp": false,
+      "sonic": false,
+      "special": false,
+      "spot": false,
+      "stun": false,
+      "unconscious": false,
+      "void": false
+    },
+    "stun": {
+      "max": 0,
+      "min": 0,
+      "value": 0
+    },
+    "creatureTags": "",
+    "allegiancePoints": 0,
+    "gainingTheContact": "",
+    "isContact": false,
+    "isNPC": true
+  },
+  "prototypeToken": {
+    "width": 1,
+    "height": 1,
+    "name": "Matt Trakker",
+    "displayName": 0,
+    "actorLink": true,
+    "depth": 1,
+    "texture": {
+      "src": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "alphaThreshold": 0.75
+    },
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 0,
+    "bar1": {
+      "attribute": "health"
+    },
+    "bar2": {
+      "attribute": "stun"
+    },
+    "light": {
+      "negative": false,
+      "priority": 0,
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "sight": {
+      "enabled": false,
+      "range": 0,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": false,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 1,
+      "subject": {
+        "scale": 1,
+        "texture": null
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "flags": {},
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false
+  },
+  "flags": {
+    "essence20": {
+      "statBlockSource": {
+        "raw": null,
+        "ir": {
+          "name": "Matt Trakker",
+          "threatLevel": 8,
+          "size": "common",
+          "health": 8,
+          "conditioning": 0,
+          "essences": {
+            "strength": 4,
+            "speed": 6,
+            "smarts": 7,
+            "social": 7
+          },
+          "defenses": {
+            "toughness": 14,
+            "evasion": 16,
+            "willpower": 17,
+            "cleverness": 17
+          },
+          "movement": {
+            "ground": 40
+          },
+          "languages": [],
+          "skills": [
+            {
+              "key": "athletics",
+              "shift": "d8",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "driving",
+              "shift": "d8",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "targeting",
+              "shift": "d2",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "initiative",
+              "shift": "d2",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "alertness",
+              "shift": "d8",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "technology",
+              "shift": "d6",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "persuasion",
+              "shift": "d8",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            },
+            {
+              "key": "streetwise",
+              "shift": "d6",
+              "modifier": 0,
+              "isSpecialized": false,
+              "specialization": null
+            }
+          ],
+          "perks": [],
+          "powers": [],
+          "hangUps": [],
+          "attacks": [
+            {
+              "name": "Laser Pistol",
+              "skill": "targeting",
+              "shift": null,
+              "isSpecialized": false,
+              "numHands": 1,
+              "traits": [],
+              "damageValue": 1,
+              "damageType": "laser",
+              "defenseType": "toughness",
+              "isReach": false,
+              "range": {
+                "value": 30,
+                "long": 60,
+                "min": null,
+                "reachMultiplier": null
+              },
+              "radius": 0,
+              "shape": null,
+              "alternateEffects": [],
+              "mode": null
+            },
+            {
+              "name": "Fists",
+              "skill": "brawn",
+              "shift": null,
+              "isSpecialized": false,
+              "numHands": 1,
+              "traits": [],
+              "damageValue": 1,
+              "damageType": "blunt",
+              "defenseType": "toughness",
+              "isReach": true,
+              "range": {
+                "value": null,
+                "long": null,
+                "min": null,
+                "reachMultiplier": null
+              },
+              "radius": 0,
+              "shape": null,
+              "alternateEffects": [],
+              "mode": null
+            }
+          ],
+          "altMode": null,
+          "equipment": [],
+          "contact": null,
+          "diagnostics": []
+        },
+        "importedAt": 1793154690887,
+        "version": 1
+      },
+      "threatBuild": {
+        "ruleset": "fieldGuide",
+        "type": "typical",
+        "social": true,
+        "advanced": 0,
+        "animal": false,
+        "vehicleAi": false,
+        "healthPerks": 0
+      }
+    },
+    "essence20-homebrew-starter": {
+      "agent": "Matt Trakker",
+      "side": "mask",
+      "npc": true,
+      "vehicles": [
+        "Coast Patrol",
+        "Goliath I",
+        "Hornet",
+        "Jungle Challenge",
+        "Rhino",
+        "Skybolt",
+        "Skybolt Turbo Car",
+        "Thunderhawk",
+        "Volcano"
+      ]
+    }
+  },
+  "items": [
+    {
+      "name": "Laser Pistol",
+      "type": "weapon",
+      "system": {
+        "equipped": true,
+        "traits": [],
+        "requirements": {
+          "skill": "targeting",
+          "shift": null,
+          "custom": null
+        },
+        "originalId": "",
+        "actionType": "none",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "description": "",
+        "source": {
+          "book": "",
+          "page": null
+        },
+        "automation": {
+          "status": "",
+          "notes": ""
+        },
+        "rules": [],
+        "prerequisites": {},
+        "items": {
+          "cd8d": {
+            "uuid": "Actor.JTa2pVkjxvzzqfVr.Item.p4xaduLQ9XoKjgXP",
+            "img": "systems/essence20/assets/icons/items/weapon_effect.svg",
+            "name": "Laser Pistol",
+            "type": "weaponEffect",
+            "description": "",
+            "classification": {
+              "skill": "targeting",
+              "style": "energy"
+            },
+            "damageValue": 1,
+            "damageType": "laser",
+            "secondaryDamage": {
+              "type": null,
+              "value": 0
+            },
+            "numHands": 1,
+            "numTargets": 1,
+            "radius": 0,
+            "range": {
+              "min": null,
+              "reachMultiplier": null,
+              "long": 60,
+              "value": 30
+            },
+            "shiftDown": 0,
+            "totalReach": 5
+          }
+        },
+        "availability": "standard",
+        "classification": {
+          "size": "integrated"
+        },
+        "elementChoice": null,
+        "hands": null,
+        "hardpoint": {
+          "type": "external",
+          "reinforced": false,
+          "altModeVisibility": "obvious"
+        },
+        "isPoison": false,
+        "poisonApplication": {
+          "contact": false,
+          "ingested": false,
+          "inhaled": false
+        },
+        "modeRequirement": null,
+        "totalAimShiftBonus": 0,
+        "accurateMagnitude": 1,
+        "inaccurateMagnitude": 1,
+        "defendMagnitude": 1,
+        "defendRangedMagnitude": null,
+        "quantity": 1,
+        "ongoingDuration": 1,
+        "fanningMagnitude": null,
+        "transformerMode": "modeBotMode",
+        "upgradeTraits": [],
+        "usesPerScene": null
+      },
+      "_id": "jJyjauRSUZPX8LHS",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.jJyjauRSUZPX8LHS"
+    },
+    {
+      "name": "Laser Pistol",
+      "type": "weaponEffect",
+      "system": {
+        "classification": {
+          "skill": "targeting",
+          "style": "energy"
+        },
+        "damageType": "laser",
+        "damageValue": 1,
+        "defenseType": "toughness",
+        "numHands": 1,
+        "numTargets": 1,
+        "radius": 0,
+        "shape": null,
+        "range": {
+          "min": null,
+          "long": 60,
+          "reachMultiplier": null,
+          "value": 30
+        },
+        "originalId": "",
+        "actionType": "standard",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "description": "",
+        "source": {
+          "book": "",
+          "page": null
+        },
+        "automation": {
+          "status": "",
+          "notes": ""
+        },
+        "rules": [],
+        "prerequisites": {},
+        "secondaryDamage": {
+          "type": null,
+          "value": 0
+        },
+        "isRam": false,
+        "isFlyby": false,
+        "isSpecialized": false,
+        "accurateShiftUp": 0,
+        "hasArmorPiercing": false,
+        "shiftDown": 0,
+        "totalReach": 0
+      },
+      "_id": "p4xaduLQ9XoKjgXP",
+      "img": "systems/essence20/assets/icons/items/weapon_effect.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20": {
+          "parentId": "jJyjauRSUZPX8LHS",
+          "collectionId": "cd8d"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.p4xaduLQ9XoKjgXP"
+    },
+    {
+      "name": "Fists",
+      "type": "weapon",
+      "system": {
+        "equipped": true,
+        "traits": [],
+        "requirements": {
+          "skill": "brawn",
+          "shift": null,
+          "custom": null
+        },
+        "originalId": "",
+        "actionType": "none",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "description": "",
+        "source": {
+          "book": "",
+          "page": null
+        },
+        "automation": {
+          "status": "",
+          "notes": ""
+        },
+        "rules": [],
+        "prerequisites": {},
+        "items": {
+          "d86c": {
+            "uuid": "Actor.JTa2pVkjxvzzqfVr.Item.no4fmYBq1xTBaSTD",
+            "img": "systems/essence20/assets/icons/items/weapon_effect.svg",
+            "name": "Fists",
+            "type": "weaponEffect",
+            "description": "",
+            "classification": {
+              "skill": "brawn",
+              "style": "melee"
+            },
+            "damageValue": 1,
+            "damageType": "blunt",
+            "secondaryDamage": {
+              "type": null,
+              "value": 0
+            },
+            "numHands": 1,
+            "numTargets": 1,
+            "radius": 0,
+            "range": {
+              "min": null,
+              "reachMultiplier": null,
+              "long": null,
+              "value": null
+            },
+            "shiftDown": 0,
+            "totalReach": 5
+          }
+        },
+        "availability": "standard",
+        "classification": {
+          "size": "integrated"
+        },
+        "elementChoice": null,
+        "hands": null,
+        "hardpoint": {
+          "type": "external",
+          "reinforced": false,
+          "altModeVisibility": "obvious"
+        },
+        "isPoison": false,
+        "poisonApplication": {
+          "contact": false,
+          "ingested": false,
+          "inhaled": false
+        },
+        "modeRequirement": null,
+        "totalAimShiftBonus": 0,
+        "accurateMagnitude": 1,
+        "inaccurateMagnitude": 1,
+        "defendMagnitude": 1,
+        "defendRangedMagnitude": null,
+        "quantity": 1,
+        "ongoingDuration": 1,
+        "fanningMagnitude": null,
+        "transformerMode": "modeBotMode",
+        "upgradeTraits": [],
+        "usesPerScene": null
+      },
+      "_id": "OyxT6pI8DEx5Ya5s",
+      "img": "icons/svg/item-bag.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.OyxT6pI8DEx5Ya5s"
+    },
+    {
+      "name": "Fists",
+      "type": "weaponEffect",
+      "system": {
+        "classification": {
+          "skill": "brawn",
+          "style": "melee"
+        },
+        "damageType": "blunt",
+        "damageValue": 1,
+        "defenseType": "toughness",
+        "numHands": 1,
+        "numTargets": 1,
+        "radius": 0,
+        "shape": null,
+        "range": {
+          "min": null,
+          "long": null,
+          "reachMultiplier": null,
+          "value": null
+        },
+        "originalId": "",
+        "actionType": "standard",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "description": "",
+        "source": {
+          "book": "",
+          "page": null
+        },
+        "automation": {
+          "status": "",
+          "notes": ""
+        },
+        "rules": [],
+        "prerequisites": {},
+        "secondaryDamage": {
+          "type": null,
+          "value": 0
+        },
+        "isRam": false,
+        "isFlyby": false,
+        "isSpecialized": false,
+        "accurateShiftUp": 0,
+        "hasArmorPiercing": false,
+        "shiftDown": 0,
+        "totalReach": 0
+      },
+      "_id": "no4fmYBq1xTBaSTD",
+      "img": "systems/essence20/assets/icons/items/weapon_effect.svg",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20": {
+          "parentId": "OyxT6pI8DEx5Ya5s",
+          "collectionId": "d86c"
+        }
+      },
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.no4fmYBq1xTBaSTD"
+    },
+    {
+      "name": "Spectrum",
+      "type": "gear",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": true,
+        "quantity": 1,
+        "description": "<p>The M.A.S.K. leader's signature mask: a sensor-packed helmet whose visor fires a focused laser, throws out a pulse of sound, or sweeps the area across the whole spectrum of light.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Spectrum: Laser or Sonic Waves",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "choose",
+                "prompt": "Which Spectrum mode?",
+                "options": [
+                  {
+                    "label": "Laser Beam: 2 Laser damage to one target",
+                    "steps": [
+                      {
+                        "do": "rollVsEach",
+                        "skill": "targeting",
+                        "defense": "evasion",
+                        "to": "target",
+                        "dataset": {
+                          "maskPower": true
+                        },
+                        "damage": {
+                          "value": 2,
+                          "type": "laser"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Sonic Waves: 1 Sonic damage and Deafened, enemies within 10 ft",
+                    "steps": [
+                      {
+                        "do": "rollVsEach",
+                        "skill": "targeting",
+                        "defense": "toughness",
+                        "to": "nearbyEnemies:10",
+                        "dataset": {
+                          "maskPower": true
+                        },
+                        "damage": {
+                          "value": 1,
+                          "type": "sonic"
+                        },
+                        "onHit": [
+                          {
+                            "do": "applyCondition",
+                            "condition": "deafened",
+                            "to": "target",
+                            "until": "endOfNextTurn"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-spectrum"
+            }
+          },
+          {
+            "type": "Use",
+            "label": "Spectrum Vision",
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "spectrumVision",
+                "until": "scene"
+              },
+              {
+                "do": "chat",
+                "text": "{name} sweeps the area with Spectrum Vision."
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-spectrum"
+            }
+          },
+          {
+            "type": "RollModifier",
+            "label": "Spectrum Vision",
+            "edge": true,
+            "when": [
+              "self:marked:spectrumVision",
+              "skill:alertness"
+            ]
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Laser and Sonic Waves roll against the targets and post Apply Damage buttons; Sonic Waves deafens on a hit. Spectrum Vision gives an Edge on Alertness for the rest of the scene. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "m0r0tynfwQeJfeFR",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.m0r0tynfwQeJfeFR"
+    },
+    {
+      "name": "Ultra-Flash",
+      "type": "gear",
+      "img": "icons/magic/light/explosion-star-glow-yellow.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>A mask built around one trick: a blinding burst of light from the visor that leaves everyone caught in it seeing spots.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Ultra-Flash",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "targets",
+                "dataset": {
+                  "maskPower": true
+                },
+                "onHit": [
+                  {
+                    "do": "applyCondition",
+                    "condition": "blinded",
+                    "to": "target",
+                    "until": "endOfNextTurn"
+                  }
+                ]
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-ultra-flash"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Rolls Targeting against each targeted creature's Evasion; a hit leaves it Blinded until the end of its next turn. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "vE5S83cEIibhDzmb",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.vE5S83cEIibhDzmb"
+    },
+    {
+      "name": "Dolphin",
+      "type": "gear",
+      "img": "icons/magic/water/waves-water-blue.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>A sonar mask for work at sea: it pings the water around the wearer and helps them swim like its namesake.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Sonar",
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "dolphin",
+                "until": "scene"
+              },
+              {
+                "do": "chat",
+                "text": "{name}'s Dolphin mask starts pinging the water."
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-dolphin"
+            }
+          },
+          {
+            "type": "RollModifier",
+            "label": "Dolphin sonar",
+            "edge": true,
+            "when": [
+              "self:marked:dolphin",
+              {
+                "any": [
+                  "skill:alertness",
+                  "skill:athletics"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Movement",
+            "label": "Dolphin",
+            "movement": "swim",
+            "op": "max",
+            "value": 30,
+            "stage": "total",
+            "when": [
+              "self:marked:dolphin"
+            ]
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Sonar: for the scene, an Edge on Alertness and Athletics and a Swim speed of at least 30 ft. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "4ohhEcUm0wn0XO8p",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.4ohhEcUm0wn0XO8p"
+    },
+    {
+      "name": "Shroud",
+      "type": "gear",
+      "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>Pumps out a bank of thick fog to hide the wearer - handy at the end of a race gone wrong.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Shroud",
+            "cost": {
+              "action": "move"
+            },
+            "steps": [
+              {
+                "do": "applyCondition",
+                "condition": "cover",
+                "to": "self",
+                "until": "endOfNextTurn"
+              },
+              {
+                "do": "chat",
+                "text": "{name} vanishes into a bank of fog."
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-shroud"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Gives the wearer Cover until the end of their next turn. Who else the fog hides is up to the GM. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "ApsYfJ5rtP9uP5rq",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.ApsYfJ5rtP9uP5rq"
+    },
+    {
+      "name": "Arrow",
+      "type": "gear",
+      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>Hurls bolts of electricity from the visor - built for a jet-pack pilot who can't carry a rifle.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Thunderbolt",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "dataset": {
+                  "maskPower": true
+                },
+                "damage": {
+                  "value": 2,
+                  "type": "electric"
+                }
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-arrow"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "7UcxqQmghEssuf3m",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.7UcxqQmghEssuf3m"
+    },
+    {
+      "name": "Lava Shot",
+      "type": "gear",
+      "img": "icons/magic/fire/projectile-meteor-salvo-strong-red.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>Lobs blobs of molten rock that splash and keep burning.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Lava Shot",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "dataset": {
+                  "maskPower": true
+                },
+                "damage": {
+                  "value": 2,
+                  "type": "fire"
+                }
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-lava-shot"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "ov4G6kXeqIwlbXUr",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.ov4G6kXeqIwlbXUr"
+    },
+    {
+      "name": "New Spectrum",
+      "type": "gear",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>The upgraded Spectrum: its laser, plus a holographic double of the wearer to draw fire.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Laser Beam",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "dataset": {
+                  "maskPower": true
+                },
+                "damage": {
+                  "value": 2,
+                  "type": "laser"
+                }
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-new-spectrum"
+            }
+          },
+          {
+            "type": "Use",
+            "label": "Holo-Double",
+            "cost": {
+              "action": "free"
+            },
+            "steps": [
+              {
+                "do": "mark",
+                "key": "holoDouble",
+                "until": "endOfNextTurn"
+              },
+              {
+                "do": "chat",
+                "text": "{name} throws out a holographic double."
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-new-spectrum"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Holo-Double",
+            "defense": "evasion",
+            "amount": 2,
+            "when": [
+              "self:marked:holoDouble"
+            ]
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. Holo-Double: +2 Evasion until the end of the wearer's next turn. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "zF4plWSj0V2wPcme",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.zF4plWSj0V2wPcme"
+    },
+    {
+      "name": "Signature Mask",
+      "type": "perk",
+      "img": "icons/equipment/head/helm-barbute-horned-gold-red.webp",
+      "system": {
+        "type": "general",
+        "description": "<p>You and your mask are one. Rolls made with your mask's power are upshifted once.</p><p><em>M.A.S.K. homebrew.</em></p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "selectionLimit": 1,
+        "rules": [
+          {
+            "type": "RollModifier",
+            "label": "Signature Mask",
+            "upshift": 1,
+            "when": [
+              "roll:dataset:maskPower"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Automatic: an attack from one of your mask's Use buttons is upshifted once.</p>"
+        },
+        "originalId": "",
+        "actionType": "none",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "prerequisites": {},
+        "items": {},
+        "allegianceCost": 0,
+        "advances": {
+          "baseValue": 1,
+          "canAdvance": false,
+          "currentValue": 0,
+          "increaseValue": 1
+        },
+        "canActivate": false,
+        "choice": null,
+        "choiceEssence": null,
+        "choiceType": "none",
+        "isRoleVariant": false,
+        "hasChoice": false,
+        "hasMorphedToughnessBonus": false,
+        "numChoices": 1,
+        "prerequisite": null,
+        "reroll": {
+          "enabled": false,
+          "maxUses": 1,
+          "mode": "all",
+          "reset": "none",
+          "target": "allDice",
+          "cost": {
+            "resourcePath": "",
+            "amount": 0,
+            "worldStoryPoints": 0,
+            "rolePointsName": ""
+          },
+          "condition": "none",
+          "skills": [],
+          "scopeToOriginSkill": false,
+          "essence": "any",
+          "recursive": true,
+          "minDieFaces": 0,
+          "grantsCanCritD2": false,
+          "bonus": 0,
+          "shiftUp": 0,
+          "keepBetter": false
+        },
+        "value": 0,
+        "version": "powerRangers",
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0,
+          "whileMorphed": false,
+          "teamWide": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "agentPerk": true
+        }
+      },
+      "_id": "VyAVxu3euktcGdYg",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.VyAVxu3euktcGdYg"
+    },
+    {
+      "name": "Lasertron",
+      "type": "gear",
+      "img": "icons/magic/light/beam-rays-yellow.webp",
+      "system": {
+        "gearType": "military",
+        "equipped": false,
+        "quantity": 1,
+        "description": "<p>A Laser Command mask that focuses its flash into a cutting beam - and dazzles anyone hit hard.</p><p><em>Matt Trakker's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Lasertron Beam",
+            "cost": {
+              "action": "standard"
+            },
+            "steps": [
+              {
+                "do": "rollVsEach",
+                "skill": "targeting",
+                "defense": "evasion",
+                "to": "target",
+                "dataset": {
+                  "maskPower": true
+                },
+                "damage": {
+                  "value": 2,
+                  "type": "laser"
+                },
+                "onDouble": [
+                  {
+                    "do": "applyCondition",
+                    "condition": "blinded",
+                    "to": "target",
+                    "until": "endOfNextTurn"
+                  }
+                ]
+              }
+            ],
+            "limit": {
+              "per": "scene",
+              "max": "@essence.speed",
+              "key": "mask-lasertron"
+            }
+          },
+          {
+            "type": "Defense",
+            "label": "Mask helmet",
+            "defense": "toughness",
+            "amount": 1
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Rolls against the targets and posts Apply Damage buttons (x degrees of success) and any Condition on a hit. A hit of two degrees or more also Blinds. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
+        },
+        "originalId": "",
+        "prerequisites": {},
+        "nanomite": {
+          "powerUuid": null,
+          "uses": 1,
+          "spent": 0
+        },
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0
+        },
+        "powerGear": {
+          "bonded": true,
+          "bondedTo": "JTa2pVkjxvzzqfVr",
+          "slot": "mask",
+          "altModeOnly": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "mask": true,
+          "agent": "Matt Trakker"
+        }
+      },
+      "_id": "IcxVK9zs3UODgNuh",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.IcxVK9zs3UODgNuh"
+    },
+    {
+      "name": "Deep Pockets",
+      "type": "perk",
+      "img": "icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp",
+      "system": {
+        "type": "origin",
+        "description": "<p>Money opens doors. Once per mission, your fortune or your contacts produce something the team needs: a ride, a plane ticket, a building pass, a piece of gear.</p><p><em>M.A.S.K. homebrew.</em></p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "selectionLimit": 1,
+        "rules": [
+          {
+            "type": "Use",
+            "label": "Call in your fortune",
+            "limit": {
+              "per": "mission",
+              "max": 1
+            },
+            "steps": [
+              {
+                "do": "chat",
+                "text": "{name} pulls some strings - money talks. (GM: a vehicle, travel or a piece of gear of Standard Availability or lower turns up.)"
+              }
+            ]
+          }
+        ],
+        "automation": {
+          "status": "partial",
+          "notes": "<p>Use button: once per mission, posts it to chat.</p><p>Left to the table: what turns up.</p>"
+        },
+        "originalId": "",
+        "actionType": "none",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "prerequisites": {},
+        "items": {},
+        "allegianceCost": 0,
+        "advances": {
+          "baseValue": 1,
+          "canAdvance": false,
+          "currentValue": 0,
+          "increaseValue": 1
+        },
+        "canActivate": false,
+        "choice": null,
+        "choiceEssence": null,
+        "choiceType": "none",
+        "isRoleVariant": false,
+        "hasChoice": false,
+        "hasMorphedToughnessBonus": false,
+        "numChoices": 1,
+        "prerequisite": null,
+        "reroll": {
+          "enabled": false,
+          "maxUses": 1,
+          "mode": "all",
+          "reset": "none",
+          "target": "allDice",
+          "cost": {
+            "resourcePath": "",
+            "amount": 0,
+            "worldStoryPoints": 0,
+            "rolePointsName": ""
+          },
+          "condition": "none",
+          "skills": [],
+          "scopeToOriginSkill": false,
+          "essence": "any",
+          "recursive": true,
+          "minDieFaces": 0,
+          "grantsCanCritD2": false,
+          "bonus": 0,
+          "shiftUp": 0,
+          "keepBetter": false
+        },
+        "value": 0,
+        "version": "powerRangers",
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0,
+          "whileMorphed": false,
+          "teamWide": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "originPerk": true
+        }
+      },
+      "_id": "gRyYtRdU9yI1d987",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.gRyYtRdU9yI1d987"
+    },
+    {
+      "name": "Vehicle Bond",
+      "type": "perk",
+      "img": "icons/environment/settlement/wagon.webp",
+      "system": {
+        "type": "general",
+        "description": "<p>You know your ride like your own hands. A vehicle you are driving has +1 Evasion and Edge on its Driving Tests.</p><p><em>M.A.S.K. homebrew.</em></p>",
+        "source": {
+          "book": "M.A.S.K. (homebrew)",
+          "page": 0
+        },
+        "prerequisites": {
+          "when": [
+            "self:skill:driving>=d2"
+          ]
+        },
+        "selectionLimit": 1,
+        "rules": [
+          {
+            "type": "Defense",
+            "label": "Vehicle Bond",
+            "scope": "driven",
+            "defense": "evasion",
+            "amount": 1
+          },
+          {
+            "type": "RollModifier",
+            "label": "Vehicle Bond",
+            "scope": "driven",
+            "edge": true,
+            "when": [
+              "skill:driving"
+            ]
+          }
+        ],
+        "automation": {
+          "status": "full",
+          "notes": "<p>Automatic: the vehicle you drive gets +1 Evasion, and its Driving Tests have Edge.</p>"
+        },
+        "originalId": "",
+        "actionType": "none",
+        "actionCost": 1,
+        "contingencyTrigger": null,
+        "ignoresEconomy": false,
+        "items": {},
+        "allegianceCost": 0,
+        "advances": {
+          "baseValue": 1,
+          "canAdvance": false,
+          "currentValue": 0,
+          "increaseValue": 1
+        },
+        "canActivate": false,
+        "choice": null,
+        "choiceEssence": null,
+        "choiceType": "none",
+        "isRoleVariant": false,
+        "hasChoice": false,
+        "hasMorphedToughnessBonus": false,
+        "numChoices": 1,
+        "prerequisite": null,
+        "reroll": {
+          "enabled": false,
+          "maxUses": 1,
+          "mode": "all",
+          "reset": "none",
+          "target": "allDice",
+          "cost": {
+            "resourcePath": "",
+            "amount": 0,
+            "worldStoryPoints": 0,
+            "rolePointsName": ""
+          },
+          "condition": "none",
+          "skills": [],
+          "scopeToOriginSkill": false,
+          "essence": "any",
+          "recursive": true,
+          "minDieFaces": 0,
+          "grantsCanCritD2": false,
+          "bonus": 0,
+          "shiftUp": 0,
+          "keepBetter": false
+        },
+        "value": 0,
+        "version": "powerRangers",
+        "blindsight": {
+          "enabled": false,
+          "range": 0
+        },
+        "visionGrant": {
+          "enabled": false,
+          "mode": "darkvision",
+          "range": 0,
+          "whileMorphed": false,
+          "teamWide": false
+        }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "essence20-homebrew-starter": {
+          "agentPerk": true
+        }
+      },
+      "_id": "QvYFfn1uAOe1Njrk",
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!JTa2pVkjxvzzqfVr.QvYFfn1uAOe1Njrk"
+    }
+  ],
+  "_id": "JTa2pVkjxvzzqfVr",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!actors!JTa2pVkjxvzzqfVr",
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  }
+}

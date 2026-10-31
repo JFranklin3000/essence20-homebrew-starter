@@ -8,18 +8,21 @@
     "gearType": "military",
     "equipped": false,
     "quantity": 1,
-    "description": "<p>Sprays sticky glue, fire-smothering foam or a slick of oil.</p><p><em>Julio Lopez's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "description": "<p>Sprays sticky glue, fire-smothering foam or a slick of oil.</p><p><em>Julio Lopez's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
     "source": {
       "book": "M.A.S.K. (homebrew)",
       "page": 0
+    },
+    "powerGear": {
+      "bonded": true,
+      "bondedTo": "",
+      "slot": "mask",
+      "altModeOnly": false
     },
     "rules": [
       {
         "type": "Use",
         "label": "Streamer",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "standard"
         },
@@ -94,22 +97,11 @@
         "label": "Mask helmet",
         "defense": "toughness",
         "amount": 1
-      },
-      {
-        "type": "Veto",
-        "on": "equip",
-        "items": [
-          "item:mask"
-        ],
-        "when": [
-          "self:wearingItem:item:mask"
-        ],
-        "message": "Take off the mask you are wearing first - one mask at a time."
       }
     ],
     "automation": {
       "status": "partial",
-      "notes": "<p>Glue (Restrained until the end of the target's next turn) and Oil (Prone) roll against Evasion. Foam just posts to chat - which fire goes out is up to the GM. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+      "notes": "<p>Glue (Restrained until the end of the target's next turn) and Oil (Prone) roll against Evasion. Foam just posts to chat - which fire goes out is up to the GM. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
     }
   },
   "effects": [],

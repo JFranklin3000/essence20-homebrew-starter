@@ -50,69 +50,48 @@
   "items": [
     {
       "name": "Strike Mode: Weapon Platform",
-      "type": "upgrade",
+      "type": "altMode",
       "img": "icons/svg/direction.svg",
       "system": {
-        "type": "vehicle",
         "description": "<p>A pickup truck converts into its Strike Mode: weapon platform.</p>",
         "source": {
           "book": "M.A.S.K. (homebrew)",
           "page": 0
         },
+        "altModeMovement": {
+          "ground": 70,
+          "aerial": 0,
+          "aquatic": 0,
+          "climb": 0,
+          "burrow": 0
+        },
+        "altModesize": "large",
+        "altModeSizeOptions": [
+          "large"
+        ],
+        "modeDefenses": {
+          "toughness": 2,
+          "evasion": 0
+        },
         "rules": [
           {
-            "type": "Use",
-            "label": "Strike Mode!",
+            "type": "RollModifier",
+            "label": "Disguised Vehicle",
+            "edge": true,
             "when": [
-              "not:self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
+              "not:self:transformed",
               {
-                "do": "mark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} converts - weapon platform mode!"
+                "any": [
+                  "skill:deception",
+                  "skill:infiltration"
+                ]
               }
-            ]
-          },
-          {
-            "type": "Use",
-            "label": "Civilian Mode",
-            "when": [
-              "self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
-              {
-                "do": "unmark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} converts back to Civilian Mode."
-              }
-            ]
-          },
-          {
-            "type": "Defense",
-            "defense": "toughness",
-            "amount": 2,
-            "label": "Weapon Platform",
-            "when": [
-              "self:marked:strikeMode"
             ]
           }
         ],
         "automation": {
           "status": "full",
-          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Weapon Platform: +2 Toughness.</p>"
+          "notes": "<p>Strike Mode is an Alt Mode: the vehicle's Transform button converts it, and back. Weapon Platform: +2 Toughness. In Civilian Mode it has Edge on Deception and Infiltration Tests.</p>"
         }
       },
       "effects": [],
@@ -155,9 +134,6 @@
           {
             "type": "Use",
             "label": "Laser Turret",
-            "when": [
-              "self:marked:strikeMode"
-            ],
             "cost": {
               "action": "standard"
             },
@@ -179,6 +155,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Strike Mode only: Targeting against up to 2 targets's evasion, 2 laser damage.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],
@@ -221,8 +203,7 @@
             "type": "Use",
             "label": "Amplified Heat Beam",
             "when": [
-              "self:marked:strikeMode",
-              "self:crewWearing:Blaster"
+              "self:crewSlotEquipped:mask:Blaster"
             ],
             "cost": {
               "action": "standard"
@@ -248,6 +229,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Strike Mode, with someone aboard wearing a working Blaster mask: once per scene, the mask's Heat Beam rolled by the vehicle against every enemy within 20 ft.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],

@@ -1,0 +1,332 @@
+{
+  "name": "Prize",
+  "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+  "description": "<p>What V.E.N.O.M. is after.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "A shipment of gold bullion on its way to a national reserve",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "xnwsR1aQYvu4EJWQ",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.xnwsR1aQYvu4EJWQ"
+    },
+    {
+      "type": "text",
+      "name": "A prototype engine that runs on almost nothing",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "vFUn7LWKlvh56Gen",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.vFUn7LWKlvh56Gen"
+    },
+    {
+      "type": "text",
+      "name": "An ancient relic, just unearthed and not yet catalogued",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "XxLagALNCHn3jz3p",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.XxLagALNCHn3jz3p"
+    },
+    {
+      "type": "text",
+      "name": "The launch codes for a communications satellite",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "MEP6n9VWeiH9lV6W",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.MEP6n9VWeiH9lV6W"
+    },
+    {
+      "type": "text",
+      "name": "A famous gemstone, on loan for a single exhibition",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "b1nnRlMQZPZv07fG",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.b1nnRlMQZPZv07fG"
+    },
+    {
+      "type": "text",
+      "name": "A weather-control experiment that works a little too well",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "pe5crGYxf0EsjRXV",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.pe5crGYxf0EsjRXV"
+    },
+    {
+      "type": "text",
+      "name": "A priceless painting, travelling between galleries",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "FLLkQHrX9MmGDTOI",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.FLLkQHrX9MmGDTOI"
+    },
+    {
+      "type": "text",
+      "name": "A scientist - and everything in their head",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "0JeITb3PWDdAki6h",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.0JeITb3PWDdAki6h"
+    },
+    {
+      "type": "text",
+      "name": "A sample of the alloy the masks are made from",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "1xYJgwFwSBrJVkA2",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.1xYJgwFwSBrJVkA2"
+    },
+    {
+      "type": "text",
+      "name": "A city's water supply, to be held for ransom",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "5m96zWa4xbBfsNIq",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.5m96zWa4xbBfsNIq"
+    },
+    {
+      "type": "text",
+      "name": "A racing championship: the trophy, the purse and the sponsors",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "63azCK9zlG0UnBSt",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.63azCK9zlG0UnBSt"
+    },
+    {
+      "type": "text",
+      "name": "The deed to land with something valuable underneath",
+      "img": "icons/containers/chest/chest-oak-steel-brown.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "oA961sCnCLTbBCqf",
+      "_key": "!tables.results!BNXyPe25sYWaBXAI.oA961sCnCLTbBCqf"
+    }
+  ],
+  "formula": "1d12",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 100,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "target"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "BNXyPe25sYWaBXAI",
+  "_key": "!tables!BNXyPe25sYWaBXAI"
+}

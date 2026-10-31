@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Nose Cannon",
-            "when": [],
             "cost": {
               "action": "standard"
             },

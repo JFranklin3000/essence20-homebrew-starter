@@ -13,9 +13,6 @@
       {
         "type": "Use",
         "label": "Concealed Weapon",
-        "when": [
-          "self:marked:strikeMode"
-        ],
         "cost": {
           "action": "standard"
         },
@@ -35,7 +32,13 @@
     ],
     "automation": {
       "status": "full",
-      "notes": "<p>Strike Mode only: Targeting against the target's Evasion, 2 damage (x degrees).</p>"
+      "notes": "<p>Strike Mode only (Power Gear: Alt Mode only): Targeting against the target's Evasion, 2 damage (x degrees).</p>"
+    },
+    "powerGear": {
+      "bonded": false,
+      "bondedTo": "",
+      "slot": "",
+      "altModeOnly": true
     }
   },
   "effects": [],

@@ -62,7 +62,6 @@
           {
             "type": "Use",
             "label": "Pack Missiles",
-            "when": [],
             "cost": {
               "action": "standard"
             },
@@ -126,7 +125,7 @@
             "type": "Use",
             "label": "Amplified Shredding Beam",
             "when": [
-              "self:crewWearing:Ripper"
+              "self:crewSlotEquipped:mask:Ripper"
             ],
             "cost": {
               "action": "standard"

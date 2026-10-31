@@ -53,80 +53,48 @@
   "items": [
     {
       "name": "Strike Mode: Jet",
-      "type": "upgrade",
+      "type": "altMode",
       "img": "icons/svg/wing.svg",
       "system": {
-        "type": "vehicle",
         "description": "<p>The doors become wings, the engine becomes a jet: Aerial 180 ft and harder to hit.</p>",
         "source": {
           "book": "M.A.S.K. (homebrew)",
           "page": 0
         },
+        "altModeMovement": {
+          "ground": 90,
+          "aerial": 180,
+          "aquatic": 0,
+          "climb": 0,
+          "burrow": 0
+        },
+        "altModesize": "long",
+        "altModeSizeOptions": [
+          "long"
+        ],
+        "modeDefenses": {
+          "toughness": 0,
+          "evasion": 2
+        },
         "rules": [
           {
-            "type": "Use",
-            "label": "Strike Mode!",
+            "type": "RollModifier",
+            "label": "Disguised Vehicle",
+            "edge": true,
             "when": [
-              "not:self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
+              "not:self:transformed",
               {
-                "do": "mark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} sprouts wings and takes off!"
+                "any": [
+                  "skill:deception",
+                  "skill:infiltration"
+                ]
               }
-            ]
-          },
-          {
-            "type": "Use",
-            "label": "Civilian Mode",
-            "when": [
-              "self:marked:strikeMode"
-            ],
-            "cost": {
-              "action": "free"
-            },
-            "steps": [
-              {
-                "do": "unmark",
-                "key": "strikeMode"
-              },
-              {
-                "do": "chat",
-                "text": "{name} converts back to Civilian Mode."
-              }
-            ]
-          },
-          {
-            "type": "Movement",
-            "label": "Jet",
-            "movement": "aerial",
-            "op": "max",
-            "value": 180,
-            "stage": "total",
-            "when": [
-              "self:marked:strikeMode"
-            ]
-          },
-          {
-            "type": "Defense",
-            "label": "Jet",
-            "defense": "evasion",
-            "amount": 2,
-            "when": [
-              "self:marked:strikeMode"
             ]
           }
         ],
         "automation": {
           "status": "full",
-          "notes": "<p>Strike Mode! marks the vehicle (until Civilian Mode clears it); the rules listed here hold only while it is marked. Jet: Aerial at least 180 ft, +2 Evasion.</p>"
+          "notes": "<p>Strike Mode is an Alt Mode: the vehicle's Transform button converts it, and back. Jet: Aerial 180 ft, +2 Evasion. In Civilian Mode it has Edge on Deception and Infiltration Tests.</p>"
         }
       },
       "effects": [],
@@ -169,9 +137,6 @@
           {
             "type": "Use",
             "label": "Laser Cannons",
-            "when": [
-              "self:marked:strikeMode"
-            ],
             "cost": {
               "action": "standard"
             },
@@ -192,6 +157,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Strike Mode only: Targeting against the target's Evasion, 3 Laser damage (x degrees).</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],
@@ -233,9 +204,6 @@
           {
             "type": "Use",
             "label": "Wing Missiles",
-            "when": [
-              "self:marked:strikeMode"
-            ],
             "cost": {
               "action": "standard"
             },
@@ -257,6 +225,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Strike Mode only: Targeting against the Evasion of up to two targets, 2 Fire damage each.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],
@@ -299,8 +273,7 @@
             "type": "Use",
             "label": "Amplified Sonic Waves",
             "when": [
-              "self:marked:strikeMode",
-              "self:crewWearing:Spectrum"
+              "self:crewSlotEquipped:mask:Spectrum"
             ],
             "cost": {
               "action": "standard"
@@ -334,6 +307,12 @@
         "automation": {
           "status": "full",
           "notes": "<p>Strike Mode, with someone aboard wearing a working Spectrum mask: once per scene, Targeting against the Toughness of every enemy within 20 ft, 1 Sonic damage and Deafened.</p>"
+        },
+        "powerGear": {
+          "bonded": false,
+          "bondedTo": "",
+          "slot": "",
+          "altModeOnly": true
         }
       },
       "effects": [],

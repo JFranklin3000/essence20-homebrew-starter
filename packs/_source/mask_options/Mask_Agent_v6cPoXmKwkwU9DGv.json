@@ -1,0 +1,267 @@
+{
+  "name": "Mask Agent",
+  "type": "role",
+  "img": "icons/equipment/head/mask-carved-wood-brown.webp",
+  "system": {
+    "description": "<p>The agents who wear the masks: drivers, specialists and field operatives, each bonded to a helmet with one extraordinary power and to the converting vehicles that carry them into action. The Mask Agent leans on Speed and Smarts, grows into their mask's power and pushes it further with Mask Charge.</p><p><em>A G.I. Joe-line Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "automation": {
+      "status": "full",
+      "notes": "<p>Granted: its Perks at the listed levels (its own, Signature Mask, Quick Change and the system's Extra Attack), Mask Charge, the Essence boosts from its level table, its armor and weapon training, and General Perk picks at the listed levels. You choose its Role skill ranks yourself in the Skill Picker.</p>"
+    },
+    "items": {
+      "a000": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.kz9WteU24VypCcZT",
+        "img": "icons/equipment/head/helm-barbute-horned-gold-red.webp",
+        "name": "Signature Mask",
+        "type": "perk",
+        "subtype": "general",
+        "level": 1
+      },
+      "a001": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.0fzogJcjwZj0KMNM",
+        "img": "icons/magic/lightning/bolt-strike-blue.webp",
+        "name": "Mask Surge",
+        "type": "perk",
+        "subtype": "role",
+        "level": 1
+      },
+      "a002": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.aINugJ5hpdapaKcE",
+        "img": "icons/environment/settlement/wagon.webp",
+        "name": "Behind the Wheel",
+        "type": "perk",
+        "subtype": "role",
+        "level": 2
+      },
+      "a003": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.4ctzeHcyYOCrXnmh",
+        "img": "icons/skills/movement/feet-winged-boots-brown.webp",
+        "name": "Quick Change",
+        "type": "perk",
+        "subtype": "general",
+        "level": 3
+      },
+      "a004": {
+        "uuid": "Compendium.essence20.gi_joe_crb.Item.aQjUa46mn4kHvsVO",
+        "img": "systems/essence20/assets/icons/items/perk.svg",
+        "name": "Extra Attack",
+        "type": "perk",
+        "subtype": "role",
+        "level": 5
+      },
+      "a005": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.XGl7xBxDlZnwnKEl",
+        "img": "icons/equipment/head/helm-barbute-engraved-steel.webp",
+        "name": "Masked Up",
+        "type": "perk",
+        "subtype": "role",
+        "level": 7
+      },
+      "a006": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.3c4MObk2vWZn66ga",
+        "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+        "name": "Rapid Recharge",
+        "type": "perk",
+        "subtype": "role",
+        "level": 9
+      },
+      "a007": {
+        "uuid": "Compendium.essence20.gi_joe_crb.Item.aQjUa46mn4kHvsVO",
+        "img": "systems/essence20/assets/icons/items/perk.svg",
+        "name": "Extra Attack",
+        "type": "perk",
+        "subtype": "role",
+        "level": 11
+      },
+      "a008": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.sigV755Wm86OvNww",
+        "img": "icons/magic/control/energy-stream-link-blue.webp",
+        "name": "Mask Network",
+        "type": "perk",
+        "subtype": "role",
+        "level": 13
+      },
+      "a009": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.A5EMnjqyfrQt3FIi",
+        "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
+        "name": "Steel Nerves",
+        "type": "perk",
+        "subtype": "role",
+        "level": 14
+      },
+      "a00a": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.QbToJiISp9OQnL2H",
+        "img": "icons/skills/movement/feet-winged-boots-brown.webp",
+        "name": "Evasive Driver",
+        "type": "perk",
+        "subtype": "role",
+        "level": 15
+      },
+      "a00b": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.P39SMvR5ynYD21Ni",
+        "img": "icons/equipment/head/helm-barbute-horned-gold-red.webp",
+        "name": "Mask Mastery",
+        "type": "perk",
+        "subtype": "role",
+        "level": 18
+      },
+      "a00c": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.JDPMhK3EAelapqHn",
+        "img": "icons/magic/light/explosion-star-glow-yellow.webp",
+        "name": "Living Legend",
+        "type": "perk",
+        "subtype": "role",
+        "level": 20
+      },
+      "a00d": {
+        "uuid": "Compendium.essence20-homebrew-starter.mask_options.Item.ZxaxllC7GhY9G5p4",
+        "img": "systems/essence20/assets/icons/items/rolePoints.svg",
+        "name": "Mask Charge",
+        "type": "rolePoints",
+        "bonus": {
+          "defenseBonus": {
+            "cleverness": false,
+            "evasion": false,
+            "toughness": false,
+            "willpower": false
+          },
+          "increase": 0,
+          "level20Value": 0,
+          "increaseLevels": [],
+          "startingValue": 0,
+          "type": "none",
+          "value": 0
+        },
+        "isActivatable": false,
+        "isActive": false,
+        "powerCost": null,
+        "resource": {
+          "increase": 1,
+          "level20Value": null,
+          "level20ValueIsUnlimited": false,
+          "increaseLevels": [
+            "level3",
+            "level6",
+            "level11",
+            "level17"
+          ],
+          "max": null,
+          "startingMax": 2,
+          "value": null
+        }
+      }
+    },
+    "adjustments": {
+      "health": []
+    },
+    "armors": {
+      "qualified": [
+        "tactical"
+      ],
+      "trained": [
+        "light"
+      ]
+    },
+    "essenceLevels": {
+      "speed": [
+        "level1",
+        "level2",
+        "level5",
+        "level9",
+        "level14",
+        "level18",
+        "level20"
+      ],
+      "social": [
+        "level1",
+        "level6",
+        "level12",
+        "level17"
+      ],
+      "smarts": [
+        "level3",
+        "level7",
+        "level11",
+        "level15",
+        "level19"
+      ],
+      "strength": [
+        "level4",
+        "level8",
+        "level13",
+        "level16"
+      ]
+    },
+    "gridPowerLevels": [
+      "level6",
+      "level11",
+      "level16"
+    ],
+    "hasSpecialAdvancement": false,
+    "isAdvanced": false,
+    "isAdditive": false,
+    "perkLevels": {
+      "general": [
+        "level4",
+        "level8",
+        "level12",
+        "level16",
+        "level19"
+      ]
+    },
+    "powers": {
+      "personal": {
+        "increase": 0,
+        "levels": [],
+        "regeneration": 0,
+        "starting": 0
+      }
+    },
+    "skillDie": {
+      "isUsed": false,
+      "name": "",
+      "levels": [],
+      "specializedLevels": []
+    },
+    "skills": [],
+    "version": "giJoe",
+    "gameLine": "mask",
+    "weapons": {
+      "qualified": [
+        "submachineGun"
+      ],
+      "trained": [
+        "ballistic",
+        "finesse",
+        "silent"
+      ]
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "role": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "v6cPoXmKwkwU9DGv",
+  "_key": "!items!v6cPoXmKwkwU9DGv"
+}

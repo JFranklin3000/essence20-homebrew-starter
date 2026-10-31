@@ -44,7 +44,7 @@
     ],
     "automation": {
       "status": "partial",
-      "notes": "<p>Automatic: Technology Tests have Edge. Use button: once per scene, the target regains 2 Health.</p><p>Left to the table: the mask lab work (the GM runs the Rebond Mask macro afterwards).</p>"
+      "notes": "<p>Automatic: Technology Tests have Edge. Use button: once per scene, the target regains 2 Health.</p><p>Left to the table: the mask lab work (the GM presses Rebond on the mask sheet afterwards).</p>"
     }
   },
   "effects": [],

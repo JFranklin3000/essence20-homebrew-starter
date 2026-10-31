@@ -1,0 +1,67 @@
+{
+  "name": "Rapid Recharge",
+  "type": "perk",
+  "img": "icons/magic/lightning/orb-ball-spiral-blue.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>You know how to coax a little more out of your mask. Once per scene, as a free action, regain 1 Mask Charge.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "Use",
+        "label": "Rapid Recharge (regain 1 Mask Charge)",
+        "cost": {
+          "action": "free"
+        },
+        "limit": {
+          "per": "scene",
+          "max": 1
+        },
+        "steps": [
+          {
+            "do": "gainResource",
+            "resource": {
+              "rolePoints": true
+            },
+            "amount": 1
+          },
+          {
+            "do": "chat",
+            "text": "{name} recharges their mask."
+          }
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Use button: once per scene, regain 1 Mask Charge.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "3c4MObk2vWZn66ga",
+  "_key": "!items!3c4MObk2vWZn66ga"
+}

@@ -1,0 +1,266 @@
+{
+  "name": "Crew",
+  "img": "icons/svg/skull.svg",
+  "description": "<p>Who leads the job (their vehicles come with them).</p>",
+  "results": [
+    {
+      "type": "document",
+      "name": "Miles Mayhem",
+      "img": "icons/magic/acid/projectile-smoke-glowing.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.kqJTP2v6xCWzlcDZ",
+      "weight": 2,
+      "range": [
+        1,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "rI3jN8JQ7t5JlNAC",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.rI3jN8JQ7t5JlNAC"
+    },
+    {
+      "type": "document",
+      "name": "Sly Rax",
+      "img": "icons/weapons/thrown/dart-feathered.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.vcbFTiy1KyVojTg0",
+      "weight": 2,
+      "range": [
+        3,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "8T5UseSwNzRnL0VV",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.8T5UseSwNzRnL0VV"
+    },
+    {
+      "type": "document",
+      "name": "Cliff Dagger",
+      "img": "icons/magic/fire/flame-burning-hand-orange.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.0LbIUdw23SzN9RE4",
+      "weight": 2,
+      "range": [
+        5,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "PYVoYhEQJQG8zyRm",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.PYVoYhEQJQG8zyRm"
+    },
+    {
+      "type": "document",
+      "name": "Vanessa Warfield",
+      "img": "icons/magic/lightning/bolt-forked-large-magenta.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.l1nEr1CTbopmCPLO",
+      "weight": 2,
+      "range": [
+        7,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "5c79AoGDyfbzP7Ec",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.5c79AoGDyfbzP7Ec"
+    },
+    {
+      "type": "document",
+      "name": "Floyd Malloy",
+      "img": "icons/weapons/ammunition/shot-round-blue.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.SAiUgtcNfzhcqM9m",
+      "weight": 2,
+      "range": [
+        9,
+        10
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "kAQgwjJkNzCNt5Wc",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.kAQgwjJkNzCNt5Wc"
+    },
+    {
+      "type": "document",
+      "name": "Bruno Sheppard",
+      "img": "icons/magic/control/energy-stream-link-blue.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.EFF5CgUa1RUxnjSn",
+      "weight": 2,
+      "range": [
+        11,
+        12
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "dPCDdPQIt270jWMr",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.dPCDdPQIt270jWMr"
+    },
+    {
+      "type": "document",
+      "name": "Lester Sludge",
+      "img": "icons/magic/earth/projectile-boulder-debris.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.DzW5KCKThzJnrhrw",
+      "weight": 1,
+      "range": [
+        13,
+        13
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RKQqgPTvbSxBdfSo",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.RKQqgPTvbSxBdfSo"
+    },
+    {
+      "type": "document",
+      "name": "Maximus Mayhem",
+      "img": "icons/magic/water/projectile-ice-snowball.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.tXSDs6hUcrJrlwTb",
+      "weight": 1,
+      "range": [
+        14,
+        14
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "QXQTtF2HHbAuSBDa",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.QXQTtF2HHbAuSBDa"
+    },
+    {
+      "type": "document",
+      "name": "Nash Gorey",
+      "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
+      "description": "",
+      "documentUuid": "Compendium.essence20-homebrew-starter.mask_venom.Actor.HriUHk1TdWpsN5jc",
+      "weight": 1,
+      "range": [
+        15,
+        15
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "zmyTFsq0tOpNpmid",
+      "_key": "!tables.results!oUF7LxOx9i19S7eR.zmyTFsq0tOpNpmid"
+    }
+  ],
+  "formula": "1d15",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 500,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "crew"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "oUF7LxOx9i19S7eR",
+  "_key": "!tables!oUF7LxOx9i19S7eR"
+}

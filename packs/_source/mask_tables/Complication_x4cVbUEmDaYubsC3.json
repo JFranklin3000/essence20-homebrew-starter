@@ -1,0 +1,232 @@
+{
+  "name": "Complication",
+  "img": "icons/magic/control/debuff-chains-blue.webp",
+  "description": "<p>What goes wrong - for somebody.</p>",
+  "results": [
+    {
+      "type": "text",
+      "name": "Scott and T-Bob have stowed away in one of the vehicles",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "RpdOann2ULPnfvOg",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.RpdOann2ULPnfvOg"
+    },
+    {
+      "type": "text",
+      "name": "The local police arrive and decide M.A.S.K. are the thieves",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "cyKg095aKSQfA0bx",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.cyKg095aKSQfA0bx"
+    },
+    {
+      "type": "text",
+      "name": "The prize is a fake: someone beat V.E.N.O.M. to it",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "HgfsKV2IyjqmDR9N",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.HgfsKV2IyjqmDR9N"
+    },
+    {
+      "type": "text",
+      "name": "A mask misfires: its power fails the first time it is used this mission",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "x6pheu5DIeoTFHWz",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.x6pheu5DIeoTFHWz"
+    },
+    {
+      "type": "text",
+      "name": "Miles changes the plan halfway through - nobody told his crew",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "MPfDqlOHLYJD6Lcw",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.MPfDqlOHLYJD6Lcw"
+    },
+    {
+      "type": "text",
+      "name": "A storm, a flood or an avalanche cuts off the only road",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "ayvhtLjco6gdRg2E",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.ayvhtLjco6gdRg2E"
+    },
+    {
+      "type": "text",
+      "name": "An agent's civilian life is right there - someone they know is watching (Secret Identity: Cover is at risk)",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "qJxmaIIE208V5s2S",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.qJxmaIIE208V5s2S"
+    },
+    {
+      "type": "text",
+      "name": "The loot is dangerous: unstable, radioactive or alive",
+      "img": "icons/magic/control/debuff-chains-blue.webp",
+      "description": "",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.368",
+        "systemId": "essence20",
+        "systemVersion": "6.0.6",
+        "createdTime": 1793145600000,
+        "modifiedTime": 1793145600000,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "_id": "XeyQNPlKCCpMqfxU",
+      "_key": "!tables.results!x4cVbUEmDaYubsC3.XeyQNPlKCCpMqfxU"
+    }
+  ],
+  "formula": "1d8",
+  "replacement": true,
+  "displayRoll": true,
+  "folder": "ek8axS5bCL14haCp",
+  "sort": 600,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "heist": "complication"
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793145600000,
+    "modifiedTime": 1793145600000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "x4cVbUEmDaYubsC3",
+  "_key": "!tables!x4cVbUEmDaYubsC3"
+}

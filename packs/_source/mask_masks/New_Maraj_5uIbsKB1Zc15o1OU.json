@@ -8,18 +8,21 @@
     "gearType": "military",
     "equipped": false,
     "quantity": 1,
-    "description": "<p>The upgraded Maraj: invisibility, plus a holographic double to leave behind.</p><p><em>Jacques LaFleur's mask.</em> Wearing it gives +1 Toughness. Its power works only for the agent it's bonded to, a number of times per scene equal to their Speed.</p>",
+    "description": "<p>The upgraded Maraj: invisibility, plus a holographic double to leave behind.</p><p><em>Jacques LaFleur's mask.</em> Bonded to the first agent who puts it on: for them, it gives +1 Toughness and its power works a number of times per scene equal to their Speed. One mask at a time.</p>",
     "source": {
       "book": "M.A.S.K. (homebrew)",
       "page": 0
+    },
+    "powerGear": {
+      "bonded": true,
+      "bondedTo": "",
+      "slot": "mask",
+      "altModeOnly": false
     },
     "rules": [
       {
         "type": "Use",
         "label": "Invisibility Screen",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "move"
         },
@@ -44,9 +47,6 @@
       {
         "type": "Use",
         "label": "Holo-Double",
-        "when": [
-          "self:maskBonded"
-        ],
         "cost": {
           "action": "free"
         },
@@ -73,7 +73,6 @@
         "defense": "evasion",
         "amount": 2,
         "when": [
-          "self:maskBonded",
           "self:marked:holoDouble"
         ]
       },
@@ -82,22 +81,11 @@
         "label": "Mask helmet",
         "defense": "toughness",
         "amount": 1
-      },
-      {
-        "type": "Veto",
-        "on": "equip",
-        "items": [
-          "item:mask"
-        ],
-        "when": [
-          "self:wearingItem:item:mask"
-        ],
-        "message": "Take off the mask you are wearing first - one mask at a time."
       }
     ],
     "automation": {
       "status": "full",
-      "notes": "<p>Invisible until the end of the wearer's next turn. Holo-Double: +2 Evasion until the end of the wearer's next turn. Speed uses per scene, only for the bonded wearer; +1 Toughness for any wearer.</p>"
+      "notes": "<p>Invisible until the end of the wearer's next turn. Holo-Double: +2 Evasion until the end of the wearer's next turn. Speed uses per scene and +1 Toughness, only for the bonded wearer (Power Gear: bonded, mask slot).</p>"
     }
   },
   "effects": [],

@@ -52,11 +52,11 @@ changes. The guide in Foundry has a page on it.
 ## M.A.S.K. (in progress)
 
 A homebrew M.A.S.K. setting rides along in its own **M.A.S.K.** compendium folder: masks, vehicles with a Civilian and a
-Strike Mode, agents and V.E.N.O.M., mission tables, macros and a guide. It plays on the G.I. Joe line (set the Game Line
-to GI Joe, or leave it on all lines) and changes nothing in the system: its house rules are in `scripts/mask/house-rules.mjs`
-and its three rule tags (`item:mask`, `self:maskBonded`, `self:crewWearing`) in `scripts/mask/mask-tags.mjs`, through
-`game.essence20.rules`. The *M.A.S.K. Guide* compendium explains how masks and vehicles are built, and lists the
-M.A.S.K. Origins and Mask Agent Perks.
+Strike Mode, agents and V.E.N.O.M., mission tables and a guide. It's a "M.A.S.K." game line on the G.I. Joe rules,
+declared in `module.json`, and it has no code of its own: masks are the system's power gear, Strike Mode is a vehicle
+Alt Mode, and heists and races run on the system's Mission Generator and Race and Chase Tracker. The *M.A.S.K. Guide*
+compendium explains how masks and vehicles are built, and lists the M.A.S.K. Origins
+and Mask Agent Perks.
 
 ## Your words, not the book's
 

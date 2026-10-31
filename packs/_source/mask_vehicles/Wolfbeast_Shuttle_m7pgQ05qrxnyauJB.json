@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Shuttle Missiles",
-            "when": [],
             "cost": {
               "action": "standard"
             },

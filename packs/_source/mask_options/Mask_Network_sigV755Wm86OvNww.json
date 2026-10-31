@@ -1,0 +1,54 @@
+{
+  "name": "Mask Network",
+  "type": "perk",
+  "img": "icons/magic/control/energy-stream-link-blue.webp",
+  "system": {
+    "type": "role",
+    "description": "<p>Your mask links your team's. Allies within 30 ft of you have Edge on their mask power rolls.</p><p><em>Mask Agent Role - M.A.S.K. homebrew.</em></p>",
+    "source": {
+      "book": "M.A.S.K. (homebrew)",
+      "page": 0
+    },
+    "selectionLimit": 1,
+    "rules": [
+      {
+        "type": "RollModifier",
+        "label": "Mask Network",
+        "scope": "aura",
+        "radius": 30,
+        "affects": "allies",
+        "edge": true,
+        "when": [
+          "roll:dataset:maskPower"
+        ]
+      }
+    ],
+    "automation": {
+      "status": "full",
+      "notes": "<p>Automatic: allies within 30 ft of your token have Edge on rolls made with their mask's power.</p>"
+    }
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "essence20-homebrew-starter": {
+      "rolePerk": true
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.368",
+    "systemId": "essence20",
+    "systemVersion": "6.0.6",
+    "createdTime": 1793232000000,
+    "modifiedTime": 1793232000000,
+    "lastModifiedBy": null,
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "sigV755Wm86OvNww",
+  "_key": "!items!sigV755Wm86OvNww"
+}

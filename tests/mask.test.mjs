@@ -4,211 +4,73 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODULE_ID } from '../scripts/house-rules.mjs';
-import {
-  BONDED_MASKS, CONCEALED_WEAPONS, MASK_RULE_HOUSE_RULES, MASK_SWITCH_HOUSE_RULES, registerMaskHouseRules,
-} from '../scripts/mask/house-rules.mjs';
-import {
-  bondHolds, bondOf, bondOnEquip, crewWearing, isMask, rebondAllUpdates, rebondMask, registerMaskTags,
-} from '../scripts/mask/mask-tags.mjs';
 
-// M.A.S.K. (mask-work/MASK_PLAN.md): house rules, rule tags and mask bonds.
+// M.A.S.K. (mask-work/MASK_PLAN.md), built on the system's Cartoon Kit features: a game line in module.json, Strike Mode
+// as a vehicle Alt Mode, masks as bonded power gear. No module scripts of its own.
 
-let nextId = 1;
-function mask(name, { bondedTo = '', equipped = true } = {}) {
-  return { id: `m${nextId++}`, name, type: 'gear', system: { equipped }, flags: { [MODULE_ID]: { mask: true, bondedTo } } };
-}
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const manifest = JSON.parse(fs.readFileSync(path.join(root, 'module.json'), 'utf8'));
 
-function actor(items = [], extra = {}) {
-  const made = { id: `a${nextId++}`, uuid: '', type: 'playerCharacter', items: { contents: items }, system: {}, ...extra };
-  made.uuid = `Actor.${made.id}`;
-  for (const item of items) {
-    item.parent = made;
-  }
-
-  return made;
-}
-
-test('house rules: registered under the module, ids prefixed; Concealed Weapons and Bonded Masks on by default', () => {
-  const registered = [];
-  assert.equal(registerMaskHouseRules({ registerHouseRule: rule => registered.push(rule) }), true);
-  assert.deepEqual(registered.map(rule => rule.id), [...MASK_RULE_HOUSE_RULES, ...MASK_SWITCH_HOUSE_RULES].map(rule => rule.id));
-  for (const rule of registered) {
-    assert.equal(rule.module, MODULE_ID);
-    assert.ok(rule.id.startsWith(`${MODULE_ID}-mask-`), rule.id);
-    assert.ok(rule.label.startsWith('M.A.S.K.: ') && rule.hint, rule.id);
-  }
-
-  assert.deepEqual(registered.map(rule => [rule.id, !!rule.default]), [
-    [CONCEALED_WEAPONS, true], [`${MODULE_ID}-mask-disguised-vehicles`, false], [BONDED_MASKS, true],
-  ]);
-  assert.deepEqual(MASK_SWITCH_HOUSE_RULES.map(rule => rule.rules), [undefined]);
-  assert.equal(registerMaskHouseRules(undefined), false);
+test('the M.A.S.K. game line ships in module.json, built on G.I. Joe, its compendiums in the M.A.S.K. folder', () => {
+  assert.deepEqual(manifest.flags.essence20.gameLines, [{ id: 'mask', label: 'M.A.S.K.', family: 'giJoe', packFolder: 'M.A.S.K.' }]);
+  assert.ok(manifest.packFolders.some(folder => folder.name == 'M.A.S.K.'));
 });
 
-test('Concealed Weapons: an early BeforeRoll cancel on a Strike-only attack of a vehicle out of Strike Mode', () => {
-  const [rule] = MASK_RULE_HOUSE_RULES.find(houseRule => houseRule.id == CONCEALED_WEAPONS).rules;
-  assert.equal(rule.type, 'BeforeRoll');
-  assert.equal(rule.cancel, true);
-  assert.equal(rule.early, true);
-  assert.ok(rule.message);
-  assert.deepEqual(rule.when, ['self:type:vehicle', 'not:self:marked:strikeMode', `item:data:flags.${MODULE_ID}.strikeOnly=true`]);
-});
-
-test('Disguised Vehicles: an Edge for a vehicle out of Strike Mode, on Deception or Infiltration', () => {
-  const [rule] = MASK_RULE_HOUSE_RULES.find(houseRule => houseRule.id.endsWith('-disguised-vehicles')).rules;
-  assert.equal(rule.type, 'RollModifier');
-  assert.equal(rule.edge, true);
-  assert.deepEqual(rule.when, ['self:type:vehicle', 'not:self:marked:strikeMode', { any: ['skill:deception', 'skill:infiltration'] }]);
-});
-
-test('a mask is gear with the flag', () => {
-  assert.equal(isMask(mask('Spectrum')), true);
-  assert.equal(isMask({ type: 'gear', flags: {} }), false);
-  assert.equal(isMask({ type: 'weapon', flags: { [MODULE_ID]: { mask: true } } }), false);
-});
-
-test('the bond: unbonded works for anyone, bonded only for its wearer, everyone while Bonded Masks is off', () => {
-  const spectrum = mask('Spectrum');
-  const matt = actor([spectrum]);
-  assert.equal(bondHolds(spectrum, matt), true);
-  spectrum.flags[MODULE_ID].bondedTo = matt.id;
-  assert.equal(bondHolds(spectrum, matt), true);
-  const mayhem = actor();
-  assert.equal(bondHolds(spectrum, mayhem), false);
-  assert.equal(bondHolds(spectrum, mayhem, id => id != BONDED_MASKS), true);
-  assert.equal(bondHolds({ type: 'weapon' }, mayhem), true);
-});
-
-test('an unbonded mask bonds to whoever puts it on; a bonded one keeps its bond', () => {
-  const fresh = mask('Aura', { equipped: false });
-  const gloria = actor([fresh]);
-  const changes = { system: { equipped: true } };
-  bondOnEquip(fresh, changes);
-  assert.equal(changes.flags[MODULE_ID].bondedTo, gloria.id);
-
-  const stolen = mask('Viper', { bondedTo: 'mayhem', equipped: false });
-  actor([stolen]);
-  const again = { system: { equipped: true } };
-  bondOnEquip(stolen, again);
-  assert.equal(again.flags, undefined);
-
-  const off = { system: { equipped: false } };
-  bondOnEquip(fresh, off);
-  assert.equal(off.flags, undefined);
-});
-
-test('a new actor rebonds its own masks', () => {
-  const old = mask('Spectrum', { bondedTo: 'oldCopy' });
-  const blank = mask('Lava Shot');
-  const matt = actor([old, blank]);
-  assert.deepEqual(rebondAllUpdates(matt), [{ _id: old.id, [`flags.${MODULE_ID}.bondedTo`]: matt.id }]);
-});
-
-test('only the GM rebonds', async () => {
-  const stolen = mask('Spectrum', { bondedTo: 'matt' });
-  const mayhem = actor([stolen]);
-  stolen.update = async changes => {
-    stolen.flags[MODULE_ID].bondedTo = changes[`flags.${MODULE_ID}.bondedTo`];
-  };
-  globalThis.game = { user: { isGM: false } };
-  assert.equal(await rebondMask(stolen), null);
-  globalThis.game.user.isGM = true;
-  await rebondMask(stolen);
-  assert.equal(bondOf(stolen), mayhem.id);
-  await rebondMask(stolen, { clear: true });
-  assert.equal(bondOf(stolen), '');
-});
-
-test('crewWearing: someone aboard wears a working mask, by name or any', () => {
-  const spectrum = mask('Spectrum');
-  const matt = actor([spectrum]);
-  spectrum.flags[MODULE_ID].bondedTo = matt.id;
-  const thunderhawk = { type: 'vehicle', system: { actors: { a: { uuid: matt.uuid }, b: { uuid: 'Actor.gone' } } } };
-  const resolve = uuid => (uuid == matt.uuid ? matt : null);
-  assert.equal(crewWearing(thunderhawk, 'spectrum', { resolve }), true);
-  assert.equal(crewWearing(thunderhawk, '', { resolve }), true);
-  assert.equal(crewWearing(thunderhawk, 'Viper', { resolve }), false);
-  spectrum.flags[MODULE_ID].bondedTo = 'someoneElse';
-  assert.equal(crewWearing(thunderhawk, 'Spectrum', { resolve }), false);
-  assert.equal(crewWearing(thunderhawk, 'Spectrum', { resolve, enabled: () => false }), true);
-  assert.equal(crewWearing({ system: {} }, '', { resolve }), false);
-});
-
-test('the tags are registered through the public API, with phrases', () => {
-  const tags = new Map();
-  const api = { registerTag: (name, fn, meta) => tags.set(name, { fn, meta }), houseRuleEnabled: () => true };
-  assert.equal(registerMaskTags(api), true);
-  assert.deepEqual([...tags.keys()], ['item:mask', 'self:maskBonded', 'self:crewWearing']);
-  for (const { meta } of tags.values()) {
-    assert.ok(meta.phrase);
-  }
-
-  const viper = mask('Viper', { bondedTo: 'mayhem' });
-  const matt = actor();
-  assert.equal(tags.get('item:mask').fn('', { item: viper }), true);
-  assert.equal(tags.get('self:maskBonded').fn('', { self: matt, ruleItem: viper }), false);
-  assert.equal(tags.get('self:maskBonded').fn('', { ruleItem: viper }), null);
-
-  const warn = console.warn;
-  console.warn = () => {};
-  try {
-    assert.equal(registerMaskTags(undefined), false);
-  } finally {
-    console.warn = warn;
-  }
+test('no M.A.S.K. scripts: the module loads only its house-rules examples', () => {
+  assert.deepEqual(manifest.esmodules, ['scripts/house-rules.mjs']);
+  assert.equal(fs.existsSync(path.join(root, 'scripts', 'mask')), false);
 });
 
 /* ---- The masks compendium (Phase 2) ---- */
 
-const masksDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'packs', '_source', 'mask_masks');
+const masksDir = path.join(root, 'packs', '_source', 'mask_masks');
 const maskDocs = fs.readdirSync(masksDir).filter(file => file.endsWith('.json')).map(file => JSON.parse(fs.readFileSync(path.join(masksDir, file), 'utf8')));
+const OLD_TAGS = /self:maskBonded|self:wearingItem|item:mask|self:crewWearing|strikeMode/;
 
-test('every mask: flagged gear, off until worn, its helmet and the one-at-a-time Veto', () => {
+test('every mask: bonded power gear in the mask slot, off until worn, with its helmet', () => {
   assert.equal(maskDocs.length, 53);
   for (const doc of maskDocs) {
     assert.equal(doc.type, 'gear', doc.name);
     assert.equal(doc.flags[MODULE_ID].mask, true, doc.name);
     assert.ok(doc.flags[MODULE_ID].agent, doc.name);
+    assert.deepEqual(doc.system.powerGear, { bonded: true, bondedTo: '', slot: 'mask', altModeOnly: false }, doc.name);
     assert.equal(doc.system.equipped, false, `${doc.name} must start unworn, so its first wearer bonds it`);
     const rules = doc.system.rules;
     assert.ok(rules.some(rule => rule.type == 'Defense' && rule.defense == 'toughness' && !rule.when), `${doc.name} helmet`);
-    assert.ok(rules.some(rule => rule.type == 'Veto' && rule.on == 'equip' && rule.items.includes('item:mask')), `${doc.name} veto`);
+    assert.ok(!rules.some(rule => rule.type == 'Veto'), `${doc.name}: the slot takes off the other mask`);
     assert.ok(doc.system.automation?.status && doc.system.automation.notes, doc.name);
   }
 });
 
-test("every mask power: bonded wearer only, Speed uses per scene shared across the mask's buttons", () => {
+test("every mask power: Speed uses per scene shared across the mask's buttons, no old tags", () => {
   for (const doc of maskDocs) {
     const uses = doc.system.rules.filter(rule => rule.type == 'Use');
     assert.ok(uses.length, doc.name);
     const keys = new Set(uses.map(rule => rule.limit?.key));
     assert.equal(keys.size, 1, `${doc.name} shares one limit`);
     for (const rule of uses) {
-      assert.ok(rule.when.includes('self:maskBonded'), `${doc.name}: ${rule.label}`);
       assert.deepEqual({ per: rule.limit.per, max: rule.limit.max }, { per: 'scene', max: '@essence.speed' });
       assert.ok(['standard', 'free', 'move'].includes(rule.cost?.action), `${doc.name}: ${rule.label}`);
     }
 
-    for (const rule of doc.system.rules.filter(other => !['Use', 'Defense', 'Veto'].includes(other.type))) {
-      assert.ok(rule.when?.includes('self:maskBonded'), `${doc.name}: its ${rule.type} is part of the power`);
-    }
+    assert.doesNotMatch(JSON.stringify(doc.system.rules), OLD_TAGS, doc.name);
   }
 });
 
 /* ---- Vehicles and the Strike Mode templates (Phase 3) ---- */
 
 const sourceDocs = pack => {
-  const folder = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'packs', '_source', pack);
+  const folder = path.join(root, 'packs', '_source', pack);
   return fs.readdirSync(folder).filter(file => file.endsWith('.json')).map(file => JSON.parse(fs.readFileSync(path.join(folder, file), 'utf8')));
 };
-const STRIKE = 'self:marked:strikeMode';
 const vehicleDocs = sourceDocs('mask_vehicles');
 
 const rulesOfType = (doc, type) => doc.items.flatMap(item => item.system.rules.filter(rule => rule.type == type).map(rule => ({ item, rule })));
-const strikeFeature = doc => doc.items.find(item => item.flags[MODULE_ID]?.strikeMode);
+const strikeFeature = doc => doc.items.find(item => item.type == 'altMode');
+const strikeOnly = item => !!item.system.powerGear?.altModeOnly;
 
 test('vehicles: every one in scope, actors with their own embedded items, Health as the starting Health, linked tokens', () => {
-  assert.equal(vehicleDocs.length, 61);
+  assert.equal(vehicleDocs.length, 62);
   assert.equal(new Set(vehicleDocs.map(doc => doc.name)).size, vehicleDocs.length);
   for (const name of ['Thunderhawk', 'Rhino', 'Rhino ATV', 'Switchblade', 'Volcano', 'Goliath I', 'Goliath II', 'Outlaw', 'Manta', 'Hornet', 'Ratfang']) {
     assert.ok(vehicleDocs.some(doc => doc.name == name), name);
@@ -220,46 +82,56 @@ test('vehicles: every one in scope, actors with their own embedded items, Health
     assert.equal(doc.system.defenses, undefined, `${doc.name}: Defenses come from base 10 + Essence`);
     assert.equal(doc.prototypeToken.actorLink, true, doc.name);
     assert.ok(doc.flags[MODULE_ID].agent, doc.name);
+    assert.doesNotMatch(JSON.stringify(doc.items.map(item => item.system.rules)), OLD_TAGS, doc.name);
     for (const item of doc.items) {
       assert.equal(item._key, `!actors.items!${doc._id}.${item._id}`, `${doc.name}: ${item.name}`);
     }
   }
 });
 
-test('a converting vehicle: its Strike Mode feature marks and unmarks strikeMode, and holds only Strike Mode rules', () => {
+test("a converting vehicle: one Strike Mode Alt Mode, at the vehicle's size, keeping its Civilian movement, with Disguised Vehicle", () => {
   const converting = vehicleDocs.filter(strikeFeature);
-  assert.equal(converting.length, 39);
+  assert.equal(converting.length, 40);
+  const ALT = { swim: 'aquatic' };
   for (const doc of converting) {
-    const feature = strikeFeature(doc);
-    const uses = feature.system.rules.filter(rule => rule.type == 'Use');
-    assert.deepEqual(uses.map(rule => rule.steps[0]), [{ do: 'mark', key: 'strikeMode' }, { do: 'unmark', key: 'strikeMode' }], doc.name);
-    assert.deepEqual(uses.map(rule => rule.when), [[`not:${STRIKE}`], [STRIKE]], doc.name);
-    for (const rule of feature.system.rules.filter(other => other.type != 'Use')) {
-      assert.ok(rule.when.includes(STRIKE), `${doc.name}: ${rule.type}`);
+    const modes = doc.items.filter(item => item.type == 'altMode');
+    assert.equal(modes.length, 1, doc.name);
+    const [mode] = modes;
+    assert.ok(mode.name.startsWith('Strike Mode: '), doc.name);
+    assert.equal(mode.system.altModesize, doc.system.size, doc.name);
+    assert.deepEqual(mode.system.altModeSizeOptions, [doc.system.size], doc.name);
+    for (const [type, { base }] of Object.entries(doc.system.movement)) {
+      assert.ok(mode.system.altModeMovement[ALT[type] ?? type] >= base, `${doc.name}: ${type}`);
     }
+
+    const { toughness, evasion } = mode.system.modeDefenses;
+    assert.ok(toughness > 0 || evasion > 0 || Object.values(mode.system.altModeMovement).some(Boolean), doc.name);
+    assert.deepEqual(mode.system.rules, [{ type: 'RollModifier', label: 'Disguised Vehicle', edge: true, when: ['not:self:transformed', { any: ['skill:deception', 'skill:infiltration'] }] }], doc.name);
   }
 });
 
-test('weapons come out in Strike Mode on a converting vehicle, and are always ready on one that does not convert', () => {
-  const eitherMode = new Set(['Nose Guns', 'Venom Cloud']);
+test('weapons come out in Strike Mode on a converting vehicle (Alt Mode only), and are always ready on one that does not convert', () => {
+  const eitherMode = new Set(['Nose Guns', 'Viper Dispersal']);
   for (const doc of vehicleDocs) {
     const converts = !!strikeFeature(doc);
-    for (const { item, rule } of rulesOfType(doc, 'Use')) {
-      if (item.flags[MODULE_ID]?.strikeMode || /Bay$/.test(item.name) || eitherMode.has(rule.label)) {
+    for (const item of doc.items.filter(other => other.type == 'upgrade' && other.system.rules.some(rule => rule.type == 'Use'))) {
+      if (item.flags[MODULE_ID]?.hq || /Bay$/.test(item.name) || eitherMode.has(item.name)) {
+        assert.equal(strikeOnly(item), false, `${doc.name}: ${item.name}`);
         continue;
       }
 
-      assert.equal(rule.when.includes(STRIKE), converts, `${doc.name}: ${rule.label}`);
+      assert.equal(strikeOnly(item), converts, `${doc.name}: ${item.name}`);
     }
   }
 });
 
-test('linked mask powers need a working mask of that name aboard and are once per scene; every mask they name exists', () => {
+test('linked mask powers need that mask worn aboard (by slot and name) and are once per scene; every mask they name exists', () => {
   const maskNames = new Set(maskDocs.map(doc => doc.name));
-  const linked = vehicleDocs.flatMap(doc => rulesOfType(doc, 'Use').filter(({ rule }) => rule.when?.some(tag => tag.startsWith('self:crewWearing:'))).map(entry => ({ ...entry, doc })));
+  const TAG = 'self:crewSlotEquipped:mask:';
+  const linked = vehicleDocs.flatMap(doc => rulesOfType(doc, 'Use').filter(({ rule }) => rule.when?.some(tag => tag.startsWith(TAG))).map(entry => ({ ...entry, doc })));
   assert.ok(linked.length >= 40);
   for (const { doc, rule } of linked) {
-    const mask = rule.when.find(tag => tag.startsWith('self:crewWearing:')).slice('self:crewWearing:'.length);
+    const mask = rule.when.find(tag => tag.startsWith(TAG)).slice(TAG.length);
     assert.ok(maskNames.has(mask), `${doc.name}: ${mask}`);
     assert.deepEqual(rule.limit, { per: 'scene', max: 1 }, `${doc.name}: ${rule.label}`);
   }
@@ -268,16 +140,22 @@ test('linked mask powers need a working mask of that name aboard and are once pe
 test('every bay carries a vehicle that is in the compendium', () => {
   const names = new Set(vehicleDocs.map(doc => doc.name));
   for (const doc of vehicleDocs) {
-    for (const item of doc.items.filter(other => / Bay$/.test(other.name))) {
+    for (const item of doc.items.filter(other => / Bay$/.test(other.name) && !other.flags[MODULE_ID]?.hq)) {
       const carried = item.system.rules[0].label.replace(/^Deploy /, '');
       assert.ok(names.has(carried) || (doc.name == 'Rhino' && carried == 'ATV'), `${doc.name}: ${carried}`);
     }
   }
 });
 
-test('the Strike Mode templates are in the options compendium', () => {
-  const names = sourceDocs('mask_options').filter(doc => doc.flags[MODULE_ID]?.template).map(doc => doc.name).sort();
-  assert.deepEqual(names, ['Concealed Weapon (template)', 'Linked Mask Power (template)', 'Strike Mode (template)', 'Vehicle Bay (template)']);
+test('the Strike Mode templates are in the options compendium: an Alt Mode, and Strike-only upgrades', () => {
+  const templates = sourceDocs('mask_options').filter(doc => doc.flags[MODULE_ID]?.template);
+  assert.deepEqual(templates.map(doc => doc.name).sort(), ['Concealed Weapon (template)', 'Linked Mask Power (template)', 'Strike Mode (template)', 'Vehicle Bay (template)']);
+  const byName = Object.fromEntries(templates.map(doc => [doc.name, doc]));
+  assert.equal(byName['Strike Mode (template)'].type, 'altMode');
+  assert.equal(strikeOnly(byName['Concealed Weapon (template)']), true);
+  assert.equal(strikeOnly(byName['Linked Mask Power (template)']), true);
+  assert.equal(strikeOnly(byName['Vehicle Bay (template)']), false);
+  assert.doesNotMatch(JSON.stringify(templates.map(doc => doc.system.rules)), OLD_TAGS);
 });
 
 /* ---- Origins and Mask Agent Perks (Phase 4) ---- */
@@ -340,4 +218,174 @@ test('Secret Identity: a Cover pool of 5 that the GM spends and lying low restor
   assert.deepEqual(slips.cost, { resource: { pool: 'cover' }, amount: 1 });
   assert.deepEqual(lieLow.limit, { per: 'mission', max: 1 });
   assert.ok(rules.find(rule => rule.type == 'RollModifier').when.includes('calc:@pool.cover>0'));
+});
+
+/* ---- Agents and V.E.N.O.M. (Phase 5) ---- */
+
+const agentDocs = sourceDocs('mask_agents');
+const venomDocs = sourceDocs('mask_venom');
+
+test('the agent roster: every named agent of both sides, Threat Builder NPCs on the right side and pack', () => {
+  assert.equal(agentDocs.length, 17);
+  assert.equal(venomDocs.length, 11);
+  for (const [docs, side, disposition] of [[agentDocs, 'mask', 1], [venomDocs, 'venom', -1]]) {
+    for (const doc of docs) {
+      assert.equal(doc.type, 'npc', doc.name);
+      assert.equal(doc.flags[MODULE_ID].side, side, doc.name);
+      assert.equal(doc.prototypeToken.disposition, disposition, doc.name);
+      assert.equal(doc.flags.essence20.threatBuild.ruleset, 'fieldGuide', doc.name);
+      assert.ok(doc.system.threatLevel >= 0 && doc.system.health.origin >= 1, doc.name);
+      assert.ok(doc.items.some(item => item.type == 'weapon'), `${doc.name} has an attack`);
+      for (const item of doc.items) {
+        assert.equal(item._key, `!actors.items!${doc._id}.${item._id}`, `${doc.name}: ${item.name}`);
+      }
+    }
+  }
+
+  // Every agent a mask or a vehicle names is on the roster.
+  const named = new Set([...agentDocs, ...venomDocs].map(doc => doc.name));
+  for (const doc of [...maskDocs, ...vehicleDocs]) {
+    for (const agent of String(doc.flags[MODULE_ID].agent).split(' & ')) {
+      assert.ok(named.has(agent), `${doc.name}: ${agent}`);
+    }
+  }
+});
+
+test("an agent wears one mask, bonded to them, and every mask of theirs is that mask's own agent's", () => {
+  for (const doc of [...agentDocs, ...venomDocs]) {
+    const masks = doc.items.filter(item => item.flags?.[MODULE_ID]?.mask);
+    if (!masks.length) {
+      continue;
+    }
+
+    assert.equal(masks.filter(item => item.system.equipped).length, 1, doc.name);
+    for (const mask of masks) {
+      assert.equal(mask.system.powerGear.bondedTo, doc._id, `${doc.name}: ${mask.name}`);
+      assert.equal(mask.flags[MODULE_ID].bondedTo, undefined, `${doc.name}: ${mask.name} - the old module-flag bond`);
+      assert.equal(mask.flags[MODULE_ID].agent, doc.name, `${doc.name}: ${mask.name}`);
+    }
+  }
+});
+
+test("a weapon's effect is its own, by parent id", () => {
+  for (const doc of [...agentDocs, ...venomDocs]) {
+    for (const effect of doc.items.filter(item => item.type == 'weaponEffect')) {
+      const weapon = doc.items.find(item => item._id == effect.flags.essence20.parentId);
+      assert.ok(weapon?.type == 'weapon', `${doc.name}: ${effect.name}`);
+      assert.ok(Object.values(weapon.system.items).some(entry => entry.uuid.endsWith(`.Item.${effect._id}`)), `${doc.name}: ${effect.name}`);
+    }
+  }
+});
+
+test('agent Perks are copies of the M.A.S.K. Perks', () => {
+  const perkNames = new Set(optionDocs.filter(doc => doc.type == 'perk').map(doc => doc.name));
+  for (const doc of [...agentDocs, ...venomDocs]) {
+    for (const perk of doc.items.filter(item => item.type == 'perk')) {
+      assert.ok(perkNames.has(perk.name), `${doc.name}: ${perk.name}`);
+    }
+  }
+});
+
+/* ---- Campaign pieces (Phase 6) ---- */
+
+const tableDocs = sourceDocs('mask_tables').filter(doc => doc._key.startsWith('!tables!'));
+const tableFolders = sourceDocs('mask_tables').filter(doc => doc._key.startsWith('!folders!'));
+
+test('the heist and race tables: contiguous ranges that fill their formula, crew results naming V.E.N.O.M. actors', () => {
+  assert.deepEqual(tableDocs.filter(doc => doc.flags[MODULE_ID]?.heist).map(doc => doc.flags[MODULE_ID].heist).sort(),
+    ['complication', 'crew', 'disguise', 'location', 'scheme', 'target']);
+  assert.deepEqual(tableDocs.filter(doc => doc.flags[MODULE_ID]?.race).map(doc => doc.flags[MODULE_ID].race).sort(), ['course', 'hazard']);
+  const venomIds = new Set(venomDocs.map(doc => doc._id));
+  for (const doc of tableDocs) {
+    let next = 1;
+    for (const result of doc.results) {
+      assert.equal(result.range[0], next, `${doc.name}: ${result.name}`);
+      assert.equal(result.range[1] - result.range[0] + 1, result.weight, `${doc.name}: ${result.name}`);
+      assert.equal(result._key, `!tables.results!${doc._id}.${result._id}`);
+      next = result.range[1] + 1;
+      if (result.type == 'document') {
+        const id = result.documentUuid.split('.').at(-1);
+        assert.ok(result.documentUuid.startsWith(`Compendium.${MODULE_ID}.mask_venom.Actor.`) && venomIds.has(id), `${doc.name}: ${result.name}`);
+      }
+    }
+
+    assert.equal(doc.formula, `1d${next - 1}`, doc.name);
+  }
+});
+
+test('the episode folders: each kind of table in order, with a title and outline for the Mission Generator - no macros', () => {
+  assert.deepEqual(tableFolders.map(folder => folder.name).sort(), ['Racing Season', 'V.E.N.O.M. Heist']);
+  for (const folder of tableFolders) {
+    const kind = folder.flags[MODULE_ID].episode;
+    assert.equal(folder.type, 'RollTable');
+    const tables = tableDocs.filter(doc => doc.flags[MODULE_ID]?.[kind]);
+    assert.ok(tables.length >= 2, folder.name);
+    assert.ok(tables.every(doc => doc.folder == folder._id), folder.name);
+    assert.equal(new Set(tables.map(doc => doc.sort)).size, tables.length, `${folder.name}: one place each`);
+    // Every {placeholder} in its title and outline names one of its tables.
+    const { title, outline } = folder.flags.essence20.mission;
+    const key = name => name.toLowerCase().replace(/\s+/g, '');
+    const names = new Set(tables.map(doc => key(doc.name)));
+    for (const [, name] of `${title}\n${outline}`.matchAll(/\{([^{}]+)\}/g)) {
+      assert.ok(names.has(key(name)), `${folder.name}: {${name}}`);
+    }
+  }
+
+  assert.deepEqual(tableDocs.filter(doc => doc.flags[MODULE_ID]?.heist).sort((a, b) => a.sort - b.sort).map(doc => doc.name),
+    ['Prize', 'Location', 'Scheme', 'Cover', 'Crew', 'Complication']);
+  assert.ok(!fs.existsSync(path.join(root, 'packs', '_source', 'mask_macros')));
+  assert.ok(!manifest.packs.some(pack => pack.name == 'mask_macros'));
+});
+
+test('Boulder Hill: a headquarters with its HQ facilities', () => {
+  const base = vehicleDocs.find(doc => doc.name == 'Boulder Hill');
+  assert.ok(strikeFeature(base));
+  assert.deepEqual(base.items.filter(item => item.flags[MODULE_ID]?.hq).map(item => item.name).sort(), ['Command Center', 'Hidden Hangar', 'Mask Lab', 'Repair Bay']);
+  const command = base.items.find(item => item.name == 'Command Center').system.rules[0];
+  assert.equal(command.scope, 'crew');
+});
+
+/* ---- The Mask Agent Role (Phase 7) ---- */
+
+test('the Mask Agent Role: G.I. Joe-shaped - 20 Essence increases (two at 1st, none at 10th), five General Perks', () => {
+  const role = optionDocs.find(doc => doc.type == 'role');
+  assert.equal(role.name, 'Mask Agent');
+  assert.equal(role.system.version, 'giJoe');
+  assert.equal(role.system.gameLine, 'mask');
+  const counts = {};
+  for (const levels of Object.values(role.system.essenceLevels)) {
+    for (const level of levels) counts[level] = (counts[level] ?? 0) + 1;
+  }
+
+  assert.equal(Object.values(counts).reduce((a, b) => a + b, 0), 20);
+  assert.equal(counts.level1, 2);
+  assert.equal(counts.level10, undefined);
+  assert.deepEqual(role.system.perkLevels.general, ['level4', 'level8', 'level12', 'level16', 'level19']);
+});
+
+test("the Role's grants resolve: its own Perks and Mask Charge in this compendium, Extra Attack in the system's", () => {
+  const role = optionDocs.find(doc => doc.type == 'role');
+  const ids = new Map(optionDocs.map(doc => [`Compendium.${MODULE_ID}.mask_options.Item.${doc._id}`, doc]));
+  const grants = Object.values(role.system.items);
+  assert.equal(grants.filter(item => item.type == 'rolePoints').length, 1);
+  for (const item of grants) {
+    if (item.uuid.startsWith('Compendium.essence20.')) {
+      assert.equal(item.name, 'Extra Attack');
+      continue;
+    }
+
+    const doc = ids.get(item.uuid);
+    assert.ok(doc, item.name);
+    assert.equal(doc.name, item.name);
+    assert.equal(doc.type, item.type);
+    if (item.type == 'perk') {
+      assert.ok(item.level >= 1 && item.level <= 20, item.name);
+      assert.equal(item.subtype, doc.system.type == 'role' ? 'role' : 'general', item.name);
+    }
+  }
+
+  assert.deepEqual(grants.filter(item => item.type == 'perk').map(item => item.level), [1, 1, 2, 3, 5, 7, 9, 11, 13, 14, 15, 18, 20]);
+  for (const doc of optionDocs.filter(other => other.flags[MODULE_ID]?.rolePerk)) {
+    assert.equal(doc.system.type, 'role', doc.name);
+  }
 });

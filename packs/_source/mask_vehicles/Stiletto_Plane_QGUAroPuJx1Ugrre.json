@@ -61,7 +61,6 @@
           {
             "type": "Use",
             "label": "Plane Guns",
-            "when": [],
             "cost": {
               "action": "standard"
             },
